@@ -1,2 +1,22 @@
+//============utils=================
+@import './utils/vars';
+@import './utils/breakpoints';
+@import './utils/visually-hidden';
+
+//============base==================
+@import './base/global-stile';
 @import './base/reset';
 @import './base/container';
+
+//===========layout=================
+
+//header
+@import './layout/input';
+
+//main
+
+//footer
+
+//=========components===============
+@import './components/backdrop';
+@import './components/modal';
