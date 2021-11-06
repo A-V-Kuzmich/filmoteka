@@ -7,3 +7,4 @@ trailingComma: 'all'
 bracketSpacing: true
 arrowParens: 'avoid'
 proseWrap: 'always'
+jsxBracketSameLine: false
