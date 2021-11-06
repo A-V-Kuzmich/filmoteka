@@ -12,10 +12,10 @@ import './js/layout/input.js';
 
 
 //=========components===============
-import './js/components/backdrop.js'
-import './js/components/modal.js'
+import './js/components/backdrop.js';
+import './js/components/modal.js';
 
 //=============api==================
-import './js/api/apiService.js'
+import './js/api/api-service.js';
 
 //=============test==================
