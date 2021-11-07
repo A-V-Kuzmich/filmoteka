@@ -1,0 +1,39 @@
+.icon-heart-svg{
+    fill: $accent-color;
+    width:14px;
+    height: 10px;
+    @media screen and (min-width: $mobile){
+    margin-top: 10px
+}
+ @media screen and (min-width: $tablet){
+     height:12px;
+ }
+}
+.footer{
+ background-color: $secondary-bg-color;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.footer-container{
+    text-align: center;
+    @media screen and (min-width: $mobile){
+        width:270px;
+    }
+     @media screen and (min-width: $tablet){
+        width:800px;
+     }
+}
+.footer-text{
+color: $credits-text-color;
+    font-size: 14px;
+    line-height: 1.1;
+     @media screen and (min-width: $tablet){
+         font-size: 16px;
+     }
+      @media screen and (min-width: $desktop) {
+          font-size: 19px;
+      }
+}
+.footer-text__authors{
+    text-decoration: underline;
+}
