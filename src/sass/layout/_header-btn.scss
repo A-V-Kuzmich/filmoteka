@@ -1,7 +1,3 @@
-.btn-base-item_header {
-  @extend %button;
-  border: 1px solid $secondary-text-color;
-}
 .btn-base {
   display: flex;
   justify-content: center;
@@ -9,9 +5,7 @@
   color: $secondary-text-color;
   background-color: $btn-color;
   align-content: center;
-  border: 1px solid $secondary-text-color;
-  width: 130px;
-  height: 44px;
+
   &:active {
     background-color: $accent-color;
     border: none;
@@ -19,6 +13,10 @@
   }
 }
 
+.btn-base-item_header {
+  @extend %button;
+  border: 1px solid $secondary-text-color;
+}
 .btn-base-item:first-child {
   margin-right: 20px;
   @media screen and(min-width:$tablet) {
