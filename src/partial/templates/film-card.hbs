@@ -1,0 +1,29 @@
+{{#each this}}
+<li class="film-list-item">
+  <div class="film-card">
+    {{#if poster_path}}
+    <img class="film-picture" data-index="{{@index}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
+      alt="film card" />
+    {{else}}
+    <img class="film-picture" data-index="{{@index}}"
+      src="https://upload.wikimedia.org/wikipedia/commons/archive/c/c2/20170210132813%21No_image_poster.png" alt="content photo">
+    {{/if}}
+  </div>
+  <div class="film-info">
+
+    <h2 class="film-name">{{title}}</h2>
+
+    <div class="film-info-wrap">
+      <ul class="film-genre">
+        {{#each genres}}
+        <li class="film-genre-item" data-index="{{this}}">{{this}}</li>
+        {{/each}}
+      </ul>
+      <span class="film-info-mark">|</span>
+
+      <p class="film-year">{{release_date}}</p>
+      <span class="raiting">{{vote_average}}</span>
+    </div>
+  </div>
+</li>
+{{/each}}
