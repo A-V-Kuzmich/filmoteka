@@ -6,6 +6,17 @@
   display: flex;
   justify-content: center;
   justify-items: center;
+  color: $secondary-text-color;
+  background-color: $btn-color;
+  align-content: center;
+  border: 1px solid $secondary-text-color;
+  width: 130px;
+  height: 44px;
+  &:active {
+    background-color: $accent-color;
+    border: none;
+    box-shadow: $btn-shadow-color;
+  }
 }
 
 .btn-base-item:first-child {
