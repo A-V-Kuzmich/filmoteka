@@ -1,0 +1,7 @@
+.btn-header {
+  @extend %button;
+  border: 1px solid $secondary-text-color;
+}
+body {
+  background-color: yellow;
+}

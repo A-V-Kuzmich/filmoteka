@@ -1,0 +1,31 @@
+%button {
+  border-radius: 5px;
+  font-size: 12px;
+  color: $secondary-text-color;
+  background-color: $btn-color;
+  align-content: center;
+  border: 1px solid $secondary-text-color;
+  width: 130px;
+  height: 44px;
+  &:active {
+    background-color: $accent-color;
+    border: none;
+    box-shadow: $btn-shadow-color;
+  }
+  @media screen and(min-width:$tablet) {
+    width: 136px;
+  }
+}
+
+.btn-base {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.btn-base-item:first-child {
+  margin-right: 20px;
+  @media screen and(min-width:$tablet) {
+    margin-right: 15px;
+  }
+}
