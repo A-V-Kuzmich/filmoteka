@@ -2,6 +2,11 @@
   display: flex;
   justify-content: center;
   justify-items: center;
+}
+
+.btn-base-item_header {
+  @extend %button;
+  border: 1px solid $secondary-text-color;
   color: $secondary-text-color;
   background-color: $btn-color;
   align-content: center;
@@ -12,14 +17,23 @@
     box-shadow: $btn-shadow-color;
   }
 }
-
-.btn-base-item_header {
-  @extend %button;
-  border: 1px solid $secondary-text-color;
-}
 .btn-base-item:first-child {
   margin-right: 20px;
   @media screen and(min-width:$tablet) {
     margin-right: 15px;
+  }
+}
+
+.btn-base-item_modal {
+  @extend %button;
+  border: 1px solid $primary-text-color;
+  color: $primary-text-color;
+  background-color: $secondary-text-color;
+  align-content: center;
+
+  &:active {
+    background-color: $accent-color;
+    border: none;
+    box-shadow: $btn-shadow-color;
   }
 }
