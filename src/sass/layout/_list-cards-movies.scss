@@ -20,7 +20,7 @@
     
 }
 
-.films-item {
+.films__item {
     margin-right: auto;
     margin-left: auto;
     padding-bottom: 10px;
@@ -41,7 +41,7 @@
     }
 
 }
-.film-picture {
+.films__picture {
     border-radius: 5px;
     max-width: 280px;
     height: 398px;
@@ -56,19 +56,19 @@
 
   }
   
-  .film-info {
+  .films__info {
     display: block;
     margin-left: 5px;
     padding-left: 5px;
   
   }
   
-  .film-info-wrap {
+  .films__info-wrap {
     display: flex;
     flex-wrap: wrap;
   }
   
-  .film-name {
+  .films__name {
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
@@ -76,9 +76,9 @@
     color: $primary-text-color;
     margin: 0;
   }
-  .film-genre,
-  .film-info-mark,
-  .film-year {
+  .films__genre,
+  .films__info-mark,
+  .films__year {
     margin-right: 3px;
     font-weight: 500;
     font-size: 12px;
@@ -86,13 +86,13 @@
     color: $accent-color;
   }
   
-  .film-genre
+  .films__genre
   {
     display: inline-flex;
     flex-wrap: wrap;
   }
   
-  .film-genre-item{
+  .films__genre-item{
     display: inline;
     text-decoration: none;
     transition: text-decoration 1000ms $timing-function;

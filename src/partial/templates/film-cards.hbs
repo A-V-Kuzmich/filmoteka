@@ -1,27 +1,26 @@
 {{#each this}}
-<li class="film-list-item">
-  <div class="film-card">
+<li class="films__item">
+  <div class="film__card">
     {{#if poster_path}}
-    <img class="film-picture" data-index="{{@index}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
+    <img class="films__picture" data-index="{{@index}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
       alt="film card" />
     {{else}}
-    <img class="film-picture" data-index="{{@index}}"
+    <img class="films__picture" data-index="{{@index}}"
       src="https://upload.wikimedia.org/wikipedia/commons/archive/c/c2/20170210132813%21No_image_poster.png" alt="content photo">
     {{/if}}
   </div>
-  <div class="film-info">
+  <div class="films__info">
 
-    <h2 class="film-name">{{title}}</h2>
+    <h2 class="films__name">{{title}}</h2>
 
-    <div class="film-info-wrap">
-      <ul class="film-genre">
+    <div class="films__info-wrap">
+      <ul class="films__genre">
         {{#each genres}}
-        <li class="film-genre-item" data-index="{{this}}">{{this}}</li>
+        <li class="films__genre-item" data-index="{{this}}">{{this}}</li>
         {{/each}}
       </ul>
-      <span class="film-info-mark">|</span>
-
-      <p class="film-year">{{release_date}}</p>
+      <span class="films__info-mark">|</span>
+      <p class="films__year">{{release_date}}</p>
       <span class="raiting">{{vote_average}}</span>
     </div>
   </div>
