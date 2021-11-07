@@ -16,16 +16,3 @@
     width: 136px;
   }
 }
-
-.btn-base {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
-
-.btn-base-item:first-child {
-  margin-right: 20px;
-  @media screen and(min-width:$tablet) {
-    margin-right: 15px;
-  }
-}
