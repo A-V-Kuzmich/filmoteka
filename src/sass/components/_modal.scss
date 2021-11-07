@@ -1,0 +1,33 @@
+.modal__film,
+.modal__btn-group {
+  display: flex;
+  justify-content: center;
+
+  &:first-child {
+    margin-right: 15px;
+  }
+}
+
+.modal__film-details {
+  color: $modal-topic-color;
+}
+
+.modal__img {
+  width: 100%;
+  height: 100%;
+
+  @media screen and (min-width: $mobile) {
+    width: 240px;
+    height: 357px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 264px;
+    height: 374px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 396px;
+    height: 478px;
+  }
+}
