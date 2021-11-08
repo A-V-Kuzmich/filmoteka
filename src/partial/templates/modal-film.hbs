@@ -15,15 +15,17 @@
                         <li><span class="modal__accent-block">{{vote_average}}</span>/ {{vote_count}}</li>
                         <li>{{popularity}}</li>
                         <li>{{original_title}}</li>
-                        <li>{{}}</li>
+                        {{#each genre_ids}}
+                        <li>{{this}}</li>
+                        {{/each}}
                     </ul>
                 </div>
                 <h3 class="modal__about">About</h3>
                 <p class="modal__text">{{overview}}</p>
-                <div class="modal__btn-group">
-                    <button type="button">add to Watched</button>
-                    <button type="button">add to queue</button>
-                </div>
+                <ul class="modal__btn-group">
+                    <li><button type="button">add to Watched</button></li>
+                    <li><button type="button">add to queue</button></li>
+                </ul>
             </div>
             <button type="button" class="modal__close-btn" data-modal-close>
                 <svg class="modal__close-btn-icon">

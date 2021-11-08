@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   width: 280px;
-  background-color: white;
+  background-color: $secondary-text-color;
 
   transform: translate(-50%, -50%);
   @media screen and (min-width: $tablet) {
@@ -40,7 +40,7 @@
   }
 
   &__film-details {
-    color: #8c8c8c;
+    color: $modal-topic-color;
     margin-right: 40px;
   }
 
