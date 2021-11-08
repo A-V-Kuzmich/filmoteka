@@ -10,7 +10,6 @@ import './js/layout/fetch-by-keyword';
 import './js/layout/fetch-week-movies';
 
 //header
-import './js/layout/input.js';
 
 //main
 

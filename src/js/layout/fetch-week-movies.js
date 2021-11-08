@@ -1,4 +1,4 @@
-import { getApiData } from './api-service.js';
+import { getApiData } from '../api/api-service.js';
 // --------- func for Main page and for Pagination -------------
 function onFetchAllMovies(page) {
     let query = `/trending/movie/week?page=${page}`;
