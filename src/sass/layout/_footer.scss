@@ -1,0 +1,40 @@
+.footer {
+  background-color: $secondary-bg-color;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__container {
+    text-align: center;
+    @media screen and (min-width: $mobile) {
+      width: 270px;
+    }
+    @media screen and (min-width: $tablet) {
+      width: 800px;
+    }
+  }
+  &__text {
+    color: $credits-text-color;
+    font-size: 14px;
+    line-height: 1.1;
+    @media screen and (min-width: $tablet) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 19px;
+    }
+  }
+  &__icon-heart {
+  fill: $accent-color;
+  width: 14px;
+  height: 10px;
+  @media screen and (min-width: $mobile) {
+    margin-top: 10px;
+  }
+  &__text-authors {
+    text-decoration: underline;
+  }
+  @media screen and (min-width: $tablet) {
+    height: 12px;
+  }
+}
+}
