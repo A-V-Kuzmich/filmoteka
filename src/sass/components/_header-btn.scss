@@ -1,33 +1,33 @@
-.header___list-btn {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
-
-.header___item-btn {
-  @extend %button;
-  border: 1px solid $secondary-text-color;
-  color: $secondary-text-color;
- background-color: transparent;
-  align-content: center;
- 
-
-  &:active {
-    background-color: $accent-color;
-    border: none;
-    box-shadow: $btn-shadow-color;
+.header {
+  &___list-btn {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
   }
-  &:hover{
-    background-color: $accent-color;
-    border: none;
-    box-shadow: $btn-shadow-color;
+
+  &___item-btn {
+    @extend %button;
+    border: 1px solid $secondary-text-color;
+    color: $secondary-text-color;
+    background-color: transparent;
+    align-content: center;
+
+    &:active {
+      background-color: $accent-color;
+      border: none;
+      box-shadow: $btn-shadow-color;
+    }
+    &:hover {
+      background-color: $accent-color;
+      border: none;
+      box-shadow: $btn-shadow-color;
+    }
+  }
+
+  &___item-btn:first-child {
+    margin-right: 20px;
+    @media screen and(min-width:$tablet) {
+      margin-right: 15px;
+    }
   }
 }
-
-.header___item-btn:first-child {
-  margin-right: 20px;
-  @media screen and(min-width:$tablet) {
-    margin-right: 15px;
-  }
-}
-

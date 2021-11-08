@@ -1,32 +1,34 @@
-.modal___list-btn {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-}
-
-.modal___item-btn {
-  @extend %button;
-  border: 1px solid $primary-text-color;
-  color: $primary-text-color;
-  background-color: $secondary-text-color;
-  align-content: center;
-
-  &:active {
-    background-color: $accent-color;
-    border: none;
-    box-shadow: $btn-shadow-color;
+.modal {
+  &___list-btn {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
   }
 
-  &:hover {
-    background-color: $accent-color;
-    border: none;
-    box-shadow: $btn-shadow-color;
-  }
-}
+  &___item-btn {
+    @extend %button;
+    border: 1px solid $primary-text-color;
+    color: $primary-text-color;
+    background-color: $secondary-text-color;
+    align-content: center;
 
-.modal___item-btn:first-child {
-  margin-right: 20px;
-  @media screen and(min-width:$tablet) {
-    margin-right: 15px;
+    &:active {
+      background-color: $accent-color;
+      border: none;
+      box-shadow: $btn-shadow-color;
+    }
+
+    &:hover {
+      background-color: $accent-color;
+      border: none;
+      box-shadow: $btn-shadow-color;
+    }
+  }
+
+  &___item-btn:first-child {
+    margin-right: 20px;
+    @media screen and(min-width:$tablet) {
+      margin-right: 15px;
+    }
   }
 }
