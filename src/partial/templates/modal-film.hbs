@@ -1,25 +1,35 @@
-<div class="modal container">
-<img class="modal__img" src={{}} alt="">
-<h2 class="modal__title">{{}}</h2>
-<div class="modal__film">
-    <ul class="modal__film-details">
-        <li>Vote / Votes</li>
-        <li>Popularity</li>
-        <li>Original Title</li>
-        <li>Genre</li>
-    </ul>
-    <ul>
-        <li><span class="modal__accent-block">{{}}</span>/ {{}}</li>
-        <li>{{}}</li>
-        <li>{{}}</li>
-        <li>{{}}</li>
-    </ul>
-</div>
-<h3 class="modal__about">About</h3>
-<p class="modal__text">{{}}</p>
-<div class="modal__btn-group">
-    <button type="button">add to Watched</button>
-    <button type="button">add to queue</button>
-
-</div>
+<div class="backdrop visually-hidden" data-modal>
+    <div class="modal">
+        <div class="modal__elements">
+            <div><img class="modal__img" src={{poster_path}} alt={{original_title}} /></div>
+            <div>
+                <h2 class="modal__title">{{original_title}}</h2>
+                <div class="modal__film">
+                    <ul class="modal__film-details">
+                        <li>Vote/Votes</li>
+                        <li>Popularity</li>
+                        <li>Original Title</li>
+                        <li>Genre</li>
+                    </ul>
+                    <ul>
+                        <li><span class="modal__accent-block">{{vote_average}}</span>/ {{vote_count}}</li>
+                        <li>{{popularity}}</li>
+                        <li>{{original_title}}</li>
+                        <li>{{}}</li>
+                    </ul>
+                </div>
+                <h3 class="modal__about">About</h3>
+                <p class="modal__text">{{overview}}</p>
+                <div class="modal__btn-group">
+                    <button type="button">add to Watched</button>
+                    <button type="button">add to queue</button>
+                </div>
+            </div>
+            <button type="button" class="modal__close-btn" data-modal-close>
+                <svg class="modal__close-btn-icon">
+                    <use href="./sprite.svg#modal-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
 </div>
