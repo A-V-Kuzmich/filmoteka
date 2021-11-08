@@ -9,4 +9,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"../api/api-service.js":"clu1"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/refs/refs.js"),require("./js/layout/fetch-by-Id"),require("./js/layout/fetch-by-genre"),require("./js/layout/fetch-by-keyword"),require("./js/layout/fetch-week-movies"),require("./js/components/backdrop.js"),require("./js/components/modal.js"),require("./js/api/api-service.js");
 },{"./sass/main.scss":"clu1","./js/refs/refs.js":"clu1","./js/layout/fetch-by-Id":"SrSK","./js/layout/fetch-by-genre":"clu1","./js/layout/fetch-by-keyword":"j21i","./js/layout/fetch-week-movies":"CYCw","./js/components/backdrop.js":"clu1","./js/components/modal.js":"clu1","./js/api/api-service.js":"clu1"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.60bf0060.js.map
+//# sourceMappingURL=/filmoteka/src.48083df9.js.map
