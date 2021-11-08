@@ -4,7 +4,7 @@
   justify-items: center;
 }
 
-.modal__item-btn{
+.modal___item-btn{
   @extend %button;
 border: 1px solid $primary-text-color;
 color: $primary-text-color;
@@ -24,7 +24,7 @@ color: $primary-text-color;
 }
  }
 
-.modal__item-btn:first-child {
+.modal___item-btn:first-child {
   margin-right: 20px;
   @media screen and(min-width:$tablet) {
     margin-right: 15px;
