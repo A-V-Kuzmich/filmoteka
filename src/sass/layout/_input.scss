@@ -1,17 +1,67 @@
 .header {
   height: 230px;
   padding-top: 46px;
-  background-color: gray;
+  background-color: $credits-text-color;
+}
 
-  @media screen and (max-width: $tablet) {
-    padding-left: 20px;
-    padding-right: 20px;
+.header__main-bckg {
+  @media screen and (max-width: 767px) {
+    background: $linear-gradient, url('..//images/content/mobile-img/main-mob-img.jpg');
+  }
+  @media (min-device-pixel-ratio: 2) and (max-width: 767px),
+    (min-resolution: 192dpi) and (max-width: 767px),
+    (min-resolution: 2dppx) and (max-width: 767px) {
+    background: $linear-gradient, url('..//images/content/mobile-img/main-mob-img@2x.jpg');
+  }
+
+  @media screen and (min-width: $tablet) {
+    background: $linear-gradient, url('..//images/content/tablet-img/main-img-tabl.jpg');
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: $tablet),
+    (min-resolution: 192dpi) and (min-width: $tablet),
+    (min-resolution: 2dppx) and (min-width: $tablet) {
+    background: $linear-gradient, url('..//images/content/tablet-img/main-img-tabl@2x.jpg');
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: $linear-gradient, url('..//images/content/desctop-img/header-bckg-desc.jpg');
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: $desktop),
+    (min-resolution: 192dpi) and (min-width: $desktop),
+    (min-resolution: 2dppx) and (min-width: $desktop) {
+    background: $linear-gradient, url('..//images/content/desctop-img/header-bckg-desc@2x.jpg');
   }
 }
 
-// .header__main-bckg {
-//   background-image: url('../../images/content/main-header-img.jpg');
-// }
+.header__secondary-bckg {
+  @media screen and (max-width: 767px) {
+    background: $linear-gradient, url('..//images/content/mobile-img/secondary-mob-img.jpg');
+  }
+
+  @media (min-device-pixel-ratio: 2) and (max-width: 767px),
+    (min-resolution: 192dpi) and (max-width: 767px),
+    (min-resolution: 2dppx) and (max-width: 767px) {
+    background: $linear-gradient, url('..//images/content/mobile-img/secondary-mob-img@2x.jpg');
+  }
+
+  @media screen and (min-width: $tablet) {
+    background: $linear-gradient, url('..//images/content/tablet-img/secondary-tabl-img.jpg');
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: $tablet),
+    (min-resolution: 192dpi) and (min-width: $tablet),
+    (min-resolution: 2dppx) and (min-width: $tablet) {
+    background: $linear-gradient, url('..//images/content/tablet-img/secondary-tabl-img@2x.jpg');
+  }
+
+  @media screen and (min-width: $desktop) {
+    background: $linear-gradient, url('..//images/content/desctop-img/secondary-bckg-img.jpg');
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: $desktop),
+    (min-resolution: 192dpi) and (min-width: $desktop),
+    (min-resolution: 2dppx) and (min-width: $desktop) {
+    background: $linear-gradient, url('..//images/content/desctop-img/secondary-bckg-img@2x.jpg');
+  }
+}
 
 .header__section {
   display: flex;
@@ -21,39 +71,43 @@
 .header__logo {
   justify-items: center;
   align-items: center;
-}
-.header__logo_icon {
-  outline: 1px solid red;
 
-  @media screen and (min-width: $tablet) {
-    margin-right: 10px;
-  }
-}
+  &-icon {
+    fill: $logo-color;
 
-.header__logo_name {
-  @media screen and (max-width: $tablet) {
-    display: none;
+    @media screen and (min-width: $tablet) {
+      margin-right: 10px;
+    }
   }
 
-  font-size: 30px;
-  color: $secondary-text-color;
+  &-name {
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+
+    font-size: 30px;
+    color: $secondary-text-color;
+  }
 }
 
 .header__nav {
-  display: flex;
+  &-list {
+    display: flex;
+  }
 
-  &_item {
+  &-item {
     position: relative;
     line-height: 1.17;
     text-transform: uppercase;
+    color: $secondary-text-color;
   }
 
-  &_item:not(:last-child) {
+  &-item:not(:last-child) {
     margin-right: 39px;
   }
 }
 
-.header__nav_item-active::after {
+.header__nav-item--active::after {
   content: '';
   position: absolute;
   left: 0;
@@ -67,7 +121,7 @@
   text-align: center;
   margin-top: 37px;
 
-  &_input {
+  &-input {
     position: relative;
     background-color: transparent;
     border-top: none;
@@ -87,12 +141,12 @@
       font-size: 14px;
       line-height: 1.14;
       color: $secondary-text-color;
+      margin-bottom: 4px;
     }
   }
 
-  &_search-icon {
+  &-search-icon {
     position: absolute;
     right: auto;
-    outline: 1px solid red;
   }
 }
