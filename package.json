@@ -26,6 +26,7 @@
     "sass": "^1.43.4"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "debounce": "^1.2.1"
   }
 }
