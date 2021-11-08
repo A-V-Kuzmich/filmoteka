@@ -13,24 +13,10 @@ import './js/layout/input.js';
 //=========components===============
 import './js/components/backdrop.js';
 import './js/components/modal.js';
+import './js/components/notifications.js';
 
 //=============api==================
-import { fetchAllMovies } from './js/api/api-service.js';
-
-function onFetchError(error) {
-  // need some correct Error-mssg
-  console.log(error);
-}
-
-// func for Main page and for Pagination
-function onFetchAllMovies(page) {
-  fetchAllMovies(page)
-    .then(result => {
-      console.log(`RESULT of fetch ${page}-th page:`);
-      console.log(result.results);
-    })
-    .catch(onFetchError);
-}
+import './js/api/api-service.js';
 
 //=============test==================
-onFetchAllMovies(1);
+import './js/test/test-api.js';
