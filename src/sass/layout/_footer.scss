@@ -23,16 +23,15 @@
       font-size: 19px;
     }
   }
-  &__text-authors {
-    text-decoration: underline;
-  }
-
   &__icon-heart {
   fill: $accent-color;
   width: 14px;
   height: 10px;
   @media screen and (min-width: $mobile) {
     margin-top: 10px;
+  }
+  &__text-authors {
+    text-decoration: underline;
   }
   @media screen and (min-width: $tablet) {
     height: 12px;
