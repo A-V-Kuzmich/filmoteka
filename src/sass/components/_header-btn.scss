@@ -8,16 +8,22 @@
   @extend %button;
   border: 1px solid $secondary-text-color;
   color: $secondary-text-color;
-  background-color: transparent;
+ background-color: transparent;
   align-content: center;
+ 
 
   &:active {
     background-color: $accent-color;
     border: none;
     box-shadow: $btn-shadow-color;
   }
+  &:hover{
+    background-color: $accent-color;
+    border: none;
+    box-shadow: $btn-shadow-color;
+  }
 }
-s
+
 .header__item-btn:first-child {
   margin-right: 20px;
   @media screen and(min-width:$tablet) {
