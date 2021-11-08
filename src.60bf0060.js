@@ -1,0 +1,12 @@
+parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"clu1":[function(require,module,exports) {
+
+},{}],"SrSK":[function(require,module,exports) {
+"use strict";var e=require("../api/api-service.js");function i(i){let t=`/movie/${i}?`;(0,e.getApiData)(t).then(e=>{console.log(e)})}
+},{"../api/api-service.js":"clu1"}],"j21i":[function(require,module,exports) {
+"use strict";var e=require("../api/api-service.js");function i(i,a){let r=`/search/movie/?query=${i}&page=${a}`;(0,e.getApiData)(r).then(e=>{console.log(e)})}
+},{"../api/api-service.js":"clu1"}],"CYCw":[function(require,module,exports) {
+"use strict";var e=require("../api/api-service.js");function i(i){let t=`/trending/movie/week?page=${i}`;(0,e.getApiData)(t).then(e=>{console.log(e)})}
+},{"../api/api-service.js":"clu1"}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/refs/refs.js"),require("./js/layout/fetch-by-Id"),require("./js/layout/fetch-by-genre"),require("./js/layout/fetch-by-keyword"),require("./js/layout/fetch-week-movies"),require("./js/components/backdrop.js"),require("./js/components/modal.js"),require("./js/api/api-service.js");
+},{"./sass/main.scss":"clu1","./js/refs/refs.js":"clu1","./js/layout/fetch-by-Id":"SrSK","./js/layout/fetch-by-genre":"clu1","./js/layout/fetch-by-keyword":"j21i","./js/layout/fetch-week-movies":"CYCw","./js/components/backdrop.js":"clu1","./js/components/modal.js":"clu1","./js/api/api-service.js":"clu1"}]},{},["Focm"], null)
+//# sourceMappingURL=/filmoteka/src.60bf0060.js.map
