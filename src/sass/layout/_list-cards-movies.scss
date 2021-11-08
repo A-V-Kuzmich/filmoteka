@@ -1,4 +1,4 @@
-.main-container {
+.container--main-geometry {
   padding: 20px 20px 40px 20px;
 
   @media screen and (min-width: $tablet) {
@@ -21,24 +21,24 @@
 }
 
 .films__item {
-    margin-right: auto;
-    margin-left: auto;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    max-width: 280px;
-    border-radius: 5px;
-    transition: box-shadow 450ms $timing-function;
-    &:hover {
-      box-shadow: $cards-shadows-box $cards-shadow-color;
-      cursor: pointer;
-    }
-    @media screen and (min-width: $tablet) {
-      margin-bottom: 0;
-      width: 294px;
-    }
-    @media screen and (min-width: $desktop) {
-      width: 274px;
-    }
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  max-width: 280px;
+  border-radius: 5px;
+  transition: box-shadow 450ms $timing-function;
+  &:hover {
+    box-shadow: $cards-shadows-box $cards-shadow-color;
+    cursor: pointer;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+    width: 294px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 274px;
+  }
 
 }
 .films__picture {
@@ -57,8 +57,7 @@
   }
   
   .films__info {
-    display: block;
-    margin-left: 5px;
+   margin-left: 5px;
     padding-left: 5px;
   
   }
@@ -69,25 +68,17 @@
   }
   
   .films__name {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
     text-transform: uppercase;
-    color: $primary-text-color;
     margin: 0;
   }
   .films__genre,
   .films__info-mark,
   .films__year {
     margin-right: 3px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
     color: $accent-color;
   }
   
-  .films__genre
-  {
+  .films__genre {
     display: inline-flex;
     flex-wrap: wrap;
   }
@@ -113,14 +104,10 @@
   .raiting {
     width: 36px;
     height: 16px;
-    padding-top: 1px;
-    padding-right: 6px;
-    padding-bottom: 1px;
-    padding-left: 6px;
+    padding: 1px 6px;
     background: $accent-hover-color;
     border-radius: 5px;
-    font-weight: 500;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.16;
     text-align: center;
   }

@@ -2,11 +2,11 @@
 <li class="films__item">
   <div class="film__card">
     {{#if poster_path}}
-    <img class="films__picture" data-index="{{@index}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}"
-      alt="film card" />
+    <img class="films__picture" data-index="{{@index}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}" loading="lazy"
+      alt='Film {{title}} poster' />
     {{else}}
     <img class="films__picture" data-index="{{@index}}"
-      src="https://upload.wikimedia.org/wikipedia/commons/archive/c/c2/20170210132813%21No_image_poster.png" alt="content photo">
+      src="../../images/content/no-image-poster.png" alt="content photo">
     {{/if}}
   </div>
   <div class="films__info">
@@ -21,7 +21,7 @@
       </ul>
       <span class="films__info-mark">|</span>
       <p class="films__year">{{release_date}}</p>
-      <span class="raiting">{{vote_average}}</span>
+      <p class="raiting">{{vote_average}}</p>
     </div>
   </div>
 </li>
