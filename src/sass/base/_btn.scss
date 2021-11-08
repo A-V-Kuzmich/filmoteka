@@ -1,0 +1,11 @@
+%button {
+  border-radius: 5px;
+  font-size: 12px;
+  border: none;
+  width: 130px;
+  height: 44px;
+
+  @media screen and(min-width:$tablet) {
+    width: 136px;
+  }
+}
