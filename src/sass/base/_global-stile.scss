@@ -1,16 +1,8 @@
-// body{
-//   position: relative;
-//   margin: 58px 0 0 0;
-//   background-color: $primary-background-color;
-//   color: $primary-text-color;
-//   font-family: $primary-font-family, sans-serif;
-//   font-size: 15px;
-//   line-height: 1.46;
-//   @media screen and (min-width: $desktop-up) {
-//     margin: 128px 0 0 0;
-//   }
-// }
+body {
+  font-family: $primary-font, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 
-// body.modal-open {
-//   overflow: hidden;
-// }
+  color: $primary-text-color;
+}

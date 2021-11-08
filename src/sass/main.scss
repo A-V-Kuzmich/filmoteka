@@ -7,16 +7,16 @@
 @import './base/global-stile';
 @import './base/reset';
 @import './base/container';
+@import './base/btn';
 
 //===========layout=================
 
 //header
 @import './layout/input';
-
 //main
 @import './layout/list-cards-movies';
 //footer
-
+@import './layout/footer';
 //=========components===============
 @import './components/backdrop';
 @import './components/modal';
