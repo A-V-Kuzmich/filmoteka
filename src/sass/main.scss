@@ -12,14 +12,16 @@
 //===========layout=================
 
 //header
-@import './layout/input';
-@import './components/header-btn';
+@import './layout/header';
+@import './layout/header-btn';
+
 //main
 @import './layout/list-cards-movies';
+// @import './layout/filters';
 //footer
 @import './layout/footer';
+
 //=========components===============
 @import './components/backdrop';
 @import './components/modal';
-@import './components/header-btn';
 @import './components/modal-btn';
