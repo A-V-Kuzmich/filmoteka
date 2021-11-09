@@ -1,18 +1,13 @@
-const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
-    backdrop: document.querySelector('.backdrop'),
-};
+import refs from "../refs/refs"
+
+const { openModalBtn, closeModalBtn, modal, backdrop } = refs
   
-
-
-refs.openModalBtn.addEventListener('click', openModalWindow);
-refs.closeModalBtn.addEventListener('click', closeModalWindow);
-refs.backdrop.addEventListener('click', closeToBackdrop);
+openModalBtn.addEventListener('click', openModalWindow);
+closeModalBtn.addEventListener('click', closeModalWindow);
+backdrop.addEventListener('click', closeToBackdrop);
 
 function openModalWindow(e) {
-  refs.modal.classList.remove('visually-hidden');
+  modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onEscKeyPress);
 }
 
@@ -23,7 +18,7 @@ function closeToBackdrop(e) {
 }
 
 function closeModalWindow() {
-  refs.modal.classList.add('visually-hidden');
+  modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
 }
 
