@@ -73,8 +73,8 @@ module.exports=require("./lib/axios");
 },{"../api/api-service.js":"aE0C"}],"CYCw":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;var e=require("../api/api-service.js");function t(t){let r=`/trending/movie/week?page=${t}`;return(0,e.getApiData)(r).then(e=>e)}
 },{"../api/api-service.js":"aE0C"}],"zBbm":[function(require,module,exports) {
-"use strict";var e=l(require("../layout/fetch-week-movies")),o=l(require("../layout/fetch-by-Id")),t=l(require("../layout/fetch-by-keyword"));function l(e){return e&&e.__esModule?e:{default:e}}const c=e=>{console.log(`//============= RESULT of fetch ALL on ${u}-th page: =============//`),console.log(e)},r=e=>{console.log("//============= RESULT of fetch by Keyword: =============//"),console.log(e)};let u=1,f=568620,n="кин-дза-дза";
-},{"../layout/fetch-week-movies":"CYCw","../layout/fetch-by-Id":"SrSK","../layout/fetch-by-keyword":"j21i"}],"Focm":[function(require,module,exports) {
+"use strict";var e=require("../api/api-service.js");function t(t){let i=`/movie/${t}?`;return(0,e.getApiData)(i).then(e=>e)}function i(t,i){let n=`/search/movie/?query=${t}&page=${i}`;return(0,e.getApiData)(n).then(e=>e)}function n(t){let i=`/trending/movie/week?page=${t}`;return(0,e.getApiData)(i).then(e=>e)}let r=1,a=568620,u="кин-дза-дза";
+},{"../api/api-service.js":"aE0C"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/refs/refs.js"),require("./js/layout/fetch-by-Id"),require("./js/layout/fetch-by-genre"),require("./js/layout/fetch-by-keyword"),require("./js/layout/fetch-week-movies"),require("./js/components/backdrop.js"),require("./js/components/modal.js"),require("./js/components/notifications.js"),require("./js/api/api-service.js"),require("./js/test/test-api.js");
 },{"./sass/main.scss":"clu1","./js/refs/refs.js":"clu1","./js/layout/fetch-by-Id":"SrSK","./js/layout/fetch-by-genre":"clu1","./js/layout/fetch-by-keyword":"j21i","./js/layout/fetch-week-movies":"CYCw","./js/components/backdrop.js":"clu1","./js/components/modal.js":"clu1","./js/components/notifications.js":"nZfN","./js/api/api-service.js":"aE0C","./js/test/test-api.js":"zBbm"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.d0712e16.js.map
+//# sourceMappingURL=/filmoteka/src.b14f166b.js.map
