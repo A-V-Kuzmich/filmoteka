@@ -38,10 +38,9 @@ ul:hover > li {
 /* User Styles Below Not Required */
 /* User Styles Below Not Required */
 
-// .filters__wrapper {
-//   margin-top: 40px;
-//   margin-left: 40px;
-// }
+.filters__wrapper {
+  overflow: hidden;
+}
 
 .filters__link {
   background: $accent-color;
