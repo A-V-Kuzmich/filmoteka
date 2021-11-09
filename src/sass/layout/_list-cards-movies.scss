@@ -56,21 +56,15 @@
 
   }
   
-  .films__info {
-   margin-left: 5px;
-    padding-left: 5px;
-  
-  }
-  
-  .films__info-wrap {
+.films__info-wrap {
     display: flex;
     flex-wrap: wrap;
-  }
+}
   
-  .films__name {
+.films__name {
     text-transform: uppercase;
     margin: 0;
-  }
+}
   .films__genre,
   .films__info-mark,
   .films__year {
@@ -106,8 +100,8 @@
     height: 16px;
     padding: 1px 6px;
     background: $accent-hover-color;
+    color: $secondary-text-color;
     border-radius: 5px;
     font-size: 12px;
-    line-height: 1.16;
     text-align: center;
   }
