@@ -1,6 +1,7 @@
 import { getApiData } from '../api/api-service.js';
 import { refs } from '../refs/refs'
 import filmsTemplate from '../../partial/templates/film-cards.hbs'
+import { createImagesMarkup } from './render-by-template'
 
 refs.searchFormEl.addEventListener('submit', onSearch)
 
@@ -24,10 +25,10 @@ function onSearch(e) {
         alert('Веддите что-нибудь в строку поиска')
         return
     } onFetchByKeyword(searchQuery)
-        .then(result => {
-            if (result.results.length === 0) {
+        .then(response => {
+            if (response.results.length === 0) {
                 alert ('Ничего не найдено, введите что-то людское =)')
-            } createFilmsList(result.results)
+            } createImagesMarkup(refs.filmsEl,  filmsTemplate, response.results)
         })
         .catch(error => alert(error))
         
@@ -37,8 +38,5 @@ function clearFilmsMarkup () {
     refs.filmsEl.innerHTML = ''
 }
 
-function createFilmsList(films) {
-    refs.filmsEl.insertAdjacentHTML('beforeend', filmsTemplate(films))
-}
 
 
