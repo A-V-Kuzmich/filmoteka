@@ -6,6 +6,7 @@
   background-color: $secondary-text-color;
 
   transform: translate(-50%, -50%);
+
   @media screen and (min-width: $tablet) {
     width: 618px;
   }
