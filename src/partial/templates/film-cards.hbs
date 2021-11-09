@@ -2,10 +2,10 @@
 <li class="films__item">
   <div class="film__card">
     {{#if poster_path}}
-    <img class="films__picture" data-index="{{@index}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}" loading="lazy"
+    <img class="films__picture" data-index="{{id}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}" loading="lazy"
       alt='Film {{title}} poster' />
     {{else}}
-    <img class="films__picture" data-index="{{@index}}"
+    <img class="films__picture" data-index="{{id}}"
       src="../../images/content/no-image-poster.png" alt="content photo">
     {{/if}}
   </div>
@@ -15,7 +15,7 @@
 
     <div class="films__info-wrap">
       <ul class="films__genre">
-        {{#each genres}}
+        {{#each genre_ids}}
         <li class="films__genre-item" data-index="{{this}}">{{this}}</li>
         {{/each}}
       </ul>

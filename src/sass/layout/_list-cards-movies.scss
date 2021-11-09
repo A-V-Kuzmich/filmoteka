@@ -25,7 +25,7 @@
   margin-left: auto;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  max-width: 280px;
+  width: 280px;
   border-radius: 5px;
   transition: box-shadow 450ms $timing-function;
   &:hover {
@@ -43,7 +43,7 @@
 }
 .films__picture {
     border-radius: 5px;
-    max-width: 280px;
+    width: 280px;
     height: 398px;
     margin-bottom: 10px;
 
