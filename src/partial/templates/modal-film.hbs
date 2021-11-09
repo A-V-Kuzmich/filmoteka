@@ -1,37 +1,42 @@
-<div class="backdrop visually-hidden" data-modal>
-    <div class="modal">
-        <div class="modal__elements">
-            <div><img class="modal__img" src={{poster_path}} alt={{original_title}} /></div>
-            <div>
-                <h2 class="modal__title">{{original_title}}</h2>
-                <div class="modal__film">
-                    <ul class="modal__film-details">
-                        <li>Vote/Votes</li>
-                        <li>Popularity</li>
-                        <li>Original Title</li>
-                        <li>Genre</li>
-                    </ul>
-                    <ul>
-                        <li><span class="raiting">{{vote_average}}</span>/ {{vote_count}}</li>
-                        <li>{{popularity}}</li>
-                        <li>{{original_title}}</li>
-                        {{#each genres}}
-                        <li>{{this.name}}</li>
-                        {{/each}}
-                    </ul>
-                </div>
-                <h3 class="modal__about">About</h3>
-                <p class="modal__text">{{overview}}</p>
-                <ul class="modal__list-btn">
-                    <li><button class="modal__item-btn" type="button">add to Watched</button></li>
-                    <li><button class="modal__item-btn" type="button">add to queue</button></li>
-                </ul>
-            </div>
-            <button type="button" class="modal__close-btn" data-modal-close>
-                <svg class="modal__close-btn-icon">
-                    <use href="./sprite.svg#modal-close"></use>
-                </svg>
-            </button>
+<div class='backdrop visually-hidden' data-modal>
+  <div class='modal'>
+    <div class='modal__elements'>
+      <img class='modal__img' src='https://image.tmdb.org/t/p/w400{{poster_path}}' alt={{original_title}} />
+      <div>
+        <h3 class='modal__title'>{{original_title}}</h3>
+        <div class='modal__film'>
+          <ul class='modal__film-details'>
+            <li>Vote/Votes</li>
+            <li>Popularity</li>
+            <li>Original Title</li>
+            <li>Genre</li>
+          </ul>
+          <ul>
+            <li><span class='raiting'>{{vote_average}}</span>/ {{vote_count}}</li>
+            <li>{{popularity}}</li>
+            <li>{{original_title}}</li>
+            <li>
+              <ul>
+                {{#each genres}}
+                  <li>{{this.name}}</li>
+                {{/each}}
+              </ul>
+            </li>
+            
+          </ul>
         </div>
+        <h4 class='modal__about'>About</h4>
+        <p class='modal__text'>{{overview}}</p>
+        <ul class='modal__list-btn'>
+          <li><button class='modal__item-btn' type='button'>add to Watched</button></li>
+          <li><button class='modal__item-btn' type='button'>add to queue</button></li>
+        </ul>
+      </div>
+      <button type='button' class='modal__close-btn' data-modal-close>
+        <svg class='modal__close-btn-icon'>
+          <use href='./sprite.svg#modal-close'></use>
+        </svg>
+      </button>
     </div>
+  </div>
 </div>
