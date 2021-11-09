@@ -4,14 +4,9 @@ import onFetchById from '../layout/fetch-by-Id';
 import onFetchByKeyword from '../layout/fetch-by-keyword';
 
 // ----------------------------------
-const renderMovieList = res => {
-  console.log(`//============= RESULT of fetch ALL on ${page}-th page: =============//`);
+const callbackTest = res => {
   console.log(res);
-};
-
-const renderMovieItem = res => {
-  console.log(`//============= RESULT of fetch by Keyword: =============//`);
-  console.log(res);
+  console.log(res.results);
 };
 
 // ---------------- EXAMPLES ------------------
@@ -19,6 +14,9 @@ const renderMovieItem = res => {
 let page = 1;
 let movieId = 568620;
 let keyword = 'кин-дза-дза';
-// onFetchAllMovies(page).then(renderMovieList);
-// onFetchById(movieId).then(renderMovieItem);
-// onFetchByKeyword(keyword, page).then(renderMovieList);
+
+// onFetchAllMovies(page).then(callbackTest);
+
+// onFetchById(movieId).then(callbackTest);
+
+// onFetchByKeyword(keyword, page).then(callbackTest);
