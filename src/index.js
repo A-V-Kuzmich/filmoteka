@@ -2,6 +2,7 @@ import './sass/main.scss';
 
 //=========layout=================
 import './js/refs/refs.js';
+import './js/refs/genres.js';
 
 //functions
 import './js/layout/fetch-by-Id';
@@ -14,7 +15,6 @@ import './js/layout/fetch-week-movies';
 //main
 
 //footer
-
 
 //=========components===============
 import './js/components/backdrop.js';
