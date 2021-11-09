@@ -15,12 +15,13 @@ import './js/layout/fetch-week-movies';
 
 //footer
 
-
 //=========components===============
 import './js/components/backdrop.js';
 import './js/components/modal.js';
+import './js/components/notifications.js';
 
 //=============api==================
 import './js/api/api-service.js';
 
 //=============test==================
+import './js/test/test-api.js';
