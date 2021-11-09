@@ -1,17 +1,9 @@
-import { getApiData } from '../api/api-service'
-
-function setGenresToLocalStorage() {
-  let query = `genre/movie/list?`;
-  getApiData(query)
-    .then(result => {
-      localStorage.setItem('genres', JSON.stringify(result))
-    });
+export function setToLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data))
 }
-setGenresToLocalStorage()
 
-export function getGenresFromLocalStorage() {
-  const savedData = localStorage.getItem('genres')
+export function getFromLocalStorage(key) {
+  const savedData = localStorage.getItem(key)
   const parsedData = JSON.parse(savedData)
-  console.log(parsedData.genres);
-  return parsedData.genres
+  return parsedData
 }
