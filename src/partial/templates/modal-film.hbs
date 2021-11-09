@@ -15,8 +15,8 @@
                         <li><span class="modal__accent-block">{{vote_average}}</span>/ {{vote_count}}</li>
                         <li>{{popularity}}</li>
                         <li>{{original_title}}</li>
-                        {{#each genre_ids}}
-                        <li>{{this}}</li>
+                        {{#each genres}}
+                        <li>{{this.name}}</li>
                         {{/each}}
                     </ul>
                 </div>
