@@ -31,9 +31,7 @@ function onSearch(e) {
             if (response.results.length === 0) {
                 alertNothingIsFound()
             } createImagesMarkup(refs.filmsEl,  filmsTemplate, response.results)
-        })
-        .catch(error => alert(error))
-        
+        }) 
 }
 
 function clearFilmsMarkup () {
