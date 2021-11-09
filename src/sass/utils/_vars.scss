@@ -10,7 +10,7 @@ $credits-text-color: #545454;
 $modal-topic-color: #8c8c8c;
 // $primary-bg-color: #ffffff;
 $secondary-bg-color: #f7f7f7;
-$header-overlay: rgba(255, 255, 255, 0.56);
+$header-overlay: rgba(0, 0, 0, 0.56);
 $modal-backdrop: rgba(255, 255, 255, 0.25); // решить будем ли использовать
 
 
@@ -34,3 +34,9 @@ $desktop: 1024px;
 //transition
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $animation-duration: 250ms;
+
+//gradient
+$linear-gradient: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+
+//max-width
+$max-width: 767px;
