@@ -10,7 +10,7 @@ import './js/layout/fetch-by-keyword';
 import './js/layout/fetch-week-movies';
 import './js/layout/local-storage';
 import './js/layout/render-by-template';
-
+import './js/layout/click-on-logo';
 //header
 
 //main
@@ -27,4 +27,4 @@ import './js/api/api-service.js';
 
 //=============test==================
 import './js/test/test-api.js';
-import './js/test/test-click-on-logo.js';
+// import './js/test/test-click-on-logo.js';

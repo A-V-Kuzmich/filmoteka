@@ -9,11 +9,13 @@ logo.addEventListener('click', onClickLogo);
 function onClickLogo(evt) {
   evt.preventDefault();
 
-  onFetchAllMovies(1)
-    .then(res => res.results)
-    .then(makeGalleryMarkup);
+  onFetchAllMovies(1);
+  //   // console.log('click on Logo');
+  //   onFetchAllMovies(3)
+  //     .then(res => console.log(res))
+  //     .then(makeGalleryMarkup);
 }
 
-function makeGalleryMarkup(movies) {
-  movieGallery.innerHTML = filmCardTmpl(movies);
-}
+// function makeGalleryMarkup(movies) {
+//   movieGallery.innerHTML = filmCardTmpl(movies);
+// }
