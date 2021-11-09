@@ -2,6 +2,8 @@ import { getApiData } from '../api/api-service.js';
 import { refs } from '../refs/refs'
 import filmsTemplate from '../../partial/templates/film-cards.hbs'
 import { createImagesMarkup } from './render-by-template'
+import { alertEnterQuery } from '../components/notifications'
+import { alertNothingIsFound } from '../components/notifications'
 
 refs.searchFormEl.addEventListener('submit', onSearch)
 
@@ -22,12 +24,12 @@ function onSearch(e) {
     const searchQuery = e.currentTarget.elements.query.value
 
     if (searchQuery === '') {
-        alert('Веддите что-нибудь в строку поиска')
+        alertEnterQuery()
         return
     } onFetchByKeyword(searchQuery)
         .then(response => {
             if (response.results.length === 0) {
-                alert ('Ничего не найдено, введите что-то людское =)')
+                alertNothingIsFound()
             } createImagesMarkup(refs.filmsEl,  filmsTemplate, response.results)
         })
         .catch(error => alert(error))
