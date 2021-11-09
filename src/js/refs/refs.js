@@ -4,6 +4,6 @@ export const refs = {
     modal: document.querySelector('[data-modal]'),
     backdrop: document.querySelector('.backdrop'),
     filmsEl: document.querySelector('.films'),
-    inputEl: document.querySelector('.header__form-input'),
-    inputBtnEl: document.querySelector('.js-input-btn') 
+    searchFormEl: document.querySelector('.header__form'),
+    inputBtnEl: document.querySelector('.js-input-btn'),
   };
