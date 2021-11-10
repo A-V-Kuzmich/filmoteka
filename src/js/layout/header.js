@@ -1,18 +1,34 @@
-const homeBtn = document.querySelector(['data-action-home']);
-const libraryBtn = document.querySelector(['data-action-library']);
-const inputForm = document.querySelector('.header__form');
-const headerBtn = document.querySelector('.header__btn');
-const header = document.querySelector('.header');
-console.log(header)
-console.log(libraryBtn)
-// libraryBtn.addEventListener('click', changeHeader)
+import { refs } from '../refs/refs'
+refs.headerNav.addEventListener('click', changeHeader)
 
 function changeHeader(e) {
-    if (e.target.textContent === 'My library') {
-        console.log(e.target.textContent)
-        header.classList.remove('header__main-bckg');
-        header.classList.add('header__secondary-bckg');
+    if (e.srcElement.dataset.action === 'library') {
+        toggleClass(refs.header, 'header__main-bckg', 'header__secondary-bckg');
+        inputFormIsHidden()
+    } else if (e.srcElement.dataset.action === 'home') {
+        toggleClass(refs.header, 'header__secondary-bckg', 'header__main-bckg',);
+        inputFormVisibility()
     }
 }
 
+function toggleClass(element, remove, add ) {
+    element.classList.remove(remove);
+    element.classList.add(add);
+}
+
+function inputFormIsHidden() {
+    refs.searchFormEl.classList.add('visually-hidden')
+    refs.headerBtn.classList.remove('visually-hidden')
+    refs.libraryBtn.classList.add('header__nav-item--active')
+    refs.homeBtn.classList.remove('header__nav-item--active')
+    
+}
+
+function inputFormVisibility() {
+    refs.searchFormEl.classList.remove('visually-hidden')
+    refs.headerBtn.classList.add('visually-hidden')
+    refs.libraryBtn.classList.remove('header__nav-item--active')
+    refs.homeBtn.classList.add('header__nav-item--active')
+    
+}
 

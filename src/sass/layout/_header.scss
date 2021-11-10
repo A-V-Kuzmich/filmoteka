@@ -109,8 +109,13 @@
     display: flex;
 
     &-icon {
+      fill: $logo-color;
+
       @media screen and (min-width: $tablet) {
         margin-right: 10px;
+      }
+      &:hover {
+        fill: $modal-topic-color;
       }
     }
 
@@ -121,10 +126,10 @@
 
       font-size: 30px;
       color: $secondary-text-color;
-    }
 
-    &:hover {
-      transform: skew(-10deg);
+      &:hover {
+        color: $modal-topic-color;
+      }
     }
   }
 
