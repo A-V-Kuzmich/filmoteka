@@ -5,10 +5,16 @@
 
   &__icon {
     color: currentColor;
-    height: 24px;
-    width: 24px;
-    margin-right: 8px;
-    margin-left: 8px;
+    height: 12px;
+    width: 12px;
+    margin-right: 4px;
+    margin-left: 4px;
+    @media screen and(min-width:$tablet) {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      margin-left: 8px;
+    }
   }
 
   &__control {
@@ -16,10 +22,15 @@
     align-items: center;
     flex-shrink: 0;
     position: relative;
-    width: 64px;
-    height: 32px;
+    width: 32px;
+    height: 16px;
     border-radius: 50em;
     padding: 3px 0;
+
+    @media screen and(min-width:$tablet) {
+      width: 64px;
+      height: 32px;
+    }
   }
 
   &__toggle {
@@ -51,14 +62,17 @@
   &__marker {
     position: relative;
     background-color: $logo-color;
-    width: 26px;
-    height: 26px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
     z-index: 2;
     pointer-events: none;
-    box-shadow: 0 1px 1px $header-overlay;
     transform: translateX(3px);
-    transition: transform 250ms var(--timing-function);
+
+    @media screen and(min-width:$tablet) {
+      width: 26px;
+      height: 26px;
+    }
   }
 }
 .theme-switch__toggle:checked + .theme-switch__track {
@@ -66,10 +80,13 @@
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(35px);
+  transform: translateX(18px);
+  @media screen and(min-width:$tablet) {
+    transform: translateX(35px);
+  }
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px $btn-shadow-color;
+  box-shadow: 0 0 0 2px $btn-shadow-color;
 }
