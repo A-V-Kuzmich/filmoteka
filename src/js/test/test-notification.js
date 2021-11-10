@@ -1,26 +1,27 @@
+const testBtn = document.querySelector('.test-notify');
+testBtn.addEventListener('click', showNotify);
+function showNotify() {
+  console.log('click on testBtn');
+  showWarningNotify('warning');
+  showFailureNotify('fail');
+}
+//--------------------------------------------------------------
+
+// all modules
 import Notiflix from 'notiflix';
 
 function showWarningNotify(text) {
   Notiflix.Notify.warning(text);
 }
 
-export function onFetchError(error) {
-  // need some correct Error-mssg
-  console.log('WARNING!!! ВНИМАНИЕ!!! УВАГА!!! ACHTUNG!!! Status code:', error.response.status);
-}
-
-export function alertEnterQuery() {
-  showWarningNotify('Please, type your search');
-}
-
-export function alertNothingIsFound() {
-  showWarningNotify('No movie titles found');
+function showFailureNotify(text) {
+  Notiflix.Notify.failure(text);
 }
 
 // settings
 Notiflix.Notify.init({
   width: '280px',
-  position: 'center-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+  position: 'right-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
   distance: '20px',
   opacity: 1,
   borderRadius: '5px',
@@ -47,11 +48,32 @@ Notiflix.Notify.init({
   useFontAwesome: false,
   fontAwesomeIconStyle: 'basic', // 'basic' - 'shadow'
   fontAwesomeIconSize: '34px',
+
+  success: {
+    background: '#32c682',
+    textColor: '#fff',
+    childClassName: 'notiflix-notify-success',
+    notiflixIconColor: 'rgba(0,0,0,0.2)',
+    fontAwesomeClassName: 'fas fa-check-circle',
+    fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
+    backOverlayColor: 'rgba(50,198,130,0.2)',
+  },
+
+  failure: {
+    background: '#ff5549',
+    textColor: '#fff',
+    childClassName: 'notiflix-notify-failure',
+    notiflixIconColor: 'rgba(0,0,0,0.2)',
+    fontAwesomeClassName: 'fas fa-times-circle',
+    fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
+    backOverlayColor: 'rgba(255,85,73,0.2)',
+  },
+
   warning: {
     background: '#ff6b08',
     textColor: '#fff',
     childClassName: 'notiflix-notify-warning',
-    notiflixIconColor: '#fff',
+    notiflixIconColor: 'rgba(0,0,0,0.2)',
     fontAwesomeClassName: 'fas fa-exclamation-circle',
     fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
     backOverlayColor: 'rgba(238,191,49,0.2)',
