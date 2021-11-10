@@ -1,0 +1,75 @@
+/* THEME SWITCH */
+.theme-switch {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    color: currentColor;
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    width: 64px;
+    height: 32px;
+    border-radius: 50em;
+    padding: 3px 0;
+  }
+
+  &__toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+
+  &__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    user-select: none;
+    background-color: $credits-text-color;
+    border-radius: inherit;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__marker {
+    position: relative;
+    background-color: $logo-color;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 1px 1px $header-overlay;
+    transform: translateX(3px);
+    transition: transform 250ms var(--timing-function);
+  }
+}
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: $secondary-bg-color;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(35px);
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+  box-shadow: 0 0 0 3px $btn-shadow-color;
+}
