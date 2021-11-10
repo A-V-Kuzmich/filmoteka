@@ -1,13 +1,15 @@
 .modal {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  z-index: 200;
+  top: 20px;
+  left: 20px;
   width: 280px;
   background-color: $secondary-text-color;
 
-  transform: translate(-50%, -50%);
-
   @media screen and (min-width: $tablet) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 618px;
   }
   @media screen and (min-width: $desktop) {
@@ -71,6 +73,9 @@
     margin-bottom: 20px;
   }
 }
+.modal__orig-title {
+  text-transform: uppercase;
+}
 
 .modal__img {
   max-width: none;
@@ -107,7 +112,7 @@
   padding: 5px;
 
   &-icon {
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
   }
 }
