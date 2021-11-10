@@ -1,10 +1,10 @@
-// import { getApiData } from '../api/api-service.js';
-// import modalTmpl from "../../partial/templates/modal-film.hbs"
-// import { openModalWindow } from "../components/modal.js"
+import { getApiData } from '../api/api-service.js';
+import modalTmpl from "../../partial/templates/modal-film.hbs"
+import { openModalWindow } from "../components/modal.js"
 
-// let movieId = 56896;
+let movieId = 56896;
 
-// const testField = document.querySelector('body');
+const testField = document.querySelector('body');
 // const headerField = document.querySelector('.header');
 // headerField.insertAdjacentHTML('afterbegin', '<button class="btn-test">!!!!!!!BUTTON ON MODAL Size Chose !!!!!!</button>');
  
@@ -14,24 +14,24 @@
 //     onFetchById(movieId).then(renderCard);
 // });
 
-// function onFetchById(id) {
-//     let query = `/movie/${id}?`;
+function onFetchById(id) {
+    let query = `/movie/${id}?`;
 
-//     return getApiData(query).then(result => result);
-// };
+    return getApiData(query).then(result => result);
+};
 
-// function renderCard(card) {
-//     let markup = modalTmpl(card)
+function renderCard(card) {
+    let markup = modalTmpl(card)
     
-//     testField.insertAdjacentHTML("afterbegin", markup);
-//     openModalWindow();
-// }
+    testField.insertAdjacentHTML("afterbegin", markup);
+    openModalWindow();
+}
 
-// export function removeRender() {
-//     const modal = document.querySelector(".modal")
-//     modal.innerHTML=""
+export function removeRender() {
+    const modal = document.querySelector(".modal")
+    modal.innerHTML=""
     
-// }
+}
 
 
 
