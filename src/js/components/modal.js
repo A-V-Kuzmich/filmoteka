@@ -1,14 +1,15 @@
 import refs from "../refs/refs"
 
-const { openModalBtn, closeModalBtn, modal, backdrop } = refs
+// const { openModalBtn } = refs
   
-openModalBtn.addEventListener('click', openModalWindow);
-closeModalBtn.addEventListener('click', closeModalWindow);
-backdrop.addEventListener('click', closeToBackdrop);
+// openModalBtn.addEventListener('click', openModalWindow);
 
-function openModalWindow(e) {
-  modal.classList.remove('visually-hidden');
+export function openModalWindow() {
+const {closeModalBtn, backdrop} = refs
+  // modal.classList.remove('visually-hidden');
   window.addEventListener('keydown', onEscKeyPress);
+  closeModalBtn.addEventListener('click', closeModalWindow);
+backdrop.addEventListener('click', closeToBackdrop);
 }
 
 function closeToBackdrop(e) {
