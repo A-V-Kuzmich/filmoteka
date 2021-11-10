@@ -6,4 +6,5 @@ export const refs = {
     filmsEl: document.querySelector('.films'),
     searchFormEl: document.querySelector('.header__form'),
     inputBtnEl: document.querySelector('.js-input-btn'),
+    filersDropdownEl: document.querySelector('.filters__dropdown')
   };

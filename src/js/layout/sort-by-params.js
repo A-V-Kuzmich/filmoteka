@@ -5,10 +5,14 @@ import { getApiData } from '../api/api-service'
 import { getGenresFromLocalStorage } from './genre-local-storage'
 
 function getGenreIdByName(name) {
-  const queryGenre = getGenresFromLocalStorage().find(genre => genre.name === name)
+  const queryGenre = getGenresFromLocalStorage().find(genre => {
+    return genre.name === name[0].toUpperCase() + name.slice(1).toLowerCase()
+  })
   return queryGenre.id
 }
 // getGenreIdByName('Crime')
+
+
 
 function getGenreNameById(id) {
   const queryGenre = getGenresFromLocalStorage().find(genre => genre.id === id)
@@ -19,25 +23,31 @@ function getGenreNameById(id) {
 
 function sortByGenre(value) {
   const genreId = getGenreIdByName(value)
-    let query = `/discover/movie?with_genres=${genreId}`;
-    getApiData(query)
-      .then(result => {
-        console.log(result);
-        refs.filmsEl.innerHTML = ''
-        createImagesMarkup(refs.filmsEl, imagesTpl, result.results)
-      });
-  }
+  let query = `/discover/movie?with_genres=${genreId}`;
+  getApiData(query)
+    .then(result => {
+      refs.filmsEl.innerHTML = ''
+      createImagesMarkup(refs.filmsEl, imagesTpl, result.results)
+    });
+}
   
 function sortByParameter(parameter) {
-    let query = `/discover/movie?${parameter}`;
-    getApiData(query)
-      .then(result => {
-        console.log(result);
-        refs.filmsEl.innerHTML = ''
-        createImagesMarkup(refs.filmsEl, imagesTpl, result.results)
-      });
-  }
+  let query = `/discover/movie?${parameter}`;
+  getApiData(query)
+    .then(result => {
+      refs.filmsEl.innerHTML = ''
+      createImagesMarkup(refs.filmsEl, imagesTpl, result.results)
+    });
+}
 
+refs.filersDropdownEl.addEventListener('click', (evt) => {
+  const isItem = evt.target.classList.contains('values__item')
+  if (!isItem) {
+    return
+  }
+  const textValue = evt.target.textContent
+  sortByGenre(textValue)
+})
   
 
 
@@ -45,7 +55,7 @@ function sortByParameter(parameter) {
 // sortByGenre('War');
 // sortByGenre('Action');
 // sortByGenre('Comedy');
-sortByGenre('War');
+// sortByGenre('War');
 
 // sortByParameter('sort_by=vote_average.desc')
 // sortByParameter('sort_by=vote_average.asc')

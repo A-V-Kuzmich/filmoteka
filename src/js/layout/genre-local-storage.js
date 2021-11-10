@@ -13,8 +13,4 @@ setGenresToLocalStorage()
 
 export function getGenresFromLocalStorage() {
   return getFromLocalStorage('genres').genres
-  // const savedData = localStorage.getItem()
-  // const parsedData = JSON.parse(savedData)
-  // console.log(parsedData.genres);
-  // return parsedData.genres
 }
