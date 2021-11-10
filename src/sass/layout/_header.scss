@@ -135,9 +135,6 @@
 
     &-item {
       position: relative;
-      line-height: 1.17;
-      text-transform: uppercase;
-      color: $secondary-text-color;
 
       &--active::after {
         content: '';
@@ -152,6 +149,16 @@
 
     &-item:not(:last-child) {
       margin-right: 39px;
+    }
+
+    &-btn {
+      background-color: transparent;
+      border: none;
+      margin: 0px;
+      padding: 0px;
+      line-height: 1.17;
+      text-transform: uppercase;
+      color: $secondary-text-color;
     }
   }
 
