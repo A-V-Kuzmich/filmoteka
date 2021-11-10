@@ -24,14 +24,20 @@
   </head>
   <body>
     <include src="./partial/layouts/header.html"></include>
-    <iframe
-      id="player"
-      type="text/html"
-      src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
-      frameborder="0"
-    ></iframe>
     <include src="./partial/layouts/main.html"></include>
+
+    <div class="container modal-video__container">
+      <iframe
+        id="player"
+        type="text/html"
+        width="100%"
+        height="100%"
+        src="http://www.youtube.com/embed/N1r36HTysDM"
+        frameborder="0"
+      ></iframe>
+    </div>
     <include src="./partial/layouts/footer.html"></include>
     <script src="./index.js"></script>
   </body>
 </html>
+<!-- src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com" -->
