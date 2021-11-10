@@ -1,0 +1,12 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $modal-backdrop;
+  z-index: 100;
+
+  transition: opacity $animation-duration $timing-function,
+    vissibility $animation-duration $timing-function;
+}
