@@ -1,13 +1,12 @@
 //============utils=================
 @import './utils/vars';
-@import './utils/breakpoints';
+@import './utils/no-scroll';
 @import './utils/visually-hidden';
 
 //============base==================
 @import './base/global-stile';
 @import './base/reset';
 @import './base/container';
-@import './base/btn';
 
 //===========layout=================
 
@@ -22,6 +21,7 @@
 @import './layout/footer';
 
 //=========components===============
+@import './components/btn';
 @import './components/backdrop';
 @import './components/modal';
 @import './components/modal-btn';
