@@ -135,9 +135,6 @@
 
     &-item {
       position: relative;
-      line-height: 1.17;
-      text-transform: uppercase;
-      color: $secondary-text-color;
 
       &--active::after {
         content: '';
@@ -153,11 +150,22 @@
     &-item:not(:last-child) {
       margin-right: 39px;
     }
+
+    &-btn {
+      background-color: transparent;
+      border: none;
+      margin: 0px;
+      padding: 0px;
+      line-height: 1.17;
+      text-transform: uppercase;
+      color: $secondary-text-color;
+    }
   }
 
   &__form {
+    display: flex;
+    justify-content: center;
     position: relative;
-    text-align: center;
     margin-top: 37px;
 
     &-input {
@@ -168,10 +176,15 @@
       border-bottom: 0.5px solid $secondary-text-color;
       padding-top: 0px;
       padding-left: 0px;
-      padding-right: 0px;
+      padding-right: 20px;
       padding-bottom: 4px;
       color: white;
       outline: none;
+
+      &-btn {
+        border: none;
+        background-color: inherit;
+      }
 
       @media screen and (min-width: $mobile) and (max-width: $max-width) {
         width: 278px;
@@ -200,8 +213,7 @@
     }
 
     &-search-icon {
-      position: absolute;
-      transform: translateX(-110%);
+      transform: translateX(-160%);
     }
   }
 
