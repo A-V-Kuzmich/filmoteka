@@ -1,10 +1,10 @@
-const logo = document.querySelector('.js-logo');
-const movieGallery = document.querySelector('.films');
+// const logo = document.querySelector('.js-logo');
+// const movieGallery = document.querySelector('.films');
 
-import filmCardTmpl from '../../partial/templates/film-cards.hbs';
-import onFetchAllMovies from '../../js/layout/fetch-week-movies.js';
+// import filmCardTmpl from '../../partial/templates/film-cards.hbs';
+// import onFetchAllMovies from '../../js/layout/fetch-week-movies.js';
 
-logo.addEventListener('click', onClickLogo);
+// logo.addEventListener('click', onClickLogo);
 
 function onClickLogo(evt) {
   evt.preventDefault();

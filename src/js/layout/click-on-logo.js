@@ -6,5 +6,5 @@ refs.logo.addEventListener('click', onClickLogo);
 function onClickLogo(evt) {
   evt.preventDefault();
 
-  onFetchAllMovies(2);
+  onFetchAllMovies(1);
 }
