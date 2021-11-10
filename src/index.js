@@ -12,7 +12,7 @@ import './js/layout/local-storage';
 import './js/layout/render-by-template';
 
 //header
-
+import './js/layout/header';
 //main
 
 //footer
