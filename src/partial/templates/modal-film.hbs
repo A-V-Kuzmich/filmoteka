@@ -6,19 +6,19 @@
         <h3 class='modal__title'>{{original_title}}</h3>
         <div class='modal__film'>
           <ul class='modal__film-details'>
-            <li>Vote/Votes</li>
-            <li>Popularity</li>
-            <li>Original Title</li>
-            <li>Genre</li>
+            <li class="modal__film-item">Vote/Votes</li>
+            <li class="modal__film-item">Popularity</li>
+            <li class="modal__film-item">Original Title</li>
+            <li class="modal__film-item">Genre</li>
           </ul>
           <ul>
-            <li><span class='raiting'>{{vote_average}}</span>/ {{vote_count}}</li>
-            <li>{{popularity}}</li>
-            <li>{{original_title}}</li>
-            <li>
-              <ul>
+            <li class="modal__film-item"><span class='raiting'>{{vote_average}}</span>/ {{vote_count}}</li>
+            <li class="modal__film-item">{{popularity}}</li>
+            <li class="modal__film-item">{{original_title}}</li>
+            <li class="modal__film-item">
+              <ul class="modal__genres-list">
                 {{#each genres}}
-                  <li>{{this.name}} </li>
+                  <li class="modal__genres-item">{{this.name}} </li>
                 {{/each}}
               </ul>
             </li>
