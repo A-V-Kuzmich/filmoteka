@@ -1,12 +1,42 @@
 import { getApiData } from '../api/api-service.js';
+import { refs } from '../refs/refs'
+import filmsTemplate from '../../partial/templates/film-cards.hbs'
+import { createImagesMarkup } from './render-by-template'
+import { alertEnterQuery } from '../components/notifications'
+import { alertNothingIsFound } from '../components/notifications'
 
-// --------- func for search by keyword (title) -------------
+refs.searchFormEl.addEventListener('submit', onSearch)
+
 function onFetchByKeyword(keyword, page) {
     let query = `/search/movie/?query=${keyword}&page=${page}`;
-    getApiData(query)
-      .then(result => {
-        console.log(result);
-        //отрисовали hbs
-      });
-  }
-//onFetchByKeyword('iron', 1);
+    
+    return getApiData(query).then
+        (result => {
+               return result;
+            },
+        )
+}
+
+function onSearch(e) {
+    e.preventDefault();
+     
+    clearFilmsMarkup() 
+    const searchQuery = e.currentTarget.elements.query.value
+
+    if (searchQuery === '') {
+        alertEnterQuery()
+        return
+    } onFetchByKeyword(searchQuery)
+        .then(response => {
+            if (response.results.length === 0) {
+                alertNothingIsFound()
+            } createImagesMarkup(refs.filmsEl,  filmsTemplate, response.results)
+        }) 
+}
+
+function clearFilmsMarkup () {
+    refs.filmsEl.innerHTML = ''
+}
+
+
+

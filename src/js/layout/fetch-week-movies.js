@@ -1,11 +1,15 @@
 import { getApiData } from '../api/api-service.js';
+import { createImagesMarkup } from './render-by-template'
+import imagesTpl from '../../partial/templates/film-cards.hbs'
+import { refs } from '../refs/refs'
+
 // --------- func for Main page and for Pagination -------------
-function onFetchAllMovies(page) {
-    let query = `/trending/movie/week?page=${page}`;
-  
-    getApiData(query)
-      .then(result => {
-        console.log(result);
-      })
-  }
-  // onFetchAllMovies(2);
+export default function onFetchAllMovies(page) {
+  let query = `/trending/movie/week?page=${page}`;
+
+  return getApiData(query).then(result => {
+    createImagesMarkup(refs.filmsEl, imagesTpl, result.results)
+  });
+}
+
+onFetchAllMovies(1)
