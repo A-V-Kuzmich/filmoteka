@@ -21,6 +21,7 @@ import './js/layout/render-by-template';
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
+import './js/components/switchTheme.js';
 
 //=============api==================
 import './js/api/api-service.js';
