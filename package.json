@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "debounce": "^1.2.1"
+    "debounce": "^1.2.1",
+    "notiflix": "^3.2.2"
   }
 }
