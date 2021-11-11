@@ -115,9 +115,14 @@
       @media screen and (min-width: $tablet) {
         margin-right: 10px;
       }
+    }
 
-      &:hover {
+    &:hover > {
+      svg {
         stroke: $credits-text-color;
+      }
+      span {
+        color: $modal-topic-color;
       }
     }
 
@@ -131,10 +136,6 @@
       font-size: 30px;
       color: $secondary-text-color;
       transition: color $animation-duration $timing-function;
-
-      &:hover {
-        color: $modal-topic-color;
-      }
     }
   }
 
