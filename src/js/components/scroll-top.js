@@ -1,6 +1,5 @@
 const scrollButton = document.querySelector(".scroll-js");
 const scrollTarget = document.querySelector(".header");
-/* scrollButton.addEventListener('click', scrollToTop); */
 
 scrollButton.addEventListener("click", scrollToTop);
 
@@ -11,8 +10,6 @@ window.addEventListener("scroll", () => {
         scrollButton.classList.remove("icon-up-arrow--active");
     }
 })
-
-
 
 function scrollToTop() {
     scrollTarget.scrollIntoView();
