@@ -1,4 +1,4 @@
-import {removeRender} from "../test/test-modal"
+import { removeRender } from '../test/test-modal';
 
 export function openModalWindow() {
   const closeModalBtn = document.querySelector('[data-modal-close]');
@@ -16,9 +16,10 @@ function closeToBackdrop(e) {
 }
 
 export function closeModalWindow() {
+  const modal = document.querySelector('[data-modal]');
   modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
-  removeRender()
+  removeRender();
 }
 
 function onEscKeyPress(e) {
