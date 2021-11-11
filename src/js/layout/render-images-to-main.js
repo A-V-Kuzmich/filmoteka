@@ -1,6 +1,4 @@
-import imagesTpl from '../../partial/templates/film-cards.hbs'
-import { createImagesMarkup } from './render-by-template'
-import { refs } from '../refs/refs'
+import { createImagesMarkup, clearImagesMarkup } from './render-by-template'
 import { getApiData } from '../api/api-service'
 import { getGenresFromLocalStorage } from './genre-local-storage'
 
@@ -17,15 +15,20 @@ function getGenreNameById(genreIds) {
   return newArray
 }
 
+export function exchangeObjectData(result) {
+  result.results.forEach((obj) => {
+    obj.genre_ids = getGenreNameById(obj.genre_ids)
+    obj.release_date = obj.release_date.slice(0, 4)
+  })
+}
+
 // let query = `/trending/movie/week?`; - example!
-export function renderImagesToMain(query) {
+export function renderImages(query, element, template) {
   getApiData(query)
     .then(result => {
-      result.results.forEach((obj) => {
-        obj.genre_ids = getGenreNameById(obj.genre_ids)
-        obj.release_date = obj.release_date.slice(0,4)
-      })
-      refs.filmsEl.innerHTML = ''
-      createImagesMarkup(refs.filmsEl, imagesTpl, result.results)
-    });
+      exchangeObjectData(result);
+      clearImagesMarkup(element);
+      createImagesMarkup(element, template, result.results)
+    }
+  );
 }
