@@ -109,13 +109,15 @@
     display: flex;
 
     &-icon {
-      fill: $logo-color;
+      stroke: $logo-color;
+      transition: stroke $animation-duration $timing-function;
 
       @media screen and (min-width: $tablet) {
         margin-right: 10px;
       }
+
       &:hover {
-        fill: $modal-topic-color;
+        stroke: $credits-text-color;
       }
     }
 
@@ -126,6 +128,7 @@
 
       font-size: 30px;
       color: $secondary-text-color;
+      transition: color $animation-duration $timing-function;
 
       &:hover {
         color: $modal-topic-color;
