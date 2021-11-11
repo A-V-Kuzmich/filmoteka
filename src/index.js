@@ -5,14 +5,14 @@ import './js/refs/refs.js';
 
 //functions
 import './js/layout/fetch-by-Id';
-import './js/layout/sort-by-params';
+import './js/layout/render-by-params';
 import './js/layout/fetch-by-keyword';
 import './js/layout/fetch-week-movies';
 import './js/layout/local-storage';
 import './js/layout/render-by-template';
 
 //header
-
+import './js/layout/header';
 //main
 
 //footer
@@ -27,4 +27,5 @@ import './js/api/api-service.js';
 
 //=============test==================
 import './js/test/test-api.js';
-import "./js/test/test-modal.js"
+import './js/test/test-modal.js';
+// import './js/test/test-notification.js';
