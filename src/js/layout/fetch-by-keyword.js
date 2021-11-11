@@ -1,26 +1,29 @@
 import { getApiData } from '../api/api-service.js';
 import { refs } from '../refs/refs'
 import filmsTemplate from '../../partial/templates/film-cards.hbs'
-import { createImagesMarkup } from './render-by-template'
+import { createInnerMarkup } from './render-by-template'
 import { alertEnterQuery } from '../components/notifications'
 import { alertNothingIsFound } from '../components/notifications'
+import { exchangeObjectData } from './render-images-to-main'
 
 refs.searchFormEl.addEventListener('submit', onSearch)
+const pagination = document.querySelector('#pagination')
+
 
 function onFetchByKeyword(keyword, page) {
     let query = `/search/movie/?query=${keyword}&page=${page}`;
-    
+    clearMarkup(pagination)
+    clearMarkup(refs.filmsEl)
     return getApiData(query).then
         (result => {
-               return result;
-            },
+            return result;
+        },
         )
 }
 
 function onSearch(e) {
     e.preventDefault();
-     
-    clearFilmsMarkup() 
+
     const searchQuery = e.currentTarget.elements.query.value
 
     if (searchQuery === '') {
@@ -30,13 +33,13 @@ function onSearch(e) {
         .then(response => {
             if (response.results.length === 0) {
                 alertNothingIsFound()
-            } createImagesMarkup(refs.filmsEl,  filmsTemplate, response.results)
-        }) 
+            } exchangeObjectData(response)
+            createInnerMarkup(refs.filmsEl, filmsTemplate(response.results))
+        })
 }
 
-function clearFilmsMarkup () {
-    refs.filmsEl.innerHTML = ''
+function clearMarkup(element) {
+   element.innerHTML = ''
 }
-
 
 
