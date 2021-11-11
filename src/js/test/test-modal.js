@@ -1,6 +1,7 @@
 import { getApiData } from '../api/api-service.js';
 import modalTmpl from '../../partial/templates/modal-film.hbs';
 import { openModalWindow } from '../components/modal.js';
+import { createInnerMarkup } from '../layout/render-by-template.js';
 
 let movieId = 56896;
 
@@ -24,6 +25,6 @@ function onFetchById(id) {
 function renderCard(card) {
   backdropTest.classList.remove('visually-hidden');
   let markup = modalTmpl(card);
-  testField.insertAdjacentHTML('afterbegin', markup);
+  createInnerMarkup(testField, markup);
   openModalWindow();
 }
