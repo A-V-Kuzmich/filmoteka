@@ -1,7 +1,8 @@
 import { getApiData } from '../api/api-service.js';
-import makeModalFilm from '../../partial/templates/modal-film.hbs';
+// import { createImagesMarkup } from './render-by-template';
 
-import openModalWindow from '../components/modal';
+import makeModalFilm from '../../partial/templates/modal-film.hbs';
+import { openModalWindow } from '../components/modal.js';
 
 // --------- func for search by ID -------------
 function fetchById(id) {
@@ -10,9 +11,7 @@ function fetchById(id) {
 }
 
 const filmList = document.querySelector('.films');
-
 // const modal = document.querySelector('.modal'); // должна быть модалка
-// console.log(modal);
 
 filmList.addEventListener('click', onCardClick);
 
@@ -30,11 +29,13 @@ function onCardClick(e) {
   fetchById(filmId).then(result => {
     console.log('film object', result);
 
-    let modalContent = makeModalFilm(result);
+    const modalContent = makeModalFilm(result);
     const targetEl = document.querySelector('body'); // должна быть модалка
 
-    // modal.innerHTML = modalContent;
+    // modal.innerHTML = modalContent; // должна быть замена содержимого модалки при каждом открытии
     targetEl.insertAdjacentHTML('afterbegin', modalContent);
+
+    // createImagesMarkup(targetEl, makeModalFilm, result);
     openModalWindow();
   });
 }
