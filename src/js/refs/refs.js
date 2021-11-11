@@ -10,6 +10,7 @@ export const refs = {
     header: document.querySelector('.header'),
     headerNav: document.querySelector('.header__nav'),
     watchedBtn: document.querySelector('[data-action="watched"]'),
-    queueBtn: document.querySelector('[data-action="queue"]')
-    
+    queueBtn: document.querySelector('[data-action="queue"]'),
+    spinner: document.querySelector('.spinner'),//cпинер
+    pagePreloader: document.getElementById('page-preloader'),//бек-дроп
   };

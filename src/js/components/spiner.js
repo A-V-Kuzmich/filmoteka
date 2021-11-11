@@ -1,8 +1,19 @@
-document.body.onload = function (){
-    setTimeout(function() {
-let preloader = document.getElementById('page-preloader');
-if (!preloader.classList.contains('done')) {
-    preloader.classList.add('done');
+import {refs} from "../refs/refs";
+
+function showSpiner () {
+    refs.pagePreloader.classList.remove('done');
 }
+function hideSpiner () {
+    refs.pagePreloader.classList.add('done');;
+}
+
+export {
+    showSpiner,
+    hideSpiner,
+};
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+    refs.pagePreloader.classList.add('done');
     }, 1000); 
-}
+})
