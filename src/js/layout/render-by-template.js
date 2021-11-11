@@ -6,6 +6,6 @@ export function createInnerMarkup(element, data) {
   element.innerHTML = data;
 }
 
-export function crleanInnerMarkup(element) {
+export function cleanInnerMarkup(element) {
   element.innerHTML = '';
 }
