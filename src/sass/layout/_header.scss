@@ -194,6 +194,8 @@
       &-btn {
         border: none;
         background-color: inherit;
+        transform: translateX(-100%);
+        padding: 0px;
       }
 
       @media screen and (min-width: $mobile) and (max-width: $max-width) {
@@ -220,10 +222,6 @@
           width: 340px;
         }
       }
-    }
-
-    &-search-icon {
-      transform: translateX(-160%);
     }
   }
 
