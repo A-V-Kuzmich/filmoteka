@@ -677,5 +677,12 @@ button {
   }
 }
 
-/* @import './components/scroll-top.scss' */
+.scroll-top {
+  position: relative;
+}
+
+.icon-up-arrow {
+  position: absolute;
+  right: 3%;
+}
 /*# sourceMappingURL=main.css.map */

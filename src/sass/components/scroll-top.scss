@@ -2,6 +2,24 @@
   position: relative;
 }
 .icon-up-arrow {
-  position: absolute;
+  position: fixed;
+  /* right: 3%; */
+  bottom: 13%;
   right: 3%;
+  width: 80px;
+  height: 80px;
+  fill: $accent-color;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  &:hover{
+    fill: $accent-hover-color;
+  }
+  &--active{
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+html{
+  scroll-behavior: smooth;
 }
