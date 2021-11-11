@@ -1,11 +1,24 @@
 import { refs } from '../refs/refs';
 import onFetchAllMovies from './fetch-week-movies';
 
-refs.homeBtn.addEventListener('click', doMainView);
-refs.libraryBtn.addEventListener('click', doLibraryView);
-refs.watchedBtn.addEventListener('click', watchedBtnActive);
-refs.queueBtn.addEventListener('click', queueBtnActive);
-refs.logo.addEventListener('click', onClickLogo);
+refs.headerNav.addEventListener('click', changeHeader);
+refs.headerBtn.addEventListener('click', changeActiveHeaderBtn);
+
+function changeHeader(e) {
+  if (e.srcElement.dataset.action === 'library') {
+    doLibraryView();
+  } else if (e.srcElement.dataset.action === 'home') {
+    doMainView();
+  }
+}
+
+function changeActiveHeaderBtn(e) {
+  if (e.srcElement.dataset.action === 'watched') {
+    watchedBtnActive();
+  } else if (e.srcElement.dataset.action === 'queue') {
+    queueBtnActive();
+  }
+}
 
 function doMainView() {
   toggleClass(refs.header, 'header__secondary-bckg', 'header__main-bckg');
@@ -48,11 +61,6 @@ function watchedBtnActive() {
 function queueBtnActive() {
   refs.watchedBtn.classList.remove('header__item-btn--active');
   refs.queueBtn.classList.add('header__item-btn--active');
-}
-
-function onClickLogo(evt) {
-  evt.preventDefault();
-  doMainView();
 }
 
 function clearInputField() {
