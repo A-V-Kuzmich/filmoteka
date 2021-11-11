@@ -12,10 +12,12 @@ function closeToBackdrop(e) {
   }
 }
 
-function closeModalWindow(e) {
+function closeModalWindow() {
   const modal = document.querySelector('[data-modal]');
   modal.classList.add('visually-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
+  document.querySelector('[data-modal]').removeEventListener('click', closeToBackdrop);
+  document.querySelector('[data-modal-close]').removeEventListener('click', closeModalWindow);
 }
 
 function onEscKeyPress(e) {

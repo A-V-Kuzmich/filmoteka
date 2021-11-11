@@ -4,7 +4,7 @@ import { openModalWindow } from '../components/modal.js';
 
 let movieId = 56896;
 
-const testField = document.querySelector('body');
+// const testField = document.querySelector('body');
 // const headerField = document.querySelector('.header');
 // headerField.insertAdjacentHTML('afterbegin', '<button class="btn-test">!!!!!!!BUTTON ON MODAL Size Chose !!!!!!</button>');
 
@@ -16,7 +16,6 @@ const testField = document.querySelector('body');
 
 function onFetchById(id) {
   let query = `/movie/${id}?`;
-
   return getApiData(query).then(result => result);
 }
 
