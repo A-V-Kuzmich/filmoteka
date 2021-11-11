@@ -11,13 +11,21 @@
     color: $secondary-text-color;
     background-color: transparent;
     align-content: center;
+    transition: background-color $animation-duration $timing-function;
 
     &:active {
       background-color: $accent-color;
       border: none;
       box-shadow: $btn-shadow-color;
     }
+
     &:hover {
+      background-color: $accent-color;
+      border: none;
+      box-shadow: $btn-shadow-color;
+    }
+
+    &--active {
       background-color: $accent-color;
       border: none;
       box-shadow: $btn-shadow-color;

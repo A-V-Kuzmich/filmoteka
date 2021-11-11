@@ -122,6 +122,8 @@
     }
 
     &-name {
+      transition: color $animation-duration $timing-function;
+
       @media screen and (max-width: $tablet) {
         display: none;
       }
