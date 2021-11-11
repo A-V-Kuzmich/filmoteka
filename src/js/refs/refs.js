@@ -14,4 +14,5 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   backdrop: document.querySelector('.backdrop'),
   logo: document.querySelector('.js-logo'),
+  headerInputField: document.querySelector('.header__form > input'),
 };
