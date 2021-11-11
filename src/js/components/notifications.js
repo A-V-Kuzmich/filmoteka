@@ -4,9 +4,13 @@ function showWarningNotify(text) {
   Notiflix.Notify.warning(text);
 }
 
+function showFailureNotify(text) {
+  Notiflix.Notify.failure(text);
+}
+
 export function onFetchError(error) {
-  // need some correct Error-mssg
-  console.log('WARNING!!! ВНИМАНИЕ!!! УВАГА!!! ACHTUNG!!! Status code:', error.response.status);
+  console.log('Something went wrong.\r\n(Status code: ' + error.response.status + ')');
+  showFailureNotify('Something went wrong.\r\n(Error code: ' + error.response.status + ')');
 }
 
 export function alertEnterQuery() {
@@ -38,10 +42,10 @@ Notiflix.Notify.init({
   className: 'notiflix-notify',
   zindex: 4001,
   fontFamily: 'Quicksand',
-  fontSize: '13px',
+  fontSize: '14px',
   cssAnimation: true,
   cssAnimationDuration: 400,
-  cssAnimationStyle: 'fade', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
+  cssAnimationStyle: 'from-top', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
   closeButton: false,
   useIcon: true,
   useFontAwesome: false,
@@ -51,12 +55,20 @@ Notiflix.Notify.init({
     background: '#ff6b08',
     textColor: '#fff',
     childClassName: 'notiflix-notify-warning',
-    notiflixIconColor: '#fff',
+    notiflixIconColor: 'rgba(255,255,255,0.9)',
     fontAwesomeClassName: 'fas fa-exclamation-circle',
     fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
     backOverlayColor: 'rgba(238,191,49,0.2)',
   },
-
+  failure: {
+    background: '#f00',
+    textColor: '#fff',
+    childClassName: 'notiflix-notify-failure',
+    notiflixIconColor: 'rgba(255,255,255,0.9)',
+    fontAwesomeClassName: 'fas fa-times-circle',
+    fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
+    backOverlayColor: 'rgba(255,85,73,0.2)',
+  },
   info: {
     background: '#26c0d3',
     textColor: '#fff',
