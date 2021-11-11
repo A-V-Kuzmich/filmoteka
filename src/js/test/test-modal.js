@@ -4,15 +4,17 @@ import { openModalWindow } from '../components/modal.js';
 
 let movieId = 56896;
 
-// const testField = document.querySelector('body');
-// const headerField = document.querySelector('.header');
-// headerField.insertAdjacentHTML('afterbegin', '<button class="btn-test">!!!!!!!BUTTON ON MODAL Size Chose !!!!!!</button>');
-
-// const btnRef = document.querySelector('.btn-test');
-// btnRef.addEventListener('click', () => {
-
-//     onFetchById(movieId).then(renderCard);
-// });
+const testField = document.querySelector('.modal');
+const headerField = document.querySelector('.header');
+headerField.insertAdjacentHTML(
+  'afterbegin',
+  '<button class="btn-test">!!!!!!!BUTTON ON MODAL Size Chose !!!!!!</button>',
+);
+const backdropTest = document.querySelector('.backdrop');
+const btnRef = document.querySelector('.btn-test');
+btnRef.addEventListener('click', () => {
+  onFetchById(movieId).then(renderCard);
+});
 
 function onFetchById(id) {
   let query = `/movie/${id}?`;
@@ -20,13 +22,8 @@ function onFetchById(id) {
 }
 
 function renderCard(card) {
+  backdropTest.classList.remove('visually-hidden');
   let markup = modalTmpl(card);
-
   testField.insertAdjacentHTML('afterbegin', markup);
   openModalWindow();
-}
-
-export function removeRender() {
-  const modal = document.querySelector('.modal');
-  modal.innerHTML = '';
 }
