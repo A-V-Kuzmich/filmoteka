@@ -42,11 +42,11 @@ function inputFormVisibility() {
 }
 
 function watchedBtnActive() {
-    refs.queueBtn.classList.remove('header___item-btn--active')
-    refs.watchedBtn.classList.add('header___item-btn--active');
+    refs.queueBtn.classList.remove('header__item-btn--active')
+    refs.watchedBtn.classList.add('header__item-btn--active');
 }
 
 function queueBtnActive() {
-    refs.watchedBtn.classList.remove('header___item-btn--active');
-    refs.queueBtn.classList.add('header___item-btn--active');
+    refs.watchedBtn.classList.remove('header__item-btn--active');
+    refs.queueBtn.classList.add('header__item-btn--active');
 }
