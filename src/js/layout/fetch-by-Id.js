@@ -1,6 +1,8 @@
 import { getApiData } from '../api/api-service.js';
 import makeModalFilm from '../../partial/templates/modal-film.hbs';
 
+// import addToQueue from './add-to-queue.js';
+// console.log(addToQueue);
 import openModalWindow from '../components/modal';
 // console.log(makeModalFilm);
 
@@ -30,8 +32,6 @@ function onCardClick(e) {
   }
   console.log('not exit');
 
-  // openModalWindow();
-
   let filmId = e.target.dataset.index; // id атрибут должен быть на li
   console.log(filmId);
 
@@ -44,5 +44,17 @@ function onCardClick(e) {
 
     // modal.innerHTML = modalContent;
     modal.insertAdjacentHTML('afterbegin', modalContent);
+    openModalWindow();
+
+    const addBtn = document.querySelector('[data-add]');
+    console.log(addBtn);
+
+    addBtn.addEventListener('click', addToQueue);
   });
 }
+
+// function addToQueue(e) {
+//   console.log(e);
+
+//   localStorage.setItem(key, JSON.stringify(data));
+// }
