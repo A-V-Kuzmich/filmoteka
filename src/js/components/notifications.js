@@ -23,7 +23,7 @@ export function alertNothingIsFound() {
 
 // settings
 Notiflix.Notify.init({
-  width: '280px',
+  width: '240px',
   position: 'center-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
   distance: '20px',
   opacity: 1,
