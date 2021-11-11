@@ -1,49 +1,49 @@
+<div class='backdrop' data-modal>
+<div class='modal' data-id={{id}}>
+  <div class='modal__elements'>
+    <img
+      class='modal__img'
+      src='https://image.tmdb.org/t/p/w400{{poster_path}}'
+      alt={{original_title}}
+    />
+    <div>
+      <h3 class='modal__title'>{{original_title}}</h3>
+      <div class='modal__film'>
+        <ul class='modal__film-details'>
+          <li class='modal__film-item'>Vote/Votes</li>
+          <li class='modal__film-item'>Popularity</li>
+          <li class='modal__film-item'>Original Title</li>
+          <li class='modal__film-item'>Genre</li>
+        </ul>
+        <ul>
+          <li class='modal__film-item'><span class='raiting'>{{vote_average}}</span>/
+            {{vote_count}}</li>
+          <li class='modal__film-item'>{{popularity}}</li>
+          <li class='modal__film-item modal__orig-title'>{{original_title}}</li>
+          <li class='modal__film-item'>
+            <ul class='modal__genres-list'>
+              {{#each genres}}
+                <li class='modal__genres-item'>{{this.name}} </li>
+              {{/each}}
+            </ul>
+          </li>
 
-  <div class='modal' data-id={{id}}>
-    <div class='modal__elements'>
-      <img
-        class='modal__img'
-        src='https://image.tmdb.org/t/p/w400{{poster_path}}'
-        alt={{original_title}}
-      />
-      <div>
-        <h3 class='modal__title'>{{original_title}}</h3>
-        <div class='modal__film'>
-          <ul class='modal__film-details'>
-            <li class='modal__film-item'>Vote/Votes</li>
-            <li class='modal__film-item'>Popularity</li>
-            <li class='modal__film-item'>Original Title</li>
-            <li class='modal__film-item'>Genre</li>
-          </ul>
-          <ul>
-            <li class='modal__film-item'><span class='raiting'>{{vote_average}}</span>/
-              {{vote_count}}</li>
-            <li class='modal__film-item'>{{popularity}}</li>
-            <li class='modal__film-item modal__orig-title'>{{original_title}}</li>
-            <li class='modal__film-item'>
-              <ul class='modal__genres-list'>
-                {{#each genres}}
-                  <li class='modal__genres-item'>{{this.name}} </li>
-                {{/each}}
-              </ul>
-            </li>
-
-          </ul>
-        </div>
-        <h4 class='modal__about'>About</h4>
-        <p class='modal__text'>{{overview}}</p>
-        <ul class='modal__list-btn'>
-          <button class='modal__item-btn' type='button'>add to Watched</button>
-          <button class='modal__item-btn' type='button'>add to queue</button>
         </ul>
       </div>
-      <button type='button' class='modal__close-btn' data-modal-close>
-X
-        {{!-- <svg class='modal__close-btn-icon'>
-          <use href="./././images/icon/sprite.svg#modal-close"></use>
-        </svg> --}}
-        
-      </button>
+      <h4 class='modal__about'>About</h4>
+      <p class='modal__text'>{{overview}}</p>
+      <ul class='modal__list-btn'>
+        <li><button class='modal__item-btn' type='button'>add to Watched</button></li>
+        <li><button class='modal__item-btn' type='button'>add to queue</button></li>
+      </ul>
     </div>
+    <button type='button' class='modal__close-btn' data-modal-close>
+      X
+      {{! <svg class='modal__close-btn-icon'>
+          <use href="./././images/icon/sprite.svg#modal-close"></use>
+        </svg> }}
+
+    </button>
   </div>
-  <div class='backdrop' data-modal></div>
+</div>
+</div>
