@@ -12,7 +12,7 @@ import './js/layout/local-storage';
 import './js/layout/render-by-template';
 import './js/layout/click-on-logo';
 //header
-
+import './js/layout/header';
 //main
 
 //footer
@@ -28,3 +28,5 @@ import './js/api/api-service.js';
 //=============test==================
 import './js/test/test-api.js';
 // import './js/test/test-click-on-logo.js';
+import './js/test/test-modal.js';
+// import './js/test/test-notification.js';

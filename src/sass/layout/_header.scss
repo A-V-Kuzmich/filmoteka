@@ -109,22 +109,32 @@
     display: flex;
 
     &-icon {
+      stroke: $logo-color;
+      transition: stroke $animation-duration $timing-function;
+
       @media screen and (min-width: $tablet) {
         margin-right: 10px;
+      }
+
+      &:hover {
+        stroke: $credits-text-color;
       }
     }
 
     &-name {
+      transition: color $animation-duration $timing-function;
+
       @media screen and (max-width: $tablet) {
         display: none;
       }
 
       font-size: 30px;
       color: $secondary-text-color;
-    }
+      transition: color $animation-duration $timing-function;
 
-    &:hover {
-      transform: skew(-10deg);
+      &:hover {
+        color: $modal-topic-color;
+      }
     }
   }
 
@@ -135,9 +145,6 @@
 
     &-item {
       position: relative;
-      line-height: 1.17;
-      text-transform: uppercase;
-      color: $secondary-text-color;
 
       &--active::after {
         content: '';
@@ -152,6 +159,16 @@
 
     &-item:not(:last-child) {
       margin-right: 39px;
+    }
+
+    &-btn {
+      background-color: transparent;
+      border: none;
+      margin: 0px;
+      padding: 0px;
+      line-height: 1.17;
+      text-transform: uppercase;
+      color: $secondary-text-color;
     }
   }
 
@@ -177,6 +194,8 @@
       &-btn {
         border: none;
         background-color: inherit;
+        transform: translateX(-180%);
+        padding: 0px;
       }
 
       @media screen and (min-width: $mobile) and (max-width: $max-width) {
@@ -203,10 +222,6 @@
           width: 340px;
         }
       }
-    }
-
-    &-search-icon {
-      transform: translateX(-160%);
     }
   }
 

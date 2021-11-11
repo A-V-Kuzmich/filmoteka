@@ -1,5 +1,5 @@
 import axios from 'axios';
-import onFetchError from '../components/notifications.js';
+import { onFetchError } from '../components/notifications.js';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 const API_KEY = 'a3ec7c1621ade0b1491e66cd43b88745';
