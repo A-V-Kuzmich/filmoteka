@@ -1,4 +1,4 @@
-import { createImagesMarkup, clearImagesMarkup } from './render-by-template'
+import { createInnerMarkup } from './render-by-template'
 import { getApiData } from '../api/api-service'
 import { getGenresFromLocalStorage } from './genre-local-storage'
 
@@ -6,7 +6,7 @@ import { getGenresFromLocalStorage } from './genre-local-storage'
 function getGenreNameById(genreIds) {
   let newArray = []
   genreIds.forEach(genreId => {
-    const array = getGenresFromLocalStorage().map(genre =>{
+    getGenresFromLocalStorage().map(genre =>{
       if (genre.id === genreId) {
         newArray.push(genre.name)
       }
@@ -27,8 +27,7 @@ export function renderImages(query, element, template) {
   getApiData(query)
     .then(result => {
       exchangeObjectData(result);
-      clearImagesMarkup(element);
-      createImagesMarkup(element, template, result.results)
+      createInnerMarkup(element, template(result.results))
     }
   );
 }
