@@ -7,12 +7,10 @@ import { alertNothingIsFound } from '../components/notifications'
 import { exchangeObjectData } from './render-images-to-main'
 
 refs.searchFormEl.addEventListener('submit', onSearch)
-const pagination = document.querySelector('#pagination')
 
 
 function onFetchByKeyword(keyword, page) {
     let query = `/search/movie/?query=${keyword}&page=${page}`;
-    clearMarkup(pagination)
     clearMarkup(refs.filmsEl)
     return getApiData(query).then
         (result => {
