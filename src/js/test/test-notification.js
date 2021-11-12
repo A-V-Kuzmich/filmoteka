@@ -1,3 +1,13 @@
+const testBtn = document.querySelector('.test-notify');
+testBtn.addEventListener('click', showNotify);
+function showNotify() {
+  console.log('click on testBtn');
+  showWarningNotify('warning');
+  showFailureNotify('fail');
+}
+//--------------------------------------------------------------
+
+// all modules
 import Notiflix from 'notiflix';
 
 function showWarningNotify(text) {
@@ -8,23 +18,10 @@ function showFailureNotify(text) {
   Notiflix.Notify.failure(text);
 }
 
-export function onFetchError(error) {
-  console.log('Something went wrong.\r\n(Status code: ' + error.response.status + ')');
-  showFailureNotify('Something went wrong.\r\n(Error code: ' + error.response.status + ')');
-}
-
-export function alertEnterQuery() {
-  showWarningNotify('Please, type your search');
-}
-
-export function alertNothingIsFound() {
-  showWarningNotify('No movie titles found');
-}
-
 // settings
 Notiflix.Notify.init({
-  width: '240px',
-  position: 'center-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
+  width: '280px',
+  position: 'right-top', // 'right-top' - 'right-bottom' - 'left-top' - 'left-bottom' - 'center-top' - 'center-bottom' - 'center-center'
   distance: '20px',
   opacity: 1,
   borderRadius: '5px',
@@ -42,33 +39,46 @@ Notiflix.Notify.init({
   className: 'notiflix-notify',
   zindex: 4001,
   fontFamily: 'Quicksand',
-  fontSize: '14px',
+  fontSize: '13px',
   cssAnimation: true,
   cssAnimationDuration: 400,
-  cssAnimationStyle: 'from-top', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
+  cssAnimationStyle: 'fade', // 'fade' - 'zoom' - 'from-right' - 'from-top' - 'from-bottom' - 'from-left'
   closeButton: false,
   useIcon: true,
   useFontAwesome: false,
   fontAwesomeIconStyle: 'basic', // 'basic' - 'shadow'
   fontAwesomeIconSize: '34px',
-  warning: {
-    background: '#ff6b08',
+
+  success: {
+    background: '#32c682',
     textColor: '#fff',
-    childClassName: 'notiflix-notify-warning',
-    notiflixIconColor: 'rgba(255,255,255,0.9)',
-    fontAwesomeClassName: 'fas fa-exclamation-circle',
+    childClassName: 'notiflix-notify-success',
+    notiflixIconColor: 'rgba(0,0,0,0.2)',
+    fontAwesomeClassName: 'fas fa-check-circle',
     fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
-    backOverlayColor: 'rgba(238,191,49,0.2)',
+    backOverlayColor: 'rgba(50,198,130,0.2)',
   },
+
   failure: {
-    background: '#f00',
+    background: '#ff5549',
     textColor: '#fff',
     childClassName: 'notiflix-notify-failure',
-    notiflixIconColor: 'rgba(255,255,255,0.9)',
+    notiflixIconColor: 'rgba(0,0,0,0.2)',
     fontAwesomeClassName: 'fas fa-times-circle',
     fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
     backOverlayColor: 'rgba(255,85,73,0.2)',
   },
+
+  warning: {
+    background: '#ff6b08',
+    textColor: '#fff',
+    childClassName: 'notiflix-notify-warning',
+    notiflixIconColor: 'rgba(0,0,0,0.2)',
+    fontAwesomeClassName: 'fas fa-exclamation-circle',
+    fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
+    backOverlayColor: 'rgba(238,191,49,0.2)',
+  },
+
   info: {
     background: '#26c0d3',
     textColor: '#fff',
