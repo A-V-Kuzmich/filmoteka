@@ -1,12 +1,21 @@
+.modal__container {
+  position: relative;
+}
+
 .modal {
   position: absolute;
   z-index: 200;
   top: 20px;
   left: 50%;
   width: 280px;
+  overflow-y: auto;
   transform: translate(-50%);
   background-color: $secondary-text-color;
   box-shadow: $cards-shadows-box $cards-shadow-color;
+
+  @media screen and (max-width: 767px) {
+    height: 100%;
+  }
 
   @media screen and (min-width: $tablet) {
     top: 50%;
@@ -18,12 +27,13 @@
   }
 
   &__elements {
-    position: relative;
+    // position: relative;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0, auto;
-    padding-top: 48px;
-    padding-bottom: 41px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+
     @media screen and (min-width: $tablet) {
       display: flex;
       justify-content: center;
@@ -48,6 +58,14 @@
     margin-right: 40px;
   }
 
+  &__film-data {
+    font-weight: 700;
+  }
+
+  &__film-item {
+    margin-bottom: 10px;
+  }
+
   &__film-genres {
     display: inline-flex;
     flex-wrap: wrap;
@@ -66,12 +84,14 @@
   }
 
   &__about {
+    margin-top: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
   }
-  &__text,
-  &__film-details {
+  &__text {
+    font-weight: 700;
     margin-bottom: 20px;
+    line-height: 1.66;
   }
 }
 .modal__orig-title {
@@ -79,7 +99,7 @@
 }
 
 .modal__img {
-  max-width: none;
+  border-radius: 5px;
 
   @media screen and (min-width: $mobile) {
     margin-right: auto;
@@ -93,6 +113,7 @@
     width: 264px;
     height: 374px;
     margin-right: 30px;
+    margin-bottom: 0px;
   }
 
   @media screen and (min-width: $desktop) {
