@@ -27,6 +27,5 @@ import './js/api/api-service.js';
 
 //=============test==================
 import './js/test/test-api.js';
-// import './js/test/test-click-on-logo.js';
 import './js/test/test-modal.js';
 // import './js/test/test-notification.js';
