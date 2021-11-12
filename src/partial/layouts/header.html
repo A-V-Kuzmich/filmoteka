@@ -20,30 +20,21 @@
             </ul>
         </nav>
     </div>
-    <form class="header__form" role="search">
-        <input 
-        class="header__form-input"
-        type="text" 
-        name="query" 
-        placeholder="Search movies by name" 
-        autocomplete="off">
-        />
-        <button type="submit" class="header__form-input-btn js-input-btn">
-        <svg class="header__form-search-icon" width="12" height="12">
-          <use href="./././images/icon/sprite.svg#icon-search"></use>
-        </svg>
-      </button>
-    </form>
-    <div class="header__btn visually-hidden">
-        <ul class="header__list-btn">
-            <li>
-                <button class="header__item-btn header__item-btn--active" type="button" data-action="watched">WATCHED</button>
-            </li>
-            <li>
-                <button class="header__item-btn" type="button" data-action="queue">QUEUE</button>
-            </li>
-        </ul>
-    </div>
+    <div class="header__searcher">
+        <form class="header__form" role="search">
+            <input 
+            class="header__form-input"
+            type="text" 
+            name="query" 
+            placeholder="Search movies by name" 
+            autocomplete="off">
+            />
+            <button type="submit" class="header__form-input-btn js-input-btn">
+            <svg class="header__form-search-icon" width="12" height="12">
+              <use href="./././images/icon/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
         <div class="filters__box filters__dropdown">
             Search by
             <ul class="filters">
@@ -94,6 +85,17 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="header__btn visually-hidden">
+        <ul class="header__list-btn">
+            <li>
+                <button class="header__item-btn header__item-btn--active" type="button" data-action="watched">WATCHED</button>
+            </li>
+            <li>
+                <button class="header__item-btn" type="button" data-action="queue">QUEUE</button>
+            </li>
+        </ul>
+    </div>
   </div>
   
 </header>
