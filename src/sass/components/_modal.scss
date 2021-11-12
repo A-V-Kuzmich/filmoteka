@@ -1,3 +1,7 @@
+.modal__container {
+  position: relative;
+}
+
 .modal {
   position: absolute;
   z-index: 200;
@@ -22,7 +26,7 @@
   }
 
   &__elements {
-    position: relative;
+    // position: relative;
     padding-left: 20px;
     padding-right: 20px;
     margin: 0, auto;
