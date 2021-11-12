@@ -10,4 +10,6 @@ export const refs = {
   headerNav: document.querySelector('.header__nav'),
   watchedBtn: document.querySelector('[data-action="watched"]'),
   queueBtn: document.querySelector('[data-action="queue"]'),
+  themeSwitch: document.querySelector('.theme-switch'),
+  checkBox: document.querySelector('#theme-switch-toggle'),
 };

@@ -1,4 +1,5 @@
-import { refs } from '../refs/refs.js'
+import { refs } from '../refs/refs.js';
+import { setToLocalStorage, getFromLocalStorage } from './local-storage';
 
 const theme = {
   LIGHT: 'light-theme',
@@ -7,21 +8,19 @@ const theme = {
 
 const { LIGHT, DARK } = theme;
 
-let newTheme = localStorage.getItem('n-theme');
- if (!newTheme) {
-    newTheme = LIGHT;
-    localStorage.setItem('n-theme', LIGHT);
-
-} else 
-    document.querySelector('body').classList.add(newTheme);
- refs.checkBox.checked = newTheme === LIGHT ? false : true;
+let newTheme = getFromLocalStorage('n-theme');
+if (!newTheme) {
+  newTheme = LIGHT;
+  setToLocalStorage('n-theme', LIGHT);
+} else document.querySelector('body').classList.add(newTheme);
+refs.checkBox.checked = newTheme === LIGHT ? false : true;
 
 refs.checkBox.addEventListener('change', changeTheme);
-    
-function changeTheme(e) {
-    document.querySelector('body').classList.toggle(DARK);
-  
-    document.querySelector('body').classList.toggle(LIGHT);
 
-  localStorage.setItem('n-theme', e.target.checked? DARK :LIGHT);
+function changeTheme(e) {
+  document.querySelector('body').classList.toggle(DARK);
+
+  document.querySelector('body').classList.toggle(LIGHT);
+
+  setToLocalStorage('n-theme', e.target.checked ? DARK : LIGHT);
 }
