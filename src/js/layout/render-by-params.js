@@ -62,4 +62,4 @@ function searchByPopularity(value) {
   renderImages(query, refs.filmsEl, imagesTpl)
 }
 
-refs.filersDropdownEl.addEventListener('click', searhByParameter)
+refs.filtersDropdownEl.addEventListener('click', searhByParameter)
