@@ -30,7 +30,7 @@ function onSearch(e) {
         .then(response => {
             if (response.results.length === 0) {
                 alertNothingIsFound()
-            } createInnerMarkup(refs.filmsEl,  filmsTemplate, response.results)
+            } createInnerMarkup(refs.filmsEl,  filmsTemplate(response.results))
         }) 
 }
 

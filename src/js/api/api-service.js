@@ -8,7 +8,9 @@ export const getApiData = query => {
 showSpiner();
 return axios
 .get(`${query}&api_key=${API_KEY}`)
-.then(response => response.data)
+.then(response => {
+    hideSpiner()
+    return response.data
+})    
 .catch(onFetchError)
-.finally(hideSpiner())
 };
