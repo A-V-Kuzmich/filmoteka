@@ -1,6 +1,7 @@
 import { createInnerMarkup } from './render-by-template'
 import { getApiData } from '../api/api-service'
 import { getGenresFromLocalStorage } from './genre-local-storage'
+import { setLastPageNumber } from './fetch-by-keyword'
 
 
 function getGenreNameById(genreIds) {
@@ -27,6 +28,7 @@ export function renderImages(query, element, template) {
   getApiData(query)
     .then(result => {
       exchangeObjectData(result);
+      setLastPageNumber(result.total_pages)
       createInnerMarkup(element, template(result.results))
     }
   );
