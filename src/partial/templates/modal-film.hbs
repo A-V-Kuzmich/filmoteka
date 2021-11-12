@@ -13,9 +13,8 @@
         <li class='modal__film-item'>Original Title</li>
         <li class='modal__film-item'>Genre</li>
       </ul>
-      <ul>
-        <li class='modal__film-item'><span class='raiting'>{{vote_average}}</span>/
-          {{vote_count}}</li>
+      <ul class='modal__film-data'>
+        <li class='modal__film-item'><span class='raiting'>&nbsp{{vote_average}}&nbsp</span>/ &nbsp{{vote_count}}</li>
         <li class='modal__film-item'>{{popularity}}</li>
         <li class='modal__film-item modal__orig-title'>{{original_title}}</li>
         <li class='modal__film-item'>
@@ -36,10 +35,8 @@
     </ul>
   </div>
   <button type='button' class='modal__close-btn' data-modal-close>
-    X
-    {{! <svg class='modal__close-btn-icon'>
-          <use href="./././images/icon/sprite.svg#modal-close"></use>
-        </svg> }}
-
+    <svg class='modal__close-btn-icon'>
+      <use href="./././images/icon/sprite.svg#modal-close"></use>
+    </svg>
   </button>
 </div>
