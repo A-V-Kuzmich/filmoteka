@@ -18,6 +18,7 @@ import './js/layout/header';
 //footer
 
 //=========components===============
+import './js/components/spiner.js'
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
