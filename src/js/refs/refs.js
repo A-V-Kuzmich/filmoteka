@@ -17,4 +17,6 @@ export const refs = {
     closeModalBtn: document.querySelector('[data-modal-close]'),
     backdrop: document.querySelector('.backdrop'),
     headerInputField: document.querySelector('.header__form > input'),
-};
+    spiner: document.querySelector('.spiner'),
+    pagePreloader: document.getElementById('page-preloader'),
+  }

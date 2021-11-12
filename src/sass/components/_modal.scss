@@ -6,6 +6,7 @@
   width: 280px;
   transform: translate(-50%);
   background-color: $secondary-text-color;
+  box-shadow: $cards-shadows-box $cards-shadow-color;
 
   @media screen and (min-width: $tablet) {
     top: 50%;
