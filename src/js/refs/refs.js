@@ -13,6 +13,7 @@ export const refs = {
     watchedBtn: document.querySelector('[data-action="watched"]'),
     queueBtn: document.querySelector('[data-action="queue"]'),
     valueFormEl: document.querySelector('.values__form'),
-    valuesInput: document.querySelector('.values__form-input')
-    
+    valuesInput: document.querySelector('.values__form-input'),
+    spiner: document.querySelector('.spiner'),
+    pagePreloader: document.getElementById('page-preloader'),
   };
