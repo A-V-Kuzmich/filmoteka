@@ -16,9 +16,6 @@ let newTheme = localStorage.getItem('n-theme');
     document.querySelector('body').classList.add(newTheme);
  refs.checkBox.checked = newTheme === LIGHT ? false : true;
 
-
-
-
 refs.checkBox.addEventListener('change', changeTheme);
     
 function changeTheme(e) {
