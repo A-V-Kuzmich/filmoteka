@@ -18,7 +18,7 @@ import './js/layout/header';
 //footer
 
 //=========components===============
-import './js/components/spiner.js'
+import './js/components/spiner.js';
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
@@ -30,3 +30,4 @@ import './js/api/api-service.js';
 import './js/test/test-api.js';
 import './js/test/test-modal.js';
 // import './js/test/test-notification.js';
+import './js/test/test-contacts-modal.js';

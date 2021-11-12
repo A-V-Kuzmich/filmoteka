@@ -1,0 +1,14 @@
+<div class='contacts'>
+  <h2 class='contacts__title'>
+    Our team
+  </h2>
+  <ul class='contacts__list'>
+    {{#each this}}
+      <li class='contacts__item'>
+        <a href="{{url}}" class='contact__link'>
+          {{name}} {{surname}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>

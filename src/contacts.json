@@ -1,0 +1,7 @@
+{
+  "students": [
+    { "name": "Dasha", "surname": "Pashkovskaya", "url": "https://github.com/DashaPash" },
+    { "name": "Nataliia", "surname": "Salamatina", "url": "https://github.com/T-jorven" },
+    { "name": "Larysa", "surname": "Timoshenko", "url": "https://github.com/LarysaTymoshenko" }
+  ]
+}
