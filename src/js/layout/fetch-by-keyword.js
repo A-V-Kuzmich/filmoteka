@@ -20,7 +20,7 @@ function onFetchByKeyword(keyword, page) {
 function onSearch(e) {
     e.preventDefault();
      
-    clearFilmsMarkup() 
+    // clearFilmsMarkup() 
     const searchQuery = e.currentTarget.elements.query.value
 
     if (searchQuery === '') {
@@ -33,10 +33,9 @@ function onSearch(e) {
             } createInnerMarkup(refs.filmsEl,  filmsTemplate(response.results))
         }) 
 }
-
-function clearFilmsMarkup () {
-    refs.filmsEl.innerHTML = ''
-}
+// function clearFilmsMarkup () {
+//     refs.filmsEl.innerHTML = ''
+// }
 
 
 

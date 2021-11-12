@@ -14,6 +14,6 @@ export const refs = {
     queueBtn: document.querySelector('[data-action="queue"]'),
     valueFormEl: document.querySelector('.values__form'),
     valuesInput: document.querySelector('.values__form-input'),
-    spiner: document.querySelector('.spiner'),//cпинер
-    pagePreloader: document.getElementById('page-preloader'),//бек-дроп
+    spiner: document.querySelector('.spiner'),
+    pagePreloader: document.getElementById('page-preloader'),
   };
