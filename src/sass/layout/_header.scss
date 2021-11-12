@@ -173,11 +173,14 @@
     }
   }
 
+  &__searcher {
+    position: relative;
+    margin-top: 37px;
+  }
+
   &__form {
     display: flex;
     justify-content: center;
-    position: relative;
-    margin-top: 37px;
 
     &-input {
       background-color: transparent;
