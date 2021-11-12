@@ -26,6 +26,7 @@ export function exchangeObjectData(result) {
 export function renderImages(query, element, template) {
   getApiData(query)
     .then(result => {
+      console.log(result);
       exchangeObjectData(result);
       createInnerMarkup(element, template(result.results))
     }

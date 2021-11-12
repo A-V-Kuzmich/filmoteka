@@ -11,6 +11,8 @@ export const refs = {
     header: document.querySelector('.header'),
     headerNav: document.querySelector('.header__nav'),
     watchedBtn: document.querySelector('[data-action="watched"]'),
-    queueBtn: document.querySelector('[data-action="queue"]')
+    queueBtn: document.querySelector('[data-action="queue"]'),
+    valueFormEl: document.querySelector('.values__form'),
+    valuesInput: document.querySelector('.values__form-input')
     
   };
