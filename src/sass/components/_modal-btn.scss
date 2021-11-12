@@ -1,16 +1,25 @@
 .modal {
-  &___list-btn {
+  &__list-btn {
     display: flex;
-    justify-content: center;
     justify-items: center;
   }
 
-  &___item-btn {
+  &__item-btn {
     @extend %button;
     border: 1px solid $primary-text-color;
     color: $primary-text-color;
     background-color: $secondary-text-color;
     align-content: center;
+
+    @media screen and(min-width:$mobile) {
+      width: 112px;
+    }
+    @media screen and(min-width:$tablet) {
+      width: 125px;
+    }
+    @media screen and(min-width:$desktop) {
+      width: 136px;
+    }
 
     &:active {
       background-color: $accent-color;
@@ -25,10 +34,7 @@
     }
   }
 
-  &___item-btn:first-child {
-    margin-right: 20px;
-    @media screen and(min-width:$tablet) {
-      margin-right: 15px;
-    }
+  &__item-btn:first-child {
+    margin-right: 15px;
   }
 }

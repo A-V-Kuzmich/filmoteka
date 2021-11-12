@@ -1,40 +1,48 @@
-<header class="header  header__main-bckg">
-<div class="container">
+<header class="header header__main-bckg">
+  <div class="container">
     <div class="header__section">
         <a class="header__logo js-logo" href="././index.html">
             <svg class="header__logo-icon" width="24" height="24">
                 <use  href="./././images/icon/sprite.svg#icon-film"></use>
-            </svg><span class="header__logo-name">Filmoteka</span>
+            </svg>
+            <span class="header__logo-name">Filmoteka</span>
         </a>
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <li class="header__nav-item header__nav-item--active">
-                    <button class="header__nav-btn">Home</button>
+                <li class="header__nav-item">
+                    <button class="header__nav-btn header__nav-item--active"
+                     type="button" data-action="home">Home</button>
                 </li>
                 <li class="header__nav-item">
-                    <button class="header__nav-btn">My library</button>
+                    <button class="header__nav-btn" 
+                    type="button" data-action="library">My library</button>
                 </li>
             </ul>
         </nav>
     </div>
     <form class="header__form" role="search">
-        <input class="header__form-input" type="text" name="query" placeholder="Поиск фильмов" autocomplete="off">
+        <input 
+        class="header__form-input"
+        type="text" 
+        name="query" 
+        placeholder="Search movies by name" 
+        autocomplete="off">
+        />
         <button type="submit" class="header__form-input-btn js-input-btn">
         <svg class="header__form-search-icon" width="12" height="12">
-            <use href="./././images/icon/sprite.svg#icon-search"></use>
+          <use href="./././images/icon/sprite.svg#icon-search"></use>
         </svg>
-        </button>
+      </button>
     </form>
     <div class="header__btn visually-hidden">
-        <ul class="header___list-btn">
+        <ul class="header__list-btn">
             <li>
-                <button class="header___item-btn" type="button">WATCHED</button>
+                <button class="header__item-btn header__item-btn--active" type="button" data-action="watched">WATCHED</button>
             </li>
             <li>
-                <button class="header___item-btn" type="button">QUEUE</button>
+                <button class="header__item-btn" type="button" data-action="queue">QUEUE</button>
             </li>
         </ul>
     </div>
-</div>
+  </div>
 </header>
-

@@ -1,13 +1,13 @@
 //============utils=================
 @import './utils/vars';
-@import './utils/breakpoints';
+@import './utils/no-scroll';
 @import './utils/visually-hidden';
+@import './utils/btn';
 
 //============base==================
 @import './base/global-stile';
 @import './base/reset';
 @import './base/container';
-@import './base/btn';
 
 //===========layout=================
 
