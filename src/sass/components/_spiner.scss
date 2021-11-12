@@ -1,0 +1,38 @@
+.preloader {
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: white;
+z-index: 5;
+transition: 1s all;
+opacity: 1;
+visibility: visible;
+}
+
+.done {
+    display: none;
+}
+
+.spiner {
+    width: 100px;
+    height: 100px;
+    border: 15px solid rgb(20, 18, 18);
+    border-radius: 50%;
+    border-top-color: orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 1s spin infinite linear ;
+}
+
+@keyframes spin {
+   from { 
+       transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

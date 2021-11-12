@@ -16,6 +16,7 @@ export const refs = {
     valuesInput: document.querySelector('.values__form-input'),
     paginationList: document.querySelector('.pagination'),
     lastPageBtn: document.querySelector('#last-page'),
-    paginationBtnList: document.querySelector('.pagination__list')
-    
+    paginationBtnList: document.querySelector('.pagination__list'),
+    spiner: document.querySelector('.spiner'),
+    pagePreloader: document.getElementById('page-preloader')
   };

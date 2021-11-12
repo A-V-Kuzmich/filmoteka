@@ -44,9 +44,6 @@ function onSearch(e) {
         })
 }
 
-function clearMarkup(element) {
-   element.innerHTML = ''
-}
 
 //!!!! pagination !!!
 
