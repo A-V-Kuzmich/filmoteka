@@ -3,7 +3,7 @@ import modalTmpl from '../../partial/templates/modal-film.hbs';
 import { openModalWindow } from '../components/modal.js';
 import { createInnerMarkup } from '../layout/render-by-template.js';
 
-// let movieId = 56896;
+let movieId = 56896;
 
 const testField = document.querySelector('.modal');
 const headerField = document.querySelector('.header');
