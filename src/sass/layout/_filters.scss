@@ -10,8 +10,9 @@
   &__box {
     display: flex;
     align-items: center;
-    background: $filters-box-bcg;
-    color: $filters-text-color;
+    background: $secondary-text-color;
+    border: 1px solid $secondary-text-color;
+    color: $accent-color;
     width: 80px;
     height: 44px;
     margin: 0px 6px 6px 0px;
@@ -28,7 +29,7 @@
       padding: 15px;
     }
     @media screen and (min-width: 1024px) {
-      width: 190px;
+      width: 160px;
       height: 55px;
       padding: 20px;
       font-size: 16px;
@@ -41,14 +42,20 @@
   }
 
   &__dropdown {
+    background-color: transparent;
+    color: $secondary-text-color;
     position: absolute;
+    top: 130%;
     left: 0;
     margin: 0 0 40px;
     text-transform: uppercase;
     cursor: pointer;
     transition: box-shadow 2000ms linear;
     @media screen and (min-width: $tablet) {
-      left: 100px;
+      left: 130px;
+    }
+    @media screen and (min-width: $desktop) {
+      left: 262px;
     }
   }
 
@@ -88,6 +95,14 @@
     position: relative;
   }
 
+  &__title {
+    border: 1px solid $accent-color;
+  }
+
+  &__item:hover &__title {
+    border-color: $secondary-text-color;
+  }
+
   &__title:after {
     content: '';
     position: absolute;
@@ -96,7 +111,7 @@
     border-top: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    border-left: 8px solid $secondary-text-color;
+    border-left: 8px solid $accent-color;
     right: 5px;
     top: 14px;
     @media screen and (min-width: $tablet) {
@@ -105,13 +120,17 @@
       border-top: 10px solid transparent;
       border-right: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-left: 10px solid $secondary-text-color;
+      border-left: 10px solid $accent-color;
       right: 5px;
       top: 14px;
     }
     @media screen and (min-width: $desktop) {
       top: 20px;
     }
+  }
+
+  &__item:hover &__title:after {
+    border-left-color: $secondary-text-color;
   }
 
   &__item:hover .values {
@@ -126,7 +145,10 @@
     flex-wrap: wrap;
 
     @media screen and (min-width: $tablet) {
-      width: 480px;
+      width: 350px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 450px;
     }
   }
 }
@@ -159,9 +181,9 @@
     border-right: none;
     border-left: none;
     text-transform: uppercase;
-    border-bottom: 0.5px solid $secondary-text-color;
+    border-bottom: 0.5px solid $accent-color;
     padding: 4px 20px 6px 4px;
-    color: $secondary-text-color;
+    color: $accent-color;
     outline: none;
 
     @media screen and (min-width: $tablet) {
@@ -173,14 +195,23 @@
     }
 
     &::placeholder {
-      color: $secondary-text-color;
+      color: $accent-color;
       opacity: 0.7;
     }
 
     &:hover {
       display: block;
+      color: white;
       border-bottom: 1.5px solid $secondary-text-color;
     }
+  }
+
+  &__form-search-icon {
+    stroke: $accent-color;
+  }
+
+  &__form:hover &__form-search-icon {
+    stroke: $secondary-text-color;
   }
 
   &__form-btn {
@@ -202,6 +233,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 90px;
     font-size: 10px;
     padding: 4px;
@@ -209,5 +241,8 @@
 
   &__item--rating {
     justify-content: center;
+    @media screen and (min-width: $desktop) {
+      width: 136px;
+    }
   }
 }
