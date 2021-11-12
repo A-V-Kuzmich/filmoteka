@@ -4,6 +4,7 @@ export const refs = {
     filmsEl: document.querySelector('.films'),
     searchFormEl: document.querySelector('.header__form'),
     inputBtnEl: document.querySelector('.js-input-btn'),
+    filtersDropdownEl: document.querySelector('.filters__dropdown'),
     homeBtn: document.querySelector(['[data-action="home"]']),
     libraryBtn: document.querySelector('[data-action="library"]'),
     headerBtn: document.querySelector('.header__btn'),
@@ -11,6 +12,8 @@ export const refs = {
     headerNav: document.querySelector('.header__nav'),
     watchedBtn: document.querySelector('[data-action="watched"]'),
     queueBtn: document.querySelector('[data-action="queue"]'),
+    valueFormEl: document.querySelector('.values__form'),
+    valuesInput: document.querySelector('.values__form-input')
     spinner: document.querySelector('.spinner'),//cпинер
     pagePreloader: document.getElementById('page-preloader'),//бек-дроп
   };
