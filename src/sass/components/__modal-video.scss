@@ -1,13 +1,16 @@
 .modal-video {
   &__container {
     position: fixed;
-    top: 20px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 500;
 
     height: 75%;
   }
+}
+#player {
+  border-radius: 10px;
 }
 
 //  /* Позиционирование */
