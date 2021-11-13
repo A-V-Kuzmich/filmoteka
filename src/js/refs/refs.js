@@ -4,6 +4,7 @@ export const refs = {
     filmsEl: document.querySelector('.films'),
     searchFormEl: document.querySelector('.header__form'),
     inputBtnEl: document.querySelector('.js-input-btn'),
+    headerSearcherEl:document.querySelector('.header__searcher'),
     filtersDropdownEl: document.querySelector('.filters__dropdown'),
     homeBtn: document.querySelector(['[data-action="home"]']),
     libraryBtn: document.querySelector('[data-action="library"]'),
