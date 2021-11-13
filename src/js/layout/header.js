@@ -25,39 +25,18 @@ function doMainView() {
   watchedBtnActive();
 }
 
-function doLibraryView() {
-  toggleClass(refs.header, 'header__main-bckg', 'header__secondary-bckg');
-  inputFormToggleClass();
-  queueBtnActive();
+function inputFormIsHidden() {
+    refs.headerSearcherEl.classList.add('visually-hidden')
+    refs.headerBtn.classList.remove('visually-hidden')
+    refs.libraryBtn.classList.add('header__nav-item--active')
+    refs.homeBtn.classList.remove('header__nav-item--active') 
 }
 
-function inputFormToggleClass() {
-  searchFormToggle();
-  headerButtonsToggle();
-  libraryButtonToggle();
-  homeButtonToggle();
-}
-
-function toggleClass(element, remove, add) {
-  element.classList.remove(remove);
-  element.classList.add(add);
-}
-
-function searchFormToggle() {
-  refs.searchFormEl.classList.toggle('visually-hidden');
-}
-
-function headerButtonsToggle() {
-  refs.headerBtn.classList.toggle('visually-hidden');
-}
-
-function libraryButtonToggle() {
-  refs.libraryBtn.classList.toggle('header__nav-item--active');
-}
-
-function homeButtonToggle() {
-  refs.homeBtn.classList.toggle('header__nav-item--active');
-  
+function inputFormVisibility() {
+    refs.headerSearcherEl.classList.remove('visually-hidden')
+    refs.headerBtn.classList.add('visually-hidden')
+    refs.libraryBtn.classList.remove('header__nav-item--active')
+    refs.homeBtn.classList.add('header__nav-item--active') 
 }
 
 function watchedBtnActive() {
