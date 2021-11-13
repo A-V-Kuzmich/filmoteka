@@ -1,8 +1,7 @@
 import { getApiData } from '../api/api-service.js';
 import { refs } from '../refs/refs'
 import filmsTemplate from '../../partial/templates/film-cards.hbs'
-import { createInnerMarkup } from './render-by-template'
-import { cleanInnerMarkup } from './render-by-template'
+import { createInnerMarkup, cleanInnerMarkup } from './render-by-template'
 import { alertEnterQuery } from '../components/notifications'
 import { alertNothingIsFound } from '../components/notifications'
 import { exchangeObjectData } from './render-images-to-main'
@@ -16,6 +15,7 @@ let btnSummary = 2
 function onFetchAllMovies(page) {
     let query = `/trending/movie/week?page=${page}`;
     cleanInnerMarkup(refs.filmsEl)
+    cleanInnerMarkup(refs.paginationBtnList)
     return getApiData(query)
         .then(result => {
             exchangeObjectData(result)
@@ -34,9 +34,7 @@ renderGall(1)
 
 function onFetchByKeyword(keyword, page) {
     let query = `/search/movie/?query=${keyword}&page=${page}`;
-
-    cleanInnerMarkup(refs.filmsEl)
-
+    
     return getApiData(query).then
         (result => {
             if (result.results.length === 0) {
@@ -52,14 +50,14 @@ function onFetchByKeyword(keyword, page) {
 
 function onSearch(e) {
     e.preventDefault();
-
     searchQuery = e.currentTarget.elements.query.value
-     cleanInnerMarkup(refs.paginationBtnList)
-    
+    onClickPage = 1
+    cleanInnerMarkup(refs.paginationBtnList)
     if (searchQuery === '') {
         alertEnterQuery()
         return
-    } onFetchByKeyword(searchQuery)           
+    } 
+    onFetchByKeyword(searchQuery)
 }
 
 
@@ -75,8 +73,6 @@ refs.paginationList.addEventListener('click', onPaginationBtnClick)
 function renderPagesList(totalPages) {
     const start = onClickPage - btnSummary
     const end = onClickPage + btnSummary;
-
-    cleanInnerMarkup(refs.paginationBtnList)
     
     for (let i = start; i <= end; i += 1) {
     if (i > 1 && i < totalPages) {
@@ -86,6 +82,7 @@ function renderPagesList(totalPages) {
 }
 
 function onPaginationBtnClick(evt) {
+    cleanInnerMarkup(refs.paginationBtnList)
     if (evt.target.nodeName !== 'BUTTON') {
         return;
     } onClickPage = Number(evt.target.textContent);
