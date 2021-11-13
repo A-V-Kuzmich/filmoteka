@@ -7,6 +7,12 @@
   left: 0;
   transition: opacity $animation-duration $timing-function;
 
+  &__search-icon {
+    margin-left: auto;
+    fill: $secondary-text-color;
+    transition: fill $animation-duration $timing-function;
+  }
+
   &__box {
     display: flex;
     align-items: center;
@@ -35,6 +41,11 @@
     color: $secondary-text-color;
   }
 
+  &__box:hover &__search-icon {
+    fill: $accent-color;
+    // color: $secondary-text-color;
+  }
+
   &__dropdown {
     background-color: transparent;
     color: $secondary-text-color;
@@ -44,32 +55,14 @@
     margin: 0;
     text-transform: uppercase;
     cursor: pointer;
-    transition: box-shadow $animation-duration $timing-function,
-      opacity $animation-duration $timing-function;
+    box-shadow: 0px 2px 4px transparent;
+    transition: opacity $animation-duration $timing-function;
     @media screen and (min-width: $tablet) {
       top: -50%;
       left: 0%;
     }
     @media screen and (min-width: $desktop) {
       left: 15%;
-    }
-  }
-
-  &__dropdown:after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-top: 6px solid $secondary-text-color;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 6px solid transparent;
-    transition: opacity $animation-duration $timing-function;
-    right: 5px;
-    top: 14px;
-    @media screen and (min-width: $tablet) {
-      top: 15px;
-      right: 5px;
     }
   }
 
