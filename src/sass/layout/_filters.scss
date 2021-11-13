@@ -1,0 +1,248 @@
+.filters {
+  position: absolute;
+  display: none;
+  top: 100%;
+  padding-top: 6px;
+  left: 0;
+  opacity: 0;
+  transition: opacity $animation-duration $timing-function;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    background: $secondary-text-color;
+    border: 1px solid $secondary-text-color;
+    color: $accent-color;
+    width: 80px;
+    height: 44px;
+    margin: 0px 6px 6px 0px;
+    padding: 8px;
+    font-size: 9px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: $filters-box-shadow;
+    transition: background $animation-duration $timing-function,
+      color $animation-duration $timing-function;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      width: 130px;
+      padding: 15px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 160px;
+      height: 55px;
+      padding: 20px;
+      font-size: 16px;
+    }
+  }
+
+  &__box:hover {
+    background-color: $accent-color;
+    color: $secondary-text-color;
+  }
+
+  &__dropdown {
+    background-color: transparent;
+    color: $secondary-text-color;
+    position: absolute;
+    top: 130%;
+    left: 0;
+    margin: 0 0 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 2000ms linear;
+    @media screen and (min-width: $tablet) {
+      left: 130px;
+    }
+    @media screen and (min-width: $desktop) {
+      left: 262px;
+    }
+  }
+
+  &__dropdown:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-top: 8px solid $secondary-text-color;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    right: 4px;
+    top: 19px;
+    @media screen and (min-width: $tablet) {
+      width: 10px;
+      height: 10px;
+      border-top: 10px solid $secondary-text-color;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      right: 10px;
+      top: 18px;
+    }
+    @media screen and (min-width: $desktop) {
+      top: 25px;
+    }
+  }
+
+  &__dropdown:hover .filters {
+    display: block;
+    opacity: 1;
+  }
+
+  &__item {
+    display: flex;
+    position: relative;
+  }
+
+  &__title {
+    border: 1px solid $accent-color;
+  }
+
+  &__item:hover &__title {
+    border-color: $secondary-text-color;
+  }
+
+  &__title:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid $accent-color;
+    right: 5px;
+    top: 14px;
+    @media screen and (min-width: $tablet) {
+      width: 10px;
+      height: 10px;
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid $accent-color;
+      right: 5px;
+      top: 14px;
+    }
+    @media screen and (min-width: $desktop) {
+      top: 20px;
+    }
+  }
+
+  &__item:hover &__title:after {
+    border-left-color: $secondary-text-color;
+  }
+
+  &__item:hover .values {
+    display: block;
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  &:hover .values--genres {
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $tablet) {
+      width: 350px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 450px;
+    }
+  }
+}
+
+.values {
+  overflow-x: hidden;
+  display: none;
+  opacity: 0;
+  position: absolute;
+  left: 100%;
+  transform: translateX(400%);
+  transition: opacity $animation-duration $timing-function,
+    transform $animation-duration $timing-function;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100px;
+    padding: 10px;
+
+    @media screen and (min-width: $tablet) {
+      width: 136px;
+    }
+  }
+
+  &__form-input {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid $accent-color;
+    padding: 4px 20px 6px 4px;
+    color: $accent-color;
+    outline: none;
+
+    @media screen and (min-width: $tablet) {
+      width: 80px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 100px;
+    }
+
+    &::placeholder {
+      color: $accent-color;
+      opacity: 0.7;
+    }
+
+    &:hover {
+      display: block;
+      color: white;
+      border-bottom: 1.5px solid $secondary-text-color;
+    }
+  }
+
+  &__form-search-icon {
+    stroke: $accent-color;
+  }
+
+  &__form:hover &__form-search-icon {
+    stroke: $secondary-text-color;
+  }
+
+  &__form-btn {
+    border: none;
+    background-color: transparent;
+    transform: translateX(-100%);
+    padding: 0px;
+  }
+
+  &--genres {
+    transform: translateY(100%);
+  }
+
+  &--genres:hover {
+    transform: translateY(0%);
+  }
+
+  &__item--genre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90px;
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  &__item--rating {
+    justify-content: center;
+    @media screen and (min-width: $desktop) {
+      width: 136px;
+    }
+  }
+}
