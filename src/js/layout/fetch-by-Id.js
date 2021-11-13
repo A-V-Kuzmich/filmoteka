@@ -25,8 +25,8 @@ function onCardClick(e) {
   }
   // console.log('not exit');
 
-  let filmId = e.target.dataset.index; // id атрибут должен быть на елементе клика
-  console.log('film id', filmId);
+  const filmId = e.target.dataset.index; // id атрибут должен быть на елементе клика
+  // console.log('film id', filmId);
 
   fetchById(filmId).then(result => {
     // console.log('film object', result);

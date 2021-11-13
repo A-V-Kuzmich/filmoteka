@@ -3,35 +3,40 @@ import { setToLocalStorage } from './local-storage';
 import { getFromLocalStorage } from './local-storage';
 
 export function addToQueue(e) {
-  console.dir(e.target.dataset.hasOwnProperty('queue'));
+  // console.dir(e.target.dataset.hasOwnProperty('queue'));
 
   if (!e.target.dataset.hasOwnProperty('queue')) {
-    console.log('not add-button', false);
+    console.log('it is not add-button', false);
     return;
   }
   console.log('it is add-button', true);
 
   const id = e.target.dataset.id;
   console.log('id', id);
-  // console.log(localStorage.getItem(key));
 
   if (!localStorage.getItem('queue')) {
     console.log('no queue at localStorage');
-    const queue = {
-      list: [],
-    };
-    queue.list.push(id);
-    console.log('queueArray', queue);
-    setToLocalStorage('queue', queue);
+
+    const queueContent = [];
+    queueContent.push(id);
+    console.log('queueContent', queueContent);
+
+    setToLocalStorage('queue', queueContent);
   } else {
+    console.log('there is queue at localStorage');
+
     const storageQueue = getFromLocalStorage('queue');
-    console.log('item from local', storageQueue);
+    console.log('array from local', storageQueue);
 
-    console.log(storageQueue);
-    const newStorageQueue = storageQueue.list.push(id);
-    // console.log(newStorageQueue);
+    if (storageQueue.includes(id)) {
+      console.log('film is already added');
+      console.log('array from local', getFromLocalStorage('queue'));
+      return;
+    }
+    storageQueue.push(id);
+    console.log('item arter push', storageQueue);
 
-    setToLocalStorage('queue', newStorageQueue);
+    setToLocalStorage('queue', storageQueue);
   }
 }
 
