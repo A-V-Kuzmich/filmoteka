@@ -118,7 +118,7 @@
 
     &-item {
       height: 14px;
-      width: 16px;
+
       margin-right: 16px;
       background-color: inherit;
       border: none;
@@ -127,5 +127,7 @@
 
   &__current-btn {
     background-color: $accent-color;
+    height: 40px;
+    width: max-content;
   }
 }

@@ -34,7 +34,9 @@ renderGall(1)
 
 function onFetchByKeyword(keyword, page) {
     let query = `/search/movie/?query=${keyword}&page=${page}`;
+
     cleanInnerMarkup(refs.filmsEl)
+
     return getApiData(query).then
         (result => {
             if (result.results.length === 0) {
@@ -64,7 +66,7 @@ function onSearch(e) {
 // !!!! pagination !!!
 
 function setLastPageNumber(totalPages) {
-    refs.lastPageBtn.textContent = totalPages
+    refs.lastPaginationBtn.textContent = totalPages
 }
 
 refs.paginationList.addEventListener('click', onPaginationBtnClick)
@@ -73,7 +75,9 @@ refs.paginationList.addEventListener('click', onPaginationBtnClick)
 function renderPagesList(totalPages) {
     const start = onClickPage - btnSummary
     const end = onClickPage + btnSummary;
+
     cleanInnerMarkup(refs.paginationBtnList)
+    
     for (let i = start; i <= end; i += 1) {
     if (i > 1 && i < totalPages) {
       refs.paginationBtnList.insertAdjacentHTML('beforeend', `<li class="pagination__list-item"><button type="button" class="pagination__list-item">${i}</button></li>`,

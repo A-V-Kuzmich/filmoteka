@@ -18,6 +18,7 @@ export const refs = {
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
   paginationList: document.querySelector('.pagination'),
-  lastPageBtn: document.querySelector('#last-page'),
-  paginationBtnList: document.querySelector('.pagination__list')
+  paginationBtnList: document.querySelector('.pagination__list'),
+  firstPaginationBtn: document.querySelector('#first-btn'),
+  lastPaginationBtn:  document.querySelector('#last-btn')
   };
