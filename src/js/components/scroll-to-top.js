@@ -1,10 +1,11 @@
 import { refs } from '../refs/refs.js'
 
-refs.scrollButton.addEventListener("click", scrollToTop);
+ refs.scrollButton.addEventListener("click", scrollToTop);
 
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 400) {
         addClass("icon-up-arrow--active");
+        
     } else {
         removeClass("icon-up-arrow--active");
     }

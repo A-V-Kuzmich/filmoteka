@@ -23,18 +23,14 @@
     opacity: 0.5;
     pointer-events: all;
   }
-
 }
 html{
   scroll-behavior: smooth;
 }
-
-
  .scroll-running{
     animation: animate 0.5s ease-in;
     animation-timing-function: linear;
     animation-iteration-count: 1;
-    
     @keyframes animate{
     0% {
       transform: translateY(-20px);
@@ -54,11 +50,5 @@ html{
     100% {
       transform: translateY(-700px);
     }
-   
   }
 }
-
-
-
-
-
