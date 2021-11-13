@@ -10,6 +10,7 @@
     color: $primary-text-color;
     background-color: $secondary-text-color;
     align-content: center;
+    text-transform: uppercase;
 
     @media screen and(min-width:$mobile) {
       width: 112px;
