@@ -106,4 +106,26 @@
 .pagination {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+
+  &__dots {
+    margin-right: 16px;
+  }
+
+  &__list {
+    display: flex;
+
+    &-item {
+      height: 14px;
+      width: 16px;
+      margin-right: 16px;
+      background-color: inherit;
+      border: none;
+    }
+  }
+
+  &__current-btn {
+    background-color: $accent-color;
+  }
 }

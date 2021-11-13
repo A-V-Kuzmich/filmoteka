@@ -1,7 +1,6 @@
 import { createInnerMarkup } from './render-by-template'
 import { getApiData } from '../api/api-service'
 import { getGenresFromLocalStorage } from './genre-local-storage'
-import { setLastPageNumber } from './fetch-by-keyword'
 
 
 function getGenreNameById(genreIds) {
@@ -18,8 +17,12 @@ function getGenreNameById(genreIds) {
 
 export function exchangeObjectData(result) {
   result.results.forEach((obj) => {
-    obj.genre_ids = getGenreNameById(obj.genre_ids)
+    if (obj.genre_ids) {
+    obj.genre_ids = getGenreNameById(obj.genre_ids)}
+    if (obj.release_date) {
     obj.release_date = obj.release_date.slice(0, 4)
+    }
+    
   })
 }
 
@@ -28,7 +31,6 @@ export function renderImages(query, element, template) {
   getApiData(query)
     .then(result => {
       exchangeObjectData(result);
-      setLastPageNumber(result.total_pages)
       createInnerMarkup(element, template(result.results))
     }
   );
