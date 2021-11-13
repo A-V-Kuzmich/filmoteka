@@ -7,7 +7,7 @@ import { openModalWindow } from '../components/modal.js';
 import { refs } from '../refs/refs.js';
 
 // --------- func for search by ID -------------
-function fetchById(id) {
+export function fetchById(id) {
   let query = `/movie/${id}?`;
   return getApiData(query);
 }
