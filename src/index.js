@@ -16,6 +16,7 @@ import './js/layout/header';
 //main
 
 //footer
+import './js/components/contacts';
 
 //=========components===============
 import './js/components/spiner.js';
@@ -30,4 +31,3 @@ import './js/api/api-service.js';
 import './js/test/test-api.js';
 import './js/test/test-modal.js';
 // import './js/test/test-notification.js';
-import './js/test/test-contacts-modal.js';

@@ -2,6 +2,21 @@
   "students": [
     { "name": "Dasha", "surname": "Pashkovskaya", "url": "https://github.com/DashaPash" },
     { "name": "Nataliia", "surname": "Salamatina", "url": "https://github.com/T-jorven" },
-    { "name": "Larysa", "surname": "Timoshenko", "url": "https://github.com/LarysaTymoshenko" }
+    { "name": "Larysa", "surname": "Timoshenko", "url": "https://github.com/LarysaTymoshenko" },
+    { "name": "Andrey", "surname": "Kuzmichov", "url": "https://github.com/Dron010" },
+    {
+      "name": "Viktor",
+      "surname": "Kostiuchenko",
+      "url": "https://github.com/Viktor-Kostiuchenko"
+    },
+    { "name": "Viktor", "surname": "Sinelnikov", "url": "https://github.com/Fen111" },
+    { "name": "Bronislav", "surname": "Voydylo", "url": "https://github.com/Bronislav-frontend" },
+    {
+      "name": "Vladislav",
+      "surname": "Slobodenjuk",
+      "url": "https://github.com/vladislav-slobodenjuk"
+    },
+    { "name": "Bohdan", "surname": "Tatarchuk", "url": "https://github.com/Bohdan-Ta" },
+    { "name": "Serhii", "surname": "Sokolov", "url": "https://github.com/Falconoff" }
   ]
 }

@@ -17,4 +17,5 @@ export const refs = {
   valuesInput: document.querySelector('.values__form-input'),
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
-  };
+  contactsLink: document.querySelector('.js-students-contacts'),
+};

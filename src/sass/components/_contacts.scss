@@ -1,0 +1,19 @@
+.contacts {
+  &__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  &__item {
+    margin-bottom: 5px;
+  }
+  &__link {
+    font-size: 14px;
+    color: $credits-text-color;
+    transition: color $timing-function $animation-duration;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+}
