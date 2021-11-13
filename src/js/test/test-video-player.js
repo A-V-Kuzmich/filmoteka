@@ -28,7 +28,23 @@ onFetchById(movieId).then(result => console.log(result));
 //     }
 //   });
 // }
+ const player = 
+function onYouTubeIframeAPIReady() {
 
+    player = new YT.Player('video-placeholder', {
+        width: 600,
+        height: 400,
+        videoId: 'N1r36HTysDM',
+        playerVars: {
+            color: 'white',
+           // playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+        },
+        events: {
+            onReady: initialize
+        }
+    });
+}
+onYouTubeIframeAPIReady();
 
 function openVideoPlayer() {
   body.classList.add('.no-scroll');
