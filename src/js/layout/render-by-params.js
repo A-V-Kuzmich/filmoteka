@@ -4,7 +4,7 @@ import { getGenresFromLocalStorage } from './genre-local-storage'
 import { renderImages } from './render-images-to-main'
 
 
-function searhByParameter(evt) {
+export function searhByParameter(evt) {
   const yearItem = evt.target.classList.contains('values__form-input')
   const genreItem = evt.target.classList.contains('values__item--genre')
   const ratingItem = evt.target.classList.contains('values__item--rating')
