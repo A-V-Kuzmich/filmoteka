@@ -8,26 +8,27 @@ const theme = {
 
 const { LIGHT, DARK } = theme;
 
-// let newTheme = getFromLocalStorage('n-theme');
+let newTheme = getFromLocalStorage('n-theme');
 
-// if (!newTheme) {
-//   newTheme = LIGHT;
-//   setToLocalStorage('n-theme', LIGHT);
-// } else document.querySelector('body').classList.add(newTheme);
-// // refs.clickBox.click = newTheme === LIGHT ? false : true;
+if (!newTheme) {
+  newTheme = LIGHT;
+  setToLocalStorage('n-theme', LIGHT);
+} else document.querySelector('body').classList.add(newTheme);
+refs.clickBox.click = newTheme === LIGHT ? false : true;
 
-// // refs.clickBox.addEventListener('click', function () {
-// //   document.body.classList.toggle(DARK);
-// // });
+// refs.clickBox.addEventListener('click', function () {
+//   document.body.classList.toggle(DARK);
+// });
 
 refs.clickBox.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
-  document.querySelector('body').classList.toggle(DARK);
-  document.querySelector('body').classList.toggle(LIGHT);
-  document.querySelector('footer').classList.toggle(DARK);
-  document.querySelector('footer').classList.toggle(LIGHT);
-  document.querySelector('footer').classList.toggle(LIGHT);
+  refs.bodySwitch.classList.toggle(DARK);
+  refs.bodySwitch.classList.toggle(LIGHT);
+  refs.footerSwitch.classList.toggle(DARK);
+  refs.footerSwitch.classList.toggle(LIGHT);
+  refs.modal.classList.toggle(DARK);
+  refs.modal.classList.toggle(LIGHT);
 
   setToLocalStorage('n-theme', e.target.click ? DARK : LIGHT);
 }

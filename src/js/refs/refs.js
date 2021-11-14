@@ -23,4 +23,6 @@ export const refs = {
   firstPaginationBtn: document.querySelector('#first-btn'),
   lastPaginationBtn: document.querySelector('#last-btn'),
   clickBox: document.querySelector('#theme-switch-toggle'),
+  footerSwitch: document.querySelector('footer'),
+  bodySwitch: document.querySelector('body'),
 };
