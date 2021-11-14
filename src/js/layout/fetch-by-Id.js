@@ -5,7 +5,7 @@ import makeModalFilm from '../../partial/templates/modal-film.hbs';
 import { openModalWindow } from '../components/modal.js';
 
 import { refs } from '../refs/refs.js';
-import { addToQueue } from './add-to-queue';
+import { addToStorageArray } from './add-to-queue';
 
 // --------- func for search by ID -------------
 function fetchById(id) {
@@ -27,7 +27,10 @@ function onCardClick(e) {
     createInnerMarkup(refs.modal, modalContent);
     openModalWindow();
 
-    const addBtn = document.querySelector('[data-queue]');
-    addBtn.addEventListener('click', addToQueue);
+    const addToQueueBtn = document.querySelector('[data-queue]');
+    addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));
+
+    const addToWatchedBtn = document.querySelector('[data-watched]');
+    addToWatchedBtn.addEventListener('click', addToStorageArray('watched', 'watched'));
   });
 }
