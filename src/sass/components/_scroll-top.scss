@@ -9,46 +9,48 @@
   display: inline-block;
   bottom: 13%;
   right: 3%;
-  width: 90px;
+  width: 70px;
   height: auto;
   fill: $accent-color;
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
   &:hover {
-    fill: $accent-hover-color;
-    opacity: 1;
+     @media screen and (min-width: $desktop) {
+     fill: $accent-hover-color;
+     opacity: 1;
+   }
   }
   &--active {
     opacity: 0.5;
     pointer-events: all;
   }
+   @media screen and (max-width: $tablet) {
+     right: 0;
+   }
 }
 html {
   scroll-behavior: smooth;
 }
 .scroll-running {
-  animation: animate 0.5s ease-in;
+  animation: animate 0.5s ease-out;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   @keyframes animate {
     0% {
-      transform: translateY(-20px);
-    }
-    30% {
-      transform: translateY(200px);
+      transform: translateY(0px);
     }
     70% {
       transform: translateY(-400px);
     }
-    80% {
-      transform: translateY(-500px);
-    }
+    
     90% {
       transform: translateY(-600px);
     }
     100% {
+      
       transform: translateY(-700px);
-    }
+    } 
+    
   }
 }
