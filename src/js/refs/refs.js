@@ -22,4 +22,5 @@ export const refs = {
   paginationBtnList: document.querySelector('.pagination__list'),
   firstPaginationBtn: document.querySelector('#first-btn'),
   lastPaginationBtn: document.querySelector('#last-btn'),
+  clickBox: document.querySelector('#theme-switch-toggle'),
 };
