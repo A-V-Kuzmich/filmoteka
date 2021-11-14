@@ -1,13 +1,10 @@
-.modal__container {
-  position: relative;
-}
-
 .modal {
   position: absolute;
   z-index: 200;
   top: 20px;
   left: 50%;
   width: 280px;
+  padding: 50px 20px 40px 20px;
   overflow-y: auto;
   transform: translate(-50%);
   background-color: $secondary-text-color;
@@ -21,18 +18,15 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 618px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   @media screen and (min-width: $desktop) {
     width: 882px;
   }
 
   &__elements {
-    // position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0, auto;
-    padding-top: 50px;
-    padding-bottom: 40px;
+    margin: 0 auto;
 
     @media screen and (min-width: $tablet) {
       display: flex;
@@ -49,17 +43,26 @@
     }
   }
 
+  &__film-container {
+    margin-bottom: 20px;
+  }
+
   &__film {
     display: flex;
   }
 
+  &__film:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
   &__film-details {
+    flex: 0 1 108px;
     color: $modal-topic-color;
-    margin-right: 40px;
   }
 
   &__film-data {
-    font-weight: 700;
+    flex: 1 0 0;
+    // font-weight: 700;
   }
 
   &__film-item {
@@ -68,7 +71,6 @@
 
   &__film-genres {
     display: inline-flex;
-    flex-wrap: wrap;
   }
 
   &__genres-item {
@@ -84,29 +86,34 @@
   }
 
   &__about {
-    margin-top: 10px;
     margin-bottom: 10px;
+    font-weight: 500;
     text-transform: uppercase;
   }
   &__text {
-    font-weight: 700;
+    // font-weight: 700;
     margin-bottom: 20px;
-    line-height: 1.66;
+    line-height: 1.67;
   }
 }
-.modal__orig-title {
+
+.modal__data-title {
   text-transform: uppercase;
+}
+
+.modal__orig-title {
+  white-space: nowrap;
 }
 
 .modal__img {
   border-radius: 5px;
+  margin-bottom: 30px;
 
   @media screen and (min-width: $mobile) {
     margin-right: auto;
     margin-left: auto;
     width: 240px;
     height: 357px;
-    margin-bottom: 30px;
   }
 
   @media screen and (min-width: $tablet) {
@@ -122,19 +129,41 @@
   }
 }
 
+.modal__item:first-child {
+  margin-right: 15px;
+}
+
+.raiting--modal {
+  margin-right: 5px;
+}
+
 .modal__close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 201;
   position: absolute;
   top: 10px;
   right: 10px;
   width: 30px;
   height: 30px;
   background-color: transparent;
-  border: transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+
+  transition: fill $animation-duration $timing-function, border $animation-duration $timing-function;
 
   padding: 5px;
 
   &-icon {
-    width: 14px;
-    height: 14px;
+    width: 24px;
+    height: 24px;
+  }
+  &:hover {
+    border: 1px solid $accent-color;
+  }
+
+  &:hover &-icon {
+    fill: $accent-color;
   }
 }
