@@ -4,6 +4,7 @@
   top: 20px;
   left: 50%;
   width: 280px;
+  padding: 50px 20px 40px 20px;
   overflow-y: auto;
   transform: translate(-50%);
   background-color: $secondary-text-color;
@@ -17,17 +18,15 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 618px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   @media screen and (min-width: $desktop) {
     width: 882px;
   }
 
   &__elements {
-    padding-left: 20px;
-    padding-right: 20px;
     margin: 0, auto;
-    padding-top: 50px;
-    padding-bottom: 40px;
 
     @media screen and (min-width: $tablet) {
       display: flex;
@@ -101,13 +100,13 @@
 
 .modal__img {
   border-radius: 5px;
+  margin-bottom: 30px;
 
   @media screen and (min-width: $mobile) {
     margin-right: auto;
     margin-left: auto;
     width: 240px;
     height: 357px;
-    margin-bottom: 30px;
   }
 
   @media screen and (min-width: $tablet) {
@@ -124,9 +123,10 @@
 }
 
 .modal__close-btn {
+  z-index: 201;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 18px;
+  right: 18px;
   width: 30px;
   height: 30px;
   background-color: transparent;
