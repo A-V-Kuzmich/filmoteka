@@ -6,7 +6,7 @@ body.dark-theme {
 .toolbar {
   display: flex;
   justify-content: flex-end;
-  padding: 8px 12px;
+  padding: 20px 20px;
 }
 /* THEME SWITCH */
 
@@ -19,15 +19,19 @@ body.dark-theme {
     border: none;
     text-align: center;
     border-radius: 5px;
+    padding: 8px 12px;
 
     &:hover:after {
-      transform: translateX(0);
+      transform: translateY(0);
+      left: 3%;
+      top: 3%;
+      z-index: 1;
     }
 
     &:after {
       content: 'switch theme';
       position: absolute;
-      top: 0;
+      top: 30px;
       right: 0;
       left: 0;
       width: 100%;
@@ -41,15 +45,11 @@ body.dark-theme {
   &__icon {
     height: 12px;
     width: 12px;
-    margin-right: 4px;
-    margin-left: 4px;
     fill: $secondary-text-color;
 
     @media screen and(min-width:$tablet) {
       width: 20px;
       height: 20px;
-      margin-right: 8px;
-      margin-left: 8px;
     }
   }
 }
