@@ -1,10 +1,7 @@
-// const addBtn = document.querySelector('[data-add]');
 import { setToLocalStorage } from './local-storage';
 import { getFromLocalStorage } from './local-storage';
 
 export function addToQueue(e) {
-  // console.dir(e.target.dataset.hasOwnProperty('queue'));
-
   if (!e.target.dataset.hasOwnProperty('queue')) {
     console.log('it is not add-button', false);
     return;
@@ -39,6 +36,3 @@ export function addToQueue(e) {
     setToLocalStorage('queue', storageQueue);
   }
 }
-
-// console.log(localStorage);
-// setToLocalStorage();

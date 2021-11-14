@@ -28,8 +28,6 @@ function onCardClick(e) {
     openModalWindow();
 
     const addBtn = document.querySelector('[data-queue]');
-    // console.log(addBtn);
-
     addBtn.addEventListener('click', addToQueue);
   });
 }
