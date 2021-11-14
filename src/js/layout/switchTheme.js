@@ -24,8 +24,10 @@ refs.clickBox.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
   document.querySelector('body').classList.toggle(DARK);
-
   document.querySelector('body').classList.toggle(LIGHT);
+  document.querySelector('footer').classList.toggle(DARK);
+  document.querySelector('footer').classList.toggle(LIGHT);
+  document.querySelector('footer').classList.toggle(LIGHT);
 
   setToLocalStorage('n-theme', e.target.click ? DARK : LIGHT);
 }

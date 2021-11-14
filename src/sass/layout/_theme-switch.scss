@@ -2,14 +2,21 @@ body.dark-theme {
   background-color: $dark-theme-color;
   color: $secondary-text-color;
 }
+.modal.dark-theme {
+  background-color: $dark-theme-color;
+  color: $secondary-text-color;
+}
+footer.dark-theme {
+  background-color: $dark-theme-color-footer;
+}
 
 .toolbar {
   position: absolute;
-  top: -50%;
   right: 11%;
-  @media screen and(max-width:$tablet) {
-    top: 150%;
-    right: 0;
+  top: 120%;
+  @media screen and(min-width:$tablet) {
+    right: -12px;
+    top: -50%;
   }
 }
 /* THEME SWITCH */
