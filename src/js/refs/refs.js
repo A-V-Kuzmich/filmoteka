@@ -18,4 +18,6 @@ export const refs = {
   valuesInput: document.querySelector('.values__form-input'),
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
+  themeSwitch: document.querySelector('.theme-switch'),
+  clickBox: document.querySelector('#theme-switch-toggle'),
 };
