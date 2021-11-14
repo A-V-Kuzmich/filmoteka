@@ -18,4 +18,8 @@ export const refs = {
   valuesInput: document.querySelector('.values__form-input'),
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
+  paginationList: document.querySelector('.pagination'),
+  paginationBtnList: document.querySelector('.pagination__list'),
+  firstPaginationBtn: document.querySelector('#first-btn'),
+  lastPaginationBtn:  document.querySelector('#last-btn')
   };
