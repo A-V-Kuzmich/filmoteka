@@ -26,7 +26,7 @@
   }
 
   &__elements {
-    margin: 0, auto;
+    margin: 0 auto;
 
     @media screen and (min-width: $tablet) {
       display: flex;
@@ -138,6 +138,9 @@
 }
 
 .modal__close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 201;
   position: absolute;
   top: 10px;
@@ -145,12 +148,22 @@
   width: 30px;
   height: 30px;
   background-color: transparent;
-  border: transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+
+  transition: fill $animation-duration $timing-function, border $animation-duration $timing-function;
 
   padding: 5px;
 
   &-icon {
     width: 24px;
     height: 24px;
+  }
+  &:hover {
+    border: 1px solid $accent-color;
+  }
+
+  &:hover &-icon {
+    fill: $accent-color;
   }
 }
