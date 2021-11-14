@@ -8,17 +8,17 @@ const theme = {
 
 const { LIGHT, DARK } = theme;
 
-let newTheme = getFromLocalStorage('n-theme');
+// let newTheme = getFromLocalStorage('n-theme');
 
-if (!newTheme) {
-  newTheme = LIGHT;
-  setToLocalStorage('n-theme', LIGHT);
-} else document.querySelector('body').classList.add(newTheme);
-// refs.clickBox.click = newTheme === LIGHT ? false : true;
+// if (!newTheme) {
+//   newTheme = LIGHT;
+//   setToLocalStorage('n-theme', LIGHT);
+// } else document.querySelector('body').classList.add(newTheme);
+// // refs.clickBox.click = newTheme === LIGHT ? false : true;
 
-// refs.clickBox.addEventListener('click', function () {
-//   document.body.classList.toggle(DARK);
-// });
+// // refs.clickBox.addEventListener('click', function () {
+// //   document.body.classList.toggle(DARK);
+// // });
 
 refs.clickBox.addEventListener('click', changeTheme);
 
