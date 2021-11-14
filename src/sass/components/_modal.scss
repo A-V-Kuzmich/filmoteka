@@ -43,8 +43,15 @@
     }
   }
 
+  &__film-container {
+    margin-bottom: 20px;
+  }
+
   &__film {
     display: flex;
+  }
+
+  &__film:not(:last-child) {
     margin-bottom: 10px;
   }
 
@@ -55,7 +62,7 @@
 
   &__film-data {
     flex: 1 0 0;
-    font-weight: 700;
+    // font-weight: 700;
   }
 
   &__film-item {
@@ -79,14 +86,14 @@
   }
 
   &__about {
-    margin-top: 10px;
     margin-bottom: 10px;
+    font-weight: 500;
     text-transform: uppercase;
   }
   &__text {
-    font-weight: 700;
+    // font-weight: 700;
     margin-bottom: 20px;
-    line-height: 1.66;
+    line-height: 1.67;
   }
 }
 
@@ -120,6 +127,14 @@
     width: 396px;
     height: 478px;
   }
+}
+
+.modal__item:first-child {
+  margin-right: 15px;
+}
+
+.raiting--modal {
+  margin-right: 5px;
 }
 
 .modal__close-btn {

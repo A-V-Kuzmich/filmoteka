@@ -10,7 +10,11 @@
     color: $primary-text-color;
     background-color: $secondary-text-color;
     align-content: center;
+    font-weight: 500;
+    line-height: 1.33;
     text-transform: uppercase;
+    transition: background-color $animation-duration $timing-function,
+      color $animation-duration $timing-function;
 
     @media screen and(min-width:$mobile) {
       width: 112px;
@@ -30,12 +34,9 @@
 
     &:hover {
       background-color: $accent-color;
+      color: $secondary-text-color;
       border: none;
       box-shadow: $btn-shadow-color;
     }
-  }
-
-  &__item-btn:first-child {
-    margin-right: 15px;
   }
 }
