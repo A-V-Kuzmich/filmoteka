@@ -4,7 +4,7 @@ import { getGenresFromLocalStorage } from './genre-local-storage'
 import { renderImages } from './render-images-to-main'
 
 
-function searhByParameter(evt) {
+export function searhByParameter(evt) {
   const yearItem = evt.target.classList.contains('values__form-input')
   const genreItem = evt.target.classList.contains('values__item--genre')
   const ratingItem = evt.target.classList.contains('values__item--rating')
@@ -25,7 +25,7 @@ function searhByParameter(evt) {
 
 function getGenreIdByName(name) {
   const queryGenre = getGenresFromLocalStorage().find(genre => {
-    return genre.name === name[0].toUpperCase() + name.slice(1).toLowerCase()
+    return genre.name === name
   })
   return queryGenre.id
 }
