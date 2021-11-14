@@ -102,3 +102,39 @@
   font-size: 12px;
   text-align: center;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 40px;
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+  }
+
+  &__dots {
+    margin-right: 16px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: baseline;
+
+    &-item {
+      height: 14px;
+
+      margin-right: 16px;
+      background-color: inherit;
+      border: none;
+    }
+  }
+
+  &__current-btn {
+    background-color: $accent-color;
+    height: 40px;
+    width: 40px;
+  }
+}
