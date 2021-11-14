@@ -232,3 +232,22 @@
     margin-top: 45px;
   }
 }
+
+@keyframes beat {
+  0%,
+  50%,
+  to {
+    stroke: $accent-color;
+  }
+  25%,
+  75% {
+    stroke: $logo-color;
+  }
+}
+
+.animation {
+  animation-name: beat;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
