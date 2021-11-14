@@ -5,7 +5,7 @@ import makeModalFilm from '../../partial/templates/modal-film.hbs';
 import { openModalWindow } from '../components/modal.js';
 
 import { refs } from '../refs/refs.js';
-import { addToStorageArray } from './add-to-queue';
+import { addToStorageArray } from './add-to-storage-array';
 
 // --------- func for search by ID -------------
 export function fetchById(id) {
@@ -22,6 +22,7 @@ function onCardClick(e) {
 
   let filmId = e.target.dataset.index; // id атрибут должен быть на елементе клика
   fetchById(filmId).then(result => {
+    result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
     createInnerMarkup(refs.modal, modalContent);

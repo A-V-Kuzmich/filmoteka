@@ -10,7 +10,7 @@ import './js/layout/fetch-by-keyword';
 import './js/layout/fetch-week-movies';
 import './js/layout/local-storage';
 import './js/layout/render-by-template';
-import './js/layout/render-queue';
+import './js/layout/render-storage-array';
 import './js/layout/switchTheme.js';
 
 //header
