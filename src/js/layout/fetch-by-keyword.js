@@ -5,10 +5,13 @@ import { createInnerMarkup, cleanInnerMarkup} from './render-by-template'
 import { alertEnterQuery } from '../components/notifications'
 import { alertNothingIsFound } from '../components/notifications'
 import { getGenresFromLocalStorage } from './genre-local-storage'
+
 let searchQuery = '1'
 let onClickPage = 1;
 let totalPages = 0;
 let btnSummary = 2
+
+
 onFetchAllMovies('/trending/movie/week?page=1')
 refs.paginationList.addEventListener('click', onPaginationBtnClick)
 refs.filtersDropdownEl.addEventListener('click', searhByParameter)
@@ -82,15 +85,19 @@ function onFetchByKeyword(keyword, page) {
             currentBtnClass()
         })
 }
+
+
 function onPaginationBtnClick(evt) {
+  if (evt.target.nodeName !== 'BUTTON') {
+        return 
+  }
     cleanInnerMarkup(refs.paginationBtnList)
-    if (evt.target.nodeName !== 'BUTTON') {
-        return;
-    }
     onClickPage = Number(evt.target.textContent);
     const newPage = `${searchQuery}&page=${onClickPage}`
     renderImages(newPage, refs.filmsEl, filmsTemplate)
 }
+
+
 function getGenreIdByName(name) {
   const queryGenre = getGenresFromLocalStorage().find(genre => {
     return genre.name === name[0].toUpperCase() + name.slice(1).toLowerCase()
