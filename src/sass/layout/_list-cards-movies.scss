@@ -2,22 +2,21 @@
   padding: 20px 20px 40px 20px;
 
   @media screen and (min-width: $tablet) {
-      padding: 60px 75px 50px 75px;
+    padding: 60px 75px 50px 75px;
   }
   @media screen and (min-width: $desktop) {
-      padding: 60px 71px 50px 71px;
+    padding: 60px 71px 50px 71px;
   }
 }
 
 .films {
-    margin-bottom: 40px;
-    @media screen and (min-width: $tablet) {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-bottom: 50px;
-    }
-    
+  margin-bottom: 40px;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
 }
 
 .films__item {
@@ -39,13 +38,12 @@
   @media screen and (min-width: $desktop) {
     width: 274px;
   }
-
 }
 .films__picture {
-    border-radius: 5px;
-    width: 280px;
-    height: 398px;
-    margin-bottom: 10px;
+  border-radius: 5px;
+  width: 280px;
+  height: 398px;
+  margin-bottom: 10px;
 
   @media screen and (min-width: $tablet) {
     width: 294px;
@@ -53,55 +51,90 @@
   @media screen and (min-width: $desktop) {
     width: 274px;
   }
+}
 
-  }
+.films__info-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .films__info-wrap {
-    display: flex;
-    flex-wrap: wrap;
+.films__name {
+  text-transform: uppercase;
+  margin: 0;
+}
+.films__genre,
+.films__info-mark,
+.films__year {
+  margin-right: 3px;
+  color: $accent-color;
+}
+
+.films__genre {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.films__genre-item {
+  display: inline;
+  text-decoration: none;
+  transition: text-decoration 1000ms $timing-function;
+
+  &:hover {
+    text-decoration: underline;
   }
-  
-  .films__name {
-    text-transform: uppercase;
-    margin: 0;
-  }
-  .films__genre,
-  .films__info-mark,
-  .films__year {
+  &:not(:last-child) {
     margin-right: 3px;
-    color: $accent-color;
   }
-  
-  .films__genre {
-    display: inline-flex;
-    flex-wrap: wrap;
+
+  &:not(:last-child)::after {
+    content: ',';
+    color: $accent-hover-color;
   }
-  
-  .films__genre-item{
-    display: inline;
-    text-decoration: none;
-    transition: text-decoration 1000ms $timing-function;
-  
-      &:hover{
-      text-decoration: underline;
+}
+
+.raiting {
+  width: 36px;
+  height: 16px;
+  padding: 1px 6px;
+  background: $accent-hover-color;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 40px;
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+  }
+
+  &__dots {
+    margin-right: 16px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: baseline;
+
+    &-item {
+      height: 14px;
+
+      margin-right: 16px;
+      background-color: inherit;
+      border: none;
     }
-    &:not(:last-child){
-      margin-right: 3px;
-    }
-    
-    &:not(:last-child)::after{
-      content: ',';
-      color: $accent-hover-color;
-    }
   }
-  
-  .raiting {
-    width: 36px;
-    height: 16px;
-    padding: 1px 6px;
-    background: $accent-hover-color;
-    border-radius: 5px;
-    color: white;
-    font-size: 12px;
-    text-align: center;
+
+  &__current-btn {
+    background-color: $accent-color;
+    height: 40px;
+    width: 40px;
   }
+}
