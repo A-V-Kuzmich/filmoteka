@@ -136,7 +136,7 @@
   &__nav {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
     &-list {
       display: flex;
     }
@@ -242,13 +242,13 @@
   }
   25%,
   75% {
-    stroke: $logo-color;
+    stroke: $secondary-text-color;
   }
 }
 
 .animation {
   animation-name: beat;
-  animation-duration: 4000ms;
+  animation-duration: 6000ms;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
 }

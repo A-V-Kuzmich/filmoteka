@@ -4,9 +4,16 @@ body.dark-theme {
 }
 
 .toolbar {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  // right: 70px;
   padding: 20px 20px;
+
+  @media screen and(min-width:$desktop) {
+    right: 70px;
+    top: 45%;
+  }
 }
 /* THEME SWITCH */
 
