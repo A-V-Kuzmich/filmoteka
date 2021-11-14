@@ -1,13 +1,13 @@
 <header class="header header__main-bckg">
   <div class="container">
     <div class="header__section">
-        <a class="header__logo js-logo" href="././index.html">
-            <svg class="header__logo-icon" width="24" height="24">
-                <use  href="./././images/icon/sprite.svg#icon-film"></use>
-            </svg>
-            <span class="header__logo-name">Filmoteka</span>
-        </a>
         <nav class="header__nav">
+            <a class="header__logo js-logo" href="././index.html">
+                <svg class="header__logo-icon" width="24" height="24">
+                    <use  href="./././images/icon/sprite.svg#icon-film"></use>
+                </svg>
+                <span class="header__logo-name">Filmoteka</span>
+             </a>
             <ul class="header__nav-list">
                 <li class="header__nav-item">
                     <button class="header__nav-btn header__nav-item--active"
@@ -97,5 +97,15 @@
         </ul>
     </div>
   </div>
-  
+  <!-- Switch theme -->
+<div class="toolbar">
+    <div class="theme-switch">
+        <button class="theme-switch__btn " type="button" id="theme-switch-toggle" name="theme">
+        <svg class="theme-switch__icon" role="tab" aria-label="Sun icon">
+            <use href="./images/icon/sprite.svg#sun"></use>
+        </svg>
+    
+    </div>
+</div>
+<!-- End switch theme -->
 </header>

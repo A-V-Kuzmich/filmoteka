@@ -1,5 +1,5 @@
 export const refs = {
-  headerSearcherEl:document.querySelector('.header__searcher'),
+  headerSearcherEl: document.querySelector('.header__searcher'),
   closeModalBtn: document.querySelector('[data-modal="close"]'),
   backdrop: document.querySelector('[data-modal="backdrop"]'),
   modal: document.querySelector('.modal'),
@@ -18,4 +18,9 @@ export const refs = {
   valuesInput: document.querySelector('.values__form-input'),
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
-  };
+  paginationList: document.querySelector('.pagination'),
+  paginationBtnList: document.querySelector('.pagination__list'),
+  firstPaginationBtn: document.querySelector('#first-btn'),
+  lastPaginationBtn: document.querySelector('#last-btn'),
+  clickBox: document.querySelector('#theme-switch-toggle'),
+};
