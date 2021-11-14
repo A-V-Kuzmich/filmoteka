@@ -10,9 +10,7 @@ let searchQuery = '1'
 let onClickPage = 1;
 let totalPages = 0;
 let btnSummary = 2
-
-
-onFetchAllMovies('/trending/movie/week?page=1')
+document.addEventListener('DOMContentLoaded', onFetchAllMovies());
 refs.paginationList.addEventListener('click', onPaginationBtnClick)
 refs.filtersDropdownEl.addEventListener('click', searhByParameter)
 refs.searchFormEl.addEventListener('submit', onSearch)

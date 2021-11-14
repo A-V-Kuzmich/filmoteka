@@ -151,13 +151,14 @@
   border-radius: 50%;
   border: 1px solid transparent;
 
-  transition: fill $animation-duration $timing-function, border $animation-duration $timing-function;
+  transition: border $animation-duration $timing-function;
 
   padding: 5px;
 
   &-icon {
     width: 24px;
     height: 24px;
+    transition: fill $animation-duration $timing-function;
   }
   &:hover {
     border: 1px solid $accent-color;
