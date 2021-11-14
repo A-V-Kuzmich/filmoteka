@@ -1,13 +1,13 @@
 <header class="header header__main-bckg">
   <div class="container">
     <div class="header__section">
-        <a class="header__logo js-logo" href="././index.html">
-            <svg class="header__logo-icon" width="24" height="24">
-                <use  href="./././images/icon/sprite.svg#icon-film"></use>
-            </svg>
-            <span class="header__logo-name">Filmoteka</span>
-        </a>
         <nav class="header__nav">
+            <a class="header__logo js-logo" href="././index.html">
+                <svg class="header__logo-icon" width="24" height="24">
+                    <use  href="./././images/icon/sprite.svg#icon-film"></use>
+                </svg>
+                <span class="header__logo-name">Filmoteka</span>
+             </a>
             <ul class="header__nav-list">
                 <li class="header__nav-item">
                     <button class="header__nav-btn header__nav-item--active"
@@ -27,8 +27,7 @@
             type="text" 
             name="query" 
             placeholder="Search movies by name" 
-            autocomplete="off">
-            />
+            autocomplete="off"/>
             <button type="submit" class="header__form-input-btn js-input-btn">
             <svg class="header__form-search-icon" width="12" height="12">
               <use href="./././images/icon/sprite.svg#icon-search"></use>
@@ -36,14 +35,16 @@
           </button>
         </form>
         <div class="filters__box filters__dropdown">
-            Search by
+            filter
+            <svg class="filters__search-icon" width="12" height="12">
+                <use href="./././images/icon/sprite.svg#icon-equalizer"></use>
+            </svg>
             <ul class="filters">
                 <li class="filters__item">
                     <p class="filters__box filters__title">release</p>
                     <div class="values">
                         <form class="filters__box values__item values__form" role="search">
-                            <input class="values__form-input" type="number" name="year" min="1878" max="2022" maxlength="4"
-                                placeholder="year" autocomplete="off" />
+                            <input class="values__form-input" type="number" name="year" min="1878" max="2022" maxlength="4" placeholder="year" autocomplete="off"/>
                             <button type="submit" class="values__form-btn">
                                 <svg class="values__form-search-icon" width="12" height="12">
                                     <use href="./././images/icon/sprite.svg#icon-search-filters"></use>
@@ -53,34 +54,33 @@
                     </div>
                 </li>
                 <li class="filters__item">
-                    <p class="filters__box filters__title">genre</p>
-                    <ul class="values values--genres">
-                        <li class="filters__box values__item values__item--genre">action</li>
-                        <li class="filters__box values__item values__item--genre">adventure</li>
-                        <li class="filters__box values__item values__item--genre">animation</li>
-                        <li class="filters__box values__item values__item--genre">comedy</li>
-                        <li class="filters__box values__item values__item--genre">crime</li>
-                        <li class="filters__box values__item values__item--genre">documentary</li>
-                        <li class="filters__box values__item values__item--genre">drama</li>
-                        <li class="filters__box values__item values__item--genre">family</li>
-                        <li class="filters__box values__item values__item--genre">fantasy</li>
-                        <li class="filters__box values__item values__item--genre">history</li>
-                        <li class="filters__box values__item values__item--genre">horror</li>
-                        <li class="filters__box values__item values__item--genre">music</li>
-                        <li class="filters__box values__item values__item--genre">mystery</li>
-                        <li class="filters__box values__item values__item--genre">romance</li>
-                        <li class="filters__box values__item values__item--genre">science fiction</li>
-                        <li class="filters__box values__item values__item--genre">TV Movie</li>
-                        <li class="filters__box values__item values__item--genre">thriller</li>
-                        <li class="filters__box values__item values__item--genre">war</li>
-                        <li class="filters__box values__item values__item--genre">western</li>
-                    </ul>
-                </li>
-                <li class="filters__item">
                     <p class="filters__box filters__title">popularity</p>
                     <ul class="values">
                         <li class="filters__box values__item values__item--rating">descending</li>
                         <li class="filters__box values__item values__item--rating">ascending</li>
+                    </ul>
+                </li>
+                <li class="filters__item">
+                    <p class="filters__box filters__title">genre</p>
+                    <ul class="values values--genres">
+                        <li class="filters__box values__item values__item--genre">Action</li>
+                        <li class="filters__box values__item values__item--genre">Adventure</li>
+                        <li class="filters__box values__item values__item--genre">Animation</li>
+                        <li class="filters__box values__item values__item--genre">Comedy</li>
+                        <li class="filters__box values__item values__item--genre">Crime</li>
+                        <li class="filters__box values__item values__item--genre">Documentary</li>
+                        <li class="filters__box values__item values__item--genre">Drama</li>
+                        <li class="filters__box values__item values__item--genre">Family</li>
+                        <li class="filters__box values__item values__item--genre">Fantasy</li>
+                        <li class="filters__box values__item values__item--genre">History</li>
+                        <li class="filters__box values__item values__item--genre">Horror</li>
+                        <li class="filters__box values__item values__item--genre">Music</li>
+                        <li class="filters__box values__item values__item--genre">Mystery</li>
+                        <li class="filters__box values__item values__item--genre">Romance</li>
+                        <li class="filters__box values__item values__item--genre">Science Fiction</li>
+                        <li class="filters__box values__item values__item--genre">Thriller</li>
+                        <li class="filters__box values__item values__item--genre">War</li>
+                        <li class="filters__box values__item values__item--genre">Western</li>
                     </ul>
                 </li>
             </ul>
