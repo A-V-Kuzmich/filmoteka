@@ -7,24 +7,26 @@
   <div>
     <h3 class='modal__title'>{{original_title}}</h3>
 
-    <div class="modal__film-container">
-      <ul class="modal__film">
-        <li class="modal__film-details">Vote/Votes</li>
-        <li class="modal__film-data"><span class='raiting raiting--modal'>&nbsp{{vote_average}}&nbsp</span>/ &nbsp{{vote_count}}</li>
+    <div class='modal__film-container'>
+      <ul class='modal__film'>
+        <li class='modal__film-details'>Vote/Votes</li>
+        <li class='modal__film-data'><span
+            class='raiting raiting--modal'
+          >&nbsp{{vote_average}}&nbsp</span>/ &nbsp{{vote_count}}</li>
       </ul>
-      <ul class="modal__film">
-        <li class="modal__film-details">Popularity</li>
-        <li class="modal__film-data">{{popularity}}</li>
+      <ul class='modal__film'>
+        <li class='modal__film-details'>Popularity</li>
+        <li class='modal__film-data'>{{popularity}}</li>
       </ul>
-      <ul class="modal__film">
-        <li class="modal__film-details modal__orig-title">Original Title</li>
-        <li class="modal__film-data modal__data-title">{{original_title}}</li>
+      <ul class='modal__film'>
+        <li class='modal__film-details modal__orig-title'>Original Title</li>
+        <li class='modal__film-data modal__data-title'>{{original_title}}</li>
       </ul>
-      <ul class="modal__film">
-        <li class="modal__film-details">Genre</li>
+      <ul class='modal__film'>
+        <li class='modal__film-details'>Genre</li>
         <ul class='modal__film-data modal__genres-list'>
           {{#each genres}}
-          <li class='modal__film-data modal__genres-item'>{{this.name}}</li>
+            <li class='modal__film-data modal__genres-item'>{{this.name}}</li>
           {{/each}}
         </ul>
       </ul>
@@ -32,15 +34,27 @@
     <h4 class='modal__about'>About</h4>
     <p class='modal__text'>{{overview}}</p>
     <ul class='modal__list-btn'>
-      <li class="modal__item"><button class='modal__item-btn' type='button'>add to Watched</button></li>
-      <li class="modal__item"><button class='modal__item-btn' type='button'>add to queue</button></li>
+      <li class='modal__item'><button
+          class='modal__item-btn'
+          data-watched
+          data-id={{id}}
+          type='button'
+        >add to Watched</button></li>
+      <li class='modal__item'><button
+          class='modal__item-btn'
+          data-queue
+          data-id={{id}}
+          type='button'
+        >add to queue</button></li>
     </ul>
-    <button type="button" class="modal__close-btn" data-modal="close">
-      <svg class="modal__close-btn-icon" viewBox="0 0 32 32">
+    <button type='button' class='modal__close-btn' data-modal='close'>
+      <svg class='modal__close-btn-icon' viewBox='0 0 32 32'>
         <path
-          d="M26.667 7.303l-1.97-1.97-7.808 7.808-7.808-7.808-1.97 1.97 7.808 7.808-7.808 7.808 1.97 1.97 7.808-7.808 7.808 7.808 1.97-1.97-7.808-7.808 7.808-7.808z">
+          d='M26.667 7.303l-1.97-1.97-7.808 7.808-7.808-7.808-1.97 1.97 7.808 7.808-7.808 7.808 1.97 1.97 7.808-7.808 7.808 7.808 1.97-1.97-7.808-7.808 7.808-7.808z'
+        >
         </path>
       </svg>
     </button>
-  </div> 
+  </div>
+
 </div>
