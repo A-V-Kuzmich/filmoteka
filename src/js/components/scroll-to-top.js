@@ -16,6 +16,7 @@ window.addEventListener("scroll", () => {
 })
 
 function scrollToTop() {
+    
     addClass("scroll-running");
     refs.scrollTarget.scrollIntoView();
    
