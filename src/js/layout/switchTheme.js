@@ -14,7 +14,7 @@ if (!newTheme) {
   newTheme = LIGHT;
   setToLocalStorage('n-theme', LIGHT);
 } else document.querySelector('body').classList.add(newTheme);
-refs.clickBox.click = newTheme === LIGHT ? false : true;
+// refs.clickBox.click = newTheme === LIGHT ? false : true;
 
 // refs.clickBox.addEventListener('click', function () {
 //   document.body.classList.toggle(DARK);
@@ -27,5 +27,5 @@ function changeTheme(e) {
 
   document.querySelector('body').classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.target.checked ? DARK : LIGHT);
+  setToLocalStorage('n-theme', e.target.click ? DARK : LIGHT);
 }
