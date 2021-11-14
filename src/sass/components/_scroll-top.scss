@@ -6,7 +6,6 @@
 }
 .icon-up-arrow {
   position: fixed;
-  display: inline-block;
   bottom: 13%;
   right: 3%;
   width: 70px;
@@ -15,19 +14,23 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
+
   &:hover {
-     @media screen and (min-width: $desktop) {
-     fill: $accent-hover-color;
-     opacity: 1;
-   }
+    @media screen and (min-width: $desktop) {
+      fill: $accent-hover-color;
+      opacity: 1;
+    }
   }
   &--active {
     opacity: 0.5;
     pointer-events: all;
   }
-   @media screen and (max-width: $tablet) {
-     right: 0;
-   }
+  &--not-visible {
+    display: none;
+  }
+  @media screen and (max-width: $tablet) {
+    right: 0;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -43,14 +46,12 @@ html {
     70% {
       transform: translateY(-400px);
     }
-    
+
     90% {
       transform: translateY(-600px);
     }
     100% {
-      
       transform: translateY(-700px);
-    } 
-    
+    }
   }
 }

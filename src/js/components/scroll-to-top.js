@@ -3,11 +3,13 @@ import { refs } from '../refs/refs.js'
  refs.scrollButton.addEventListener("click", scrollToTop);
 
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 400) {
+    if (window.pageYOffset > 100) {
         addClass("icon-up-arrow--active");
+        removeClass("icon-up-arrow--not-visible");
         
     } else {
         removeClass("icon-up-arrow--active");
+        addClass("icon-up-arrow--not-visible");
     }
 
     if (window.pageYOffset < 20) { 
