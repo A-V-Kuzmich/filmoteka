@@ -21,5 +21,5 @@ export const refs = {
   paginationList: document.querySelector('.pagination'),
   paginationBtnList: document.querySelector('.pagination__list'),
   firstPaginationBtn: document.querySelector('#first-btn'),
-  lastPaginationBtn: document.querySelector('#last-btn'),
-};
+  lastPaginationBtn:  document.querySelector('#last-btn')
+  };

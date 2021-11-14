@@ -1,52 +1,36 @@
-import { refs } from '../refs/refs'
+import { refs } from '../refs/refs';
 
-refs.headerNav.addEventListener('click', changeHeader)
-refs.headerBtn.addEventListener('click', changeActiveHeaderBtn)
+refs.headerNav.addEventListener('click', changeHeader);
+refs.headerBtn.addEventListener('click', changeActiveHeaderBtn);
 
 function changeHeader(e) {
-    if (e.srcElement.dataset.action === 'library') {
-        toggleClass(refs.header, 'header__main-bckg', 'header__secondary-bckg');
-        inputFormIsHidden();
-        queueBtnActive()
-    } else {
-        toggleClass(refs.header, 'header__secondary-bckg', 'header__main-bckg');
-        inputFormVisibility()
-    }
+  if (e.srcElement.dataset.action === 'library' || 'home') {
+    changeInputCondition();
+    libraryBtnActive();
+  } 
 }
 
 function changeActiveHeaderBtn(e) {
-    if (e.srcElement.dataset.action === 'watched') {
-        watchedBtnActive()
-    } else {
-        queueBtnActive()
-    }
+  if (e.srcElement.dataset.action === 'watched' ||'queue') {
+    changeActiveBtn();
+  } 
 }
 
-function toggleClass(element, remove, add ) {
-    element.classList.remove(remove);
-    element.classList.add(add);
+function changeInputCondition() {
+  refs.header.classList.toggle('header__main-bckg');
+  refs.header.classList.toggle('header__secondary-bckg');
+  refs.headerSearcherEl.classList.toggle('visually-hidden')
+  refs.headerBtn.classList.toggle('visually-hidden')
+  refs.libraryBtn.classList.toggle('header__nav-item--active')
+  refs.homeBtn.classList.toggle('header__nav-item--active') 
+}
+ 
+function changeActiveBtn() {
+  refs.queueBtn.classList.toggle('header__item-btn--active');
+  refs.watchedBtn.classList.toggle('header__item-btn--active');
 }
 
-function inputFormIsHidden() {
-    refs.headerSearcherEl.classList.add('visually-hidden')
-    refs.headerBtn.classList.remove('visually-hidden')
-    refs.libraryBtn.classList.add('header__nav-item--active')
-    refs.homeBtn.classList.remove('header__nav-item--active') 
-}
-
-function inputFormVisibility() {
-    refs.headerSearcherEl.classList.remove('visually-hidden')
-    refs.headerBtn.classList.add('visually-hidden')
-    refs.libraryBtn.classList.remove('header__nav-item--active')
-    refs.homeBtn.classList.add('header__nav-item--active') 
-}
-
-function watchedBtnActive() {
-    refs.queueBtn.classList.remove('header__item-btn--active')
-    refs.watchedBtn.classList.add('header__item-btn--active');
-}
-
-function queueBtnActive() {
-    refs.watchedBtn.classList.remove('header__item-btn--active');
-    refs.queueBtn.classList.add('header__item-btn--active');
+function libraryBtnActive() {
+  refs.watchedBtn.classList.remove('header__item-btn--active');
+  refs.queueBtn.classList.add('header__item-btn--active');
 }
