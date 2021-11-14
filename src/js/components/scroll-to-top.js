@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
         removeClass("icon-up-arrow--active");
     }
 
-    if (window.pageYOffset < 20) { 
+    if (window.pageYOffset < 10) { 
         removeClass("scroll-running");
     }
 })
