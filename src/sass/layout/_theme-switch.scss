@@ -13,12 +13,18 @@ body.dark-theme {
   display: flex;
   align-items: center;
 
+  &__btn {
+    background-color: transparent;
+    align-content: center;
+    border: none;
+  }
+
   &__icon {
-    color: currentColor;
     height: 12px;
     width: 12px;
     margin-right: 4px;
     margin-left: 4px;
+    fill: $secondary-text-color;
     @media screen and(min-width:$tablet) {
       width: 20px;
       height: 20px;
