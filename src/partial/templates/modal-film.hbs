@@ -34,8 +34,18 @@
     <h4 class='modal__about'>About</h4>
     <p class='modal__text'>{{overview}}</p>
     <ul class='modal__list-btn'>
-      <li><button class='modal__item-btn' data-watched data-id={{id}} type='button'>add to Watched</button></li>
-      <li><button class='modal__item-btn' data-queue data-id={{id}} type='button'>add to queue</button></li>
+      <li class='modal__item'><button
+          class='modal__item-btn'
+          data-watched
+          data-id={{id}}
+          type='button'
+        >add to Watched</button></li>
+      <li class='modal__item'><button
+          class='modal__item-btn'
+          data-queue
+          data-id={{id}}
+          type='button'
+        >add to queue</button></li>
     </ul>
     <button type='button' class='modal__close-btn' data-modal='close'>
       <svg class='modal__close-btn-icon' viewBox='0 0 32 32'>
