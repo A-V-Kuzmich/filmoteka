@@ -194,6 +194,7 @@
       padding-bottom: 4px;
       color: white;
       outline: none;
+      transition: border-bottom $animation-duration $timing-function;
 
       &-btn {
         border: none;
@@ -213,19 +214,25 @@
         font-size: 14px;
         line-height: 1.14;
         color: $secondary-text-color;
+        transition: color $animation-duration $timing-function;
       }
+    }
 
-      &:hover {
-        border-bottom: 1.5px solid $secondary-text-color;
+    &-search-icon {
+      stroke: $secondary-text-color;
+      transition: stroke $animation-duration $timing-function;
+    }
 
-        @media screen and (min-width: $mobile) and (max-width: $max-width) {
-          width: 280px;
-        }
+    &:hover &-input {
+      border-bottom: 0.5px solid $accent-color;
 
-        @media screen and (min-width: $tablet) {
-          width: 340px;
-        }
+      &::placeholder {
+        color: $accent-color;
       }
+    }
+
+    &:hover &-search-icon {
+      stroke: $accent-color;
     }
   }
 
