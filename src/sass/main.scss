@@ -5,7 +5,7 @@
 @import './utils/btn';
 
 //============base==================
-@import './base/global-stile';
+@import './base/global-style';
 @import './base/reset';
 @import './base/container';
 
@@ -17,9 +17,7 @@
 
 //main
 @import './layout/list-cards-movies';
-// @import './layout/filters';
-
-@import './layout/theme-switch';
+@import './layout/filters';
 //footer
 @import './layout/footer';
 
@@ -27,3 +25,4 @@
 @import './components/backdrop';
 @import './components/modal';
 @import './components/modal-btn';
+@import './components/spiner';

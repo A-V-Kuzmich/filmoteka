@@ -28,14 +28,14 @@ function toggleClass(element, remove, add ) {
 }
 
 function inputFormIsHidden() {
-    refs.searchFormEl.classList.add('visually-hidden')
+    refs.headerSearcherEl.classList.add('visually-hidden')
     refs.headerBtn.classList.remove('visually-hidden')
     refs.libraryBtn.classList.add('header__nav-item--active')
     refs.homeBtn.classList.remove('header__nav-item--active') 
 }
 
 function inputFormVisibility() {
-    refs.searchFormEl.classList.remove('visually-hidden')
+    refs.headerSearcherEl.classList.remove('visually-hidden')
     refs.headerBtn.classList.add('visually-hidden')
     refs.libraryBtn.classList.remove('header__nav-item--active')
     refs.homeBtn.classList.add('header__nav-item--active') 
