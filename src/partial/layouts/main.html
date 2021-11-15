@@ -1,9 +1,21 @@
-<main>
-  <section class="container container--main-geometry">
-
-    <h1 class="visually-hidden">list movies</h1>
-
-    <ul class="films"></ul>
-    
-  </section>
-</main>
+  <main>
+    <section class="container container--main-geometry">
+  
+      <h1 class="visually-hidden">list movies</h1>
+  
+      <ul class="films"></ul>
+  
+    </section>
+    <section class="container pagination">
+      <button type="button" class="pagination__arrow js-previous">
+      </button>
+      <button type="button" class="pagination__list-item" id="first-btn">1</button>
+      <span class="pagination__dots js-left-dots">...</span>
+  
+      <ul class="pagination__list"></ul>
+  
+      <span class="pagination__dots js-right-dots">...</span>
+      <button type="button" class="pagination__list-item" id="last-btn"></button>
+      <button type="button" class="pagination__arrow js-next">
+      </button>
+    </section>
