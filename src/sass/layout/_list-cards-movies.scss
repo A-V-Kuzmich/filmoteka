@@ -107,12 +107,19 @@
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  height: 40px;
+  align-items: center;
+  padding-bottom: 60px;
 
   &__arrow {
     width: 40px;
     height: 40px;
+
+    background-color: $secondary-bg-color;
+    border: none;
+    border-radius: 5px;
+  }
+
+  &__arrow:not(:last-child) {
     margin-right: 16px;
   }
 
@@ -122,14 +129,24 @@
 
   &__list {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 
     &-item {
-      height: 14px;
-
       margin-right: 16px;
       background-color: inherit;
       border: none;
+      height: 30px;
+    }
+    &-item:hover,
+    :focus {
+      background-color: $secondary-bg-color;
+      border-radius: 5px;
+    }
+
+    &-item.pagination__current-btn:hover,
+    :focus {
+      background-color: $focus-color;
+      color: $secondary-text-color;
     }
   }
 
@@ -137,5 +154,19 @@
     background-color: $accent-color;
     height: 40px;
     width: 40px;
+    border-radius: 5px;
+    color: $secondary-text-color;
   }
+}
+
+.js-previous {
+  background-image: url(..//images/icon/arrow-left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.js-next {
+  background-image: url(..//images/icon/arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
