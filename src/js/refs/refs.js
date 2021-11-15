@@ -23,4 +23,5 @@ export const refs = {
   firstPaginationBtn: document.querySelector('#first-btn'),
   lastPaginationBtn: document.querySelector('#last-btn'),
   clickBox: document.querySelector('#theme-switch-toggle'),
+  // select: document.querySelector('select'),//клас для переключения языка
 };
