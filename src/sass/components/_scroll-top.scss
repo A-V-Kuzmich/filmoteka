@@ -5,6 +5,7 @@
   position: relative;
 }
 .icon-up-arrow {
+  
   position: fixed;
   bottom: 13%;
   right: 3%;
@@ -55,3 +56,40 @@ html {
     }
   }
 }
+
+/* .rocket-tail {
+  position: fixed;
+  bottom: 13%;
+  right: 3%;
+  width: 70px;
+  height: auto;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(#00d0ff, transparent);
+    right: 43%;
+
+    animation: animate 0.5s ease-out;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    @keyframes animate {
+      0% {
+        transform: translateY(0px);
+      }
+      70% {
+        transform: translateY(-400px);
+      }
+
+      90% {
+        transform: translateY(-600px);
+      }
+      100% {
+        transform: translateY(-700px);
+      }
+    }
+  }
+}
+ */

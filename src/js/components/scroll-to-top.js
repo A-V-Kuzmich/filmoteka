@@ -6,6 +6,7 @@ window.addEventListener("scroll", () => {
     if (window.pageYOffset > 100) {
         addClass("icon-up-arrow--active");
         removeClass("icon-up-arrow--not-visible");
+         
         
     } else {
         removeClass("icon-up-arrow--active");
@@ -19,8 +20,9 @@ window.addEventListener("scroll", () => {
 
 function scrollToTop() {
     
-    addClass("scroll-running");
+    
     refs.scrollTarget.scrollIntoView();
+    addClass("scroll-running");
    
 }
 
