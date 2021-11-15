@@ -10,6 +10,7 @@ import './js/layout/fetch-by-keyword';
 import './js/layout/fetch-week-movies';
 import './js/layout/local-storage';
 import './js/layout/render-by-template';
+import './js/layout/render-storage-array';
 import './js/layout/switchTheme.js';
 
 //header
@@ -19,7 +20,7 @@ import './js/layout/header';
 //footer
 
 //=========components===============
-import './js/components/spiner.js'
+import './js/components/spiner.js';
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
