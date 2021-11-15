@@ -24,6 +24,7 @@ import './js/components/spiner.js';
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
+import './js/components/scroll-to-top';
 
 //=============api==================
 import './js/api/api-service.js';
