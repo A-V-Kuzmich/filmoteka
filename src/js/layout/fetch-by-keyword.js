@@ -37,9 +37,14 @@ function searchByGenre(value) {
     searchQuery = `/discover/movie?with_genres=${genreId}&sort_by=popularity.desc`;
     renderImages(searchQuery, refs.filmsEl, filmsTemplate)
 }
+refs.filtersYearInput.oninput = function () {
+  if (this.value.length > 4) {
+      this.value = this.value.slice(0,4); 
+  }
+}
 function searchByYear(e) {
-  cleanInnerMarkup(refs.paginationBtnList)
   e.preventDefault();
+  cleanInnerMarkup(refs.paginationBtnList)
     const year = e.currentTarget.elements.year.value
   onClickPage = 1
   searchQuery = ''

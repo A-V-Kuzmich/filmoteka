@@ -23,5 +23,7 @@ export const refs = {
   firstPaginationBtn: document.querySelector('#first-btn'),
   lastPaginationBtn: document.querySelector('#last-btn'),
   clickBox: document.querySelector('#theme-switch-toggle'),
-  filtersGenreList: document.querySelector('.js-filters-genres'),
+  filtersGenreBox: document.querySelector('.js-filter-box'),
+  filtersGenreList: document.querySelector('.values--genres'),
+  filtersYearInput: document.querySelector('.values__form-input'),
 };
