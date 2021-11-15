@@ -22,5 +22,9 @@ export const refs = {
   paginationBtnList: document.querySelector('.pagination__list'),
   firstPaginationBtn: document.querySelector('#first-btn'),
   lastPaginationBtn: document.querySelector('#last-btn'),
-  clickBox: document.querySelector('#theme-switch-toggle'),
+  previousArrow: document.querySelector('.js-previous'),
+  nextArrow: document.querySelector('.js-next'),
+  paginationRightDots: document.querySelector('.js-right-dots'),
+  paginationLeftDots: document.querySelector('.js-left-dots'),
+  clickBox: document.querySelector('#theme-switch-toggle')
 };
