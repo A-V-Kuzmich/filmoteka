@@ -10,7 +10,9 @@ import './js/layout/fetch-by-keyword';
 import './js/layout/fetch-week-movies';
 import './js/layout/local-storage';
 import './js/layout/render-by-template';
+import './js/layout/render-storage-array';
 import './js/layout/switchTheme.js';
+import './js/layout/render-genres-list'
 
 //header
 import './js/layout/header';
@@ -24,6 +26,7 @@ import './js/components/spiner.js';
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
+import './js/components/scroll-to-top';
 
 //=============api==================
 import './js/api/api-service.js';
