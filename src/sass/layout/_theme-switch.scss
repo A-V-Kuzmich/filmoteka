@@ -1,16 +1,3 @@
-body.dark-theme {
-  background-color: $dark-theme-color;
-  color: $secondary-text-color;
-}
-.modal.dark-theme {
-  background-color: $dark-theme-color;
-  color: $secondary-text-color;
-}
-footer.dark-theme {
-  background-color: $dark-theme-color-footer;
-  color: $secondary-bg-color;
-}
-
 .toolbar {
   position: absolute;
   right: 11%;
@@ -20,7 +7,25 @@ footer.dark-theme {
     top: -50%;
   }
 }
-/* THEME SWITCH */
+
+body.dark-theme {
+  background-color: $dark-theme-color;
+  color: $secondary-text-color;
+  fill: $secondary-text-color;
+  .films__item {
+    &:hover {
+      box-shadow: $cards-shadows-box $secondary-text-color;
+    }
+  }
+}
+.modal.dark-theme {
+  background-color: $dark-theme-color;
+  color: $secondary-text-color;
+}
+footer.dark-theme {
+  background-color: $dark-theme-color-footer;
+  color: $secondary-bg-color;
+}
 
 .theme-switch {
   &__btn {

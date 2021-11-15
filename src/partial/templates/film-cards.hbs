@@ -1,11 +1,11 @@
 {{#each this}}
-<li class="films__item">
+<li class="films__item" id="theme-switch-toggle">
   <div class="film__card">
     {{#if poster_path}}
     <img class="films__picture" data-index="{{id}}" src="https://image.tmdb.org/t/p/w500{{poster_path}}" loading="lazy"
       alt='Film {{title}} poster' />
     {{else}}
-    <img class="films__picture" data-index="{{id}}"
+    <img class="films__picture"  data-index="{{id}}"
       src="https://github.com/Dron010/filmoteka/blob/main/src/images/content/no-image-poster.png?raw=true" alt="content photo">
     {{/if}}
   </div>

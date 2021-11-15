@@ -28,7 +28,7 @@
   border-radius: 5px;
   transition: box-shadow 450ms $timing-function;
   &:hover {
-    box-shadow: $cards-shadows-box $cards-shadow-color;
+    box-shadow: $cards-shadows-box $modal-topic-color;
     cursor: pointer;
   }
   @media screen and (min-width: $tablet) {
@@ -39,6 +39,7 @@
     width: 274px;
   }
 }
+
 .films__picture {
   border-radius: 5px;
   width: 280px;
