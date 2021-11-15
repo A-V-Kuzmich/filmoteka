@@ -18,8 +18,8 @@ export const refs = {
   valuesInput: document.querySelector('.values__form-input'),
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
-  scrollButton: document.querySelector(".scroll-js"),
-  scrollTarget: document.querySelector(".header"),
+  scrollButton: document.querySelector('.scroll-js'),
+  scrollTarget: document.querySelector('.header'),
   paginationList: document.querySelector('.pagination'),
   paginationBtnList: document.querySelector('.pagination__list'),
   firstPaginationBtn: document.querySelector('#first-btn'),
@@ -31,4 +31,5 @@ export const refs = {
   clickBox: document.querySelector('#theme-switch-toggle'),
   footerSwitch: document.querySelector('footer'),
   bodySwitch: document.querySelector('body'),
+  lightEl: document.querySelector('#theme-switch-light'),
 };

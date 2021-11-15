@@ -1,7 +1,7 @@
 .toolbar {
   position: absolute;
-  right: 11%;
-  top: 120%;
+  right: 0%;
+  top: 145%;
   @media screen and(min-width:$tablet) {
     right: -12px;
     top: -50%;
@@ -17,7 +17,22 @@ body.dark-theme {
       box-shadow: $cards-shadows-box $filters-text-color;
     }
   }
+  .theme-switch {
+    &__btn {
+      display: none;
+    }
+    &__btn-light {
+      display: block;
+      background-color: transparent;
+      align-content: center;
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+  }
 }
+
 .modal.dark-theme {
   background-color: $dark-theme-color;
   color: $secondary-text-color;
@@ -38,7 +53,9 @@ footer.dark-theme {
     border-radius: 5px;
     padding: 8px 12px;
   }
-
+  &__btn-light {
+    display: none;
+  }
   &__icon {
     height: 12px;
     width: 12px;
