@@ -122,17 +122,14 @@
   }
 
   &__social-link {
-    display: block;
+    display: inline-block;
     color: $secondary-text-color;
     transition: all $animation-duration ease 0ms;
     text-decoration: none;
-  }
 
-  &__social-link:hover {
-    color: $accent-color;
-    background-color: $filters-text-color;
-  }
-
-  &__social-link:focus {
+    &:hover {
+      color: $accent-color;
+      background-color: $filters-text-color;
+    }
   }
 }
