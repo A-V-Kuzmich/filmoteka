@@ -7,7 +7,7 @@ const container = document.querySelector('.modal-video');
 const backdrop = document.querySelector('[data-modal="video"]');
 const closeBtn = document.querySelector('[data-modal="close-video"]');
 
-function onFetchById(id) {
+function FetchVideo(id) {
     const type = 'images,videos&language=ru-RU'
     const value = '&append_to_response='
     let query = `/movie/${id}?${value}${type}`;
@@ -16,7 +16,7 @@ function onFetchById(id) {
   };
 let movieId = 370172;
   
-onFetchById(movieId)
+FetchVideo(movieId)
   .then(result => {
   console.log(result)
   createInnerMarkup(container, video(result.videos.results[0].key));
