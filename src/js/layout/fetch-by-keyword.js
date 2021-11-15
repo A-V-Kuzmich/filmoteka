@@ -5,6 +5,7 @@ import { createInnerMarkup, cleanInnerMarkup} from './render-by-template'
 import { alertEnterQuery } from '../components/notifications'
 import { alertNothingIsFound } from '../components/notifications'
 import { getGenresFromLocalStorage } from './genre-local-storage'
+
 let searchQuery = '1'
 let onClickPage = 1;
 let totalPages = 0;
@@ -79,7 +80,6 @@ function onFetchByKeyword(keyword, page) {
             if (result.results.length === 0) {
                 alertNothingIsFound()
             }
-            console.log(result);
             exchangeObjectData(result)
             setLastPageNumber(result.total_pages)
             createInnerMarkup(refs.filmsEl, filmsTemplate(result.results))
@@ -87,15 +87,43 @@ function onFetchByKeyword(keyword, page) {
             currentBtnClass()
         })
 }
+
 function onPaginationBtnClick(evt) {
-    cleanInnerMarkup(refs.paginationBtnList)
     if (evt.target.nodeName !== 'BUTTON') {
-        return;
-    }
-    onClickPage = Number(evt.target.textContent);
-    const newPage = `${searchQuery}&page=${onClickPage}`
-    renderImages(newPage, refs.filmsEl, filmsTemplate)
+    return
+    } else if ((evt.target.classList.contains('pagination__list-item'))) {
+      onClickPage = Number(evt.target.textContent);
+    } else if (evt.target.classList.contains('js-previous')) {
+      onClickPage -= 1
+    } else if (evt.target.classList.contains('js-next')) {
+      
+      onClickPage += 1
+  }   cleanInnerMarkup(refs.paginationBtnList)
+      const newPage = `${searchQuery}&page=${onClickPage}`
+      renderImages(newPage, refs.filmsEl, filmsTemplate)
+      checkBtnOpacity()
+      window.scrollTo({
+        behavior: 'smooth',
+        top: 250
+      })
+  } 
+
+
+function checkBtnOpacity() {
+  onClickPage === 1 ? (refs.previousArrow.classList.add('visually-hidden')) : (refs.previousArrow.classList.remove('visually-hidden'));
+  onClickPage === Number(refs.lastPaginationBtn.textContent) ? (refs.nextArrow.classList.add('visually-hidden')) : (refs.nextArrow.classList.remove('visually-hidden'));
+  if (document.body.clientWidth <= 320) {
+    refs.paginationLeftDots.classList.add('visually-hidden')
+    refs.paginationRightDots.classList.add('visually-hidden')
+    onClickPage > 3 ? (refs.firstPaginationBtn.classList.add('visually-hidden')) :  (refs.firstPaginationBtn.classList.remove('visually-hidden'))
+    onClickPage < Number(refs.lastPaginationBtn.textContent) - 2 ? (refs.lastPaginationBtn.classList.add('visually-hidden')) :  (refs.lastPaginationBtn.classList.remove('visually-hidden'))
+  } else {
+     onClickPage < 5 ? (refs.paginationLeftDots.classList.add('visually-hidden')) : (refs.paginationLeftDots.classList.remove('visually-hidden'));
+    onClickPage > Number(refs.lastPaginationBtn.textContent) - 4 ? (refs.paginationRightDots.classList.add('visually-hidden')) : (refs.paginationRightDots.classList.remove('visually-hidden'));
+  }  
 }
+
+
 function getGenreIdByName(name) {
   const queryGenre = getGenresFromLocalStorage().find(genre => {
     return genre.name === name
@@ -105,7 +133,7 @@ function getGenreIdByName(name) {
 function getGenreNameById(genreIds) {
   let newArray = []
   genreIds.forEach(genreId => {
-    getGenresFromLocalStorage().map(genre =>{
+    getGenresFromLocalStorage().map(genre => {
       if (genre.id === genreId) {
         newArray.push(genre.name)
       }
@@ -125,12 +153,12 @@ function exchangeObjectData(result) {
 function renderImages(query, element, template) {
   getApiData(query)
       .then(result => {
-        console.log(result);
       exchangeObjectData(result);
       setLastPageNumber(result.total_pages)
       createInnerMarkup(element, template(result.results))
       renderPagesList(result.total_pages)
-      currentBtnClass()
+        currentBtnClass()
+        checkBtnOpacity()
     }
   );
 }
@@ -140,12 +168,14 @@ function onFetchAllMovies(page) {
     searchQuery = ''
     searchQuery = `/trending/movie/week?`;
     renderImages(searchQuery, refs.filmsEl, filmsTemplate)
+    checkBtnOpacity()
 }
 function onSearch(e) {
     e.preventDefault();
     const keyword = e.currentTarget.elements.query.value
     onClickPage = 1
-    cleanInnerMarkup(refs.paginationBtnList)
+  cleanInnerMarkup(refs.paginationBtnList)
+  checkBtnOpacity()
     if (keyword === '') {
         alertEnterQuery()
         return
@@ -166,11 +196,11 @@ function currentBtnClass() {
   }
 }
 function renderPagesList(totalPages) {
-    const start = onClickPage - btnSummary
-    const end = onClickPage + btnSummary;
+  const start = onClickPage - btnSummary
+  const end = onClickPage + btnSummary;
     for (let i = start; i <= end; i += 1) {
     if (i > 1 && i < totalPages) {
-      refs.paginationBtnList.insertAdjacentHTML('beforeend', `<li class="pagination__list-item"><button type="button" class="pagination__list-item">${i}</button></li>`,
+      refs.paginationBtnList.insertAdjacentHTML('beforeend', `<li class=""><button type="button" class="pagination__list-item">${i}</button></li>`,
       );}
   }
 }
