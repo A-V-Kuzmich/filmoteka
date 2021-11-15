@@ -93,7 +93,7 @@ function onPaginationBtnClick(evt) {
 }
 function getGenreIdByName(name) {
   const queryGenre = getGenresFromLocalStorage().find(genre => {
-    return genre.name === name[0].toUpperCase() + name.slice(1).toLowerCase()
+    return genre.name === name
   })
   return queryGenre.id
 }
