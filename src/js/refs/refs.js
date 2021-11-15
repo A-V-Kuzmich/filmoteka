@@ -2,7 +2,7 @@ export const refs = {
   headerSearcherEl: document.querySelector('.header__searcher'),
   closeModalBtn: document.querySelector('[data-modal="close"]'),
   backdrop: document.querySelector('[data-modal="backdrop"]'),
-  modal: document.querySelector('.modal'),
+  modal: document.querySelector('.modal__content'),
   filmsEl: document.querySelector('.films'),
   searchFormEl: document.querySelector('.header__form'),
   inputBtnEl: document.querySelector('.js-input-btn'),
@@ -23,4 +23,5 @@ export const refs = {
   firstPaginationBtn: document.querySelector('#first-btn'),
   lastPaginationBtn: document.querySelector('#last-btn'),
   clickBox: document.querySelector('#theme-switch-toggle'),
+  contactsLink: document.querySelector('.js-students-contacts'),
 };

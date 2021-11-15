@@ -3,10 +3,10 @@ import { refs } from '../refs/refs.js';
 export function openModalWindow() {
   refs.backdrop.classList.remove('visually-hidden');
   window.addEventListener('keydown', onEscKeyPress);
-  document.querySelector('[data-modal="close"]').addEventListener('click', closeModalWindow);
-  document.querySelector('[data-modal="backdrop"]').addEventListener('click', closeToBackdrop);
-  // refs.closeModalBtn.addEventListener('click', closeModalWindow);
-  // refs.backdrop.addEventListener('click', closeToBackdrop);
+  // document.querySelector('[data-modal="close"]').addEventListener('click', closeModalWindow);
+  // document.querySelector('[data-modal="backdrop"]').addEventListener('click', closeToBackdrop);
+  refs.closeModalBtn.addEventListener('click', closeModalWindow);
+  refs.backdrop.addEventListener('click', closeToBackdrop);
 }
 
 function closeToBackdrop(e) {

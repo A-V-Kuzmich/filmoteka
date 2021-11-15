@@ -7,5 +7,9 @@ refs.contactsLink.addEventListener('click', onContactsClick);
 
 function onContactsClick() {
   openModalWindow();
-  refs.modal.innerHTML = contactsTmpl(contactsArr.students);
+  // refs.modal.innerHTML = contactsTmpl(contactsArr.students);
+  console.log(contactsTmpl(contactsArr.students));
+  const markup = contactsTmpl(contactsArr.students);
+  refs.modal.innerHTML = '';
+  refs.modal.insertAdjacentHTML('beforeend', markup);
 }
