@@ -7,6 +7,11 @@ body.dark-theme {
   display: flex;
   justify-content: flex-end;
   padding: 20px 20px;
+
+  @media screen and(min-width:$desktop) {
+    right: 70px;
+    top: 45%;
+  }
 }
 /* THEME SWITCH */
 

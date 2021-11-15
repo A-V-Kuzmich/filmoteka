@@ -1,14 +1,16 @@
 .filters {
   position: absolute;
-  display: none;
+  pointer-events: none;
   opacity: 0;
   top: 100%;
   padding-top: 6px;
   left: 0;
-  transition: opacity $animation-duration $timing-function;
+  transform: translateY(100%);
+  transition: opacity $animation-duration $timing-function,
+    transform $animation-duration $timing-function;
 
   &__search-icon {
-    margin-left: auto;
+    margin: 0 auto;
     fill: $secondary-text-color;
     transition: fill $animation-duration $timing-function;
   }
@@ -41,12 +43,8 @@
     color: $secondary-text-color;
   }
 
-  &__box:hover &__search-icon {
-    fill: $accent-color;
-    // color: $secondary-text-color;
-  }
-
   &__dropdown {
+    width: 32px;
     background-color: transparent;
     color: $secondary-text-color;
     position: absolute;
@@ -56,13 +54,16 @@
     text-transform: uppercase;
     cursor: pointer;
     box-shadow: 0px 2px 4px transparent;
-    transition: opacity $animation-duration $timing-function;
+    transition: opacity $animation-duration $timing-function,
+      color $animation-duration $timing-function,
+      background-color $animation-duration $timing-function,
+      fill $animation-duration $timing-function;
     @media screen and (min-width: $tablet) {
       top: -50%;
-      left: 0%;
+      left: 16%;
     }
     @media screen and (min-width: $desktop) {
-      left: 15%;
+      left: 26%;
     }
   }
 
@@ -76,8 +77,13 @@
   }
 
   &__dropdown:hover .filters {
-    display: block;
+    pointer-events: visible;
+    transform: translateX(0%);
     opacity: 1;
+  }
+
+  &__dropdown:hover &__search-icon {
+    fill: $accent-color;
   }
 
   &__item {
