@@ -15,6 +15,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
+  cursor: pointer;
 
   &:hover {
     @media screen and (min-width: $desktop) {
@@ -57,7 +58,7 @@ html {
   }
 }
 
-/* .rocket-tail {
+/*  .rocket-tail {
   position: fixed;
   bottom: 13%;
   right: 3%;
@@ -91,5 +92,5 @@ html {
       }
     }
   }
-}
- */
+} */
+ 
