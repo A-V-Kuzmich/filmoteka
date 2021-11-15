@@ -144,7 +144,7 @@
 
     &-item.pagination__current-btn:hover,
     :focus {
-      background-color: red;
+      background-color: $focus-color;
       color: $secondary-text-color;
     }
   }
