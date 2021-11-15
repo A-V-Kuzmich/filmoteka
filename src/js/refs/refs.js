@@ -28,5 +28,8 @@ export const refs = {
   nextArrow: document.querySelector('.js-next'),
   paginationRightDots: document.querySelector('.js-right-dots'),
   paginationLeftDots: document.querySelector('.js-left-dots'),
-  clickBox: document.querySelector('#theme-switch-toggle')
+  clickBox: document.querySelector('#theme-switch-toggle'),
+  filtersGenreBox: document.querySelector('.js-filter-box'),
+  filtersGenreList: document.querySelector('.values--genres'),
+  filtersYearInput: document.querySelector('.values__form-input'),
 };
