@@ -1,6 +1,11 @@
 import { getApiData } from '../api/api-service.js';
-// import { body } from '../refs/refs.js';
- const body = document.querySelector('body');
+import video from '../../partial/templates/video.hbs';
+import { createInnerMarkup } from '../layout/render-by-template';
+
+const body = document.querySelector('body');
+const container = document.querySelector('.modal-video');
+const backdrop = document.querySelector('[data-modal="video"]');
+const closeBtn = document.querySelector('[data-modal="close-video"]');
 
 function onFetchById(id) {
     const type = 'images,videos&language=ru-RU'
@@ -9,46 +14,41 @@ function onFetchById(id) {
   
     return getApiData(query).then(result => result);
   };
-
-  let movieId = 370172;
-
-onFetchById(movieId).then(result => console.log(result));
+let movieId = 370172;
   
-//    N1r36HTysDM
-//const player = document.querySelector('#player')
-// var player;
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     height: '360',
-//     width: '480',
-//     videoId: 'M7lc1UVf-VE',
-//     events: {
-//       'onReady': onPlayerReady,
-//       'onStateChange': onPlayerStateChange
-//     }
-//   });
-// }
- const player = 
-function onYouTubeIframeAPIReady() {
-
-    player = new YT.Player('video-placeholder', {
-        width: 600,
-        height: 400,
-        videoId: 'N1r36HTysDM',
-        playerVars: {
-            color: 'white',
-           // playlist: 'taJ60kskkns,FG0fTKAqZ5g'
-        },
-        events: {
-            onReady: initialize
-        }
-    });
+onFetchById(movieId)
+  .then(result => {
+  console.log(result)
+  createInnerMarkup(container, video(result.videos.results[0].key));
+  openModalWindow();
+  });
+//-----------no-scroll------------------------------------
+function noScrollBody() {
+  body.classList.toggle('no-scroll'); 
 }
-onYouTubeIframeAPIReady();
-
-function openVideoPlayer() {
-  body.classList.add('.no-scroll');
+//-----------close------------------------------------
+function openModalWindow() {
+  backdrop.classList.remove('visually-hidden');
+  window.addEventListener('keydown', onEscKeyPress);
+  closeBtn.addEventListener('click', closeModalWindow);
+  backdrop.addEventListener('click', closeToBackdrop);
+  noScrollBody();
 }
-// openVideoPlayer();
-
-  // body.classList.add('no-scroll');
+function closeToBackdrop(e) {
+  if (e.target.className === 'backdrop') {
+    closeModalWindow();
+  }
+}
+function onEscKeyPress(e) {
+  if (e.code === 'Escape') {
+    closeModalWindow();
+  }
+}
+function closeModalWindow() {
+  backdrop.classList.add('visually-hidden');
+  window.removeEventListener('keydown', onEscKeyPress);
+  closeBtn.removeEventListener('click', closeToBackdrop);
+  backdrop.removeEventListener('click', closeModalWindow);
+  noScrollBody();
+}
+//------------------------------------------------------------------
