@@ -106,17 +106,20 @@
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  height: 40px;
-  margin-bottom: 60px;
+  align-items: center;
+  padding-bottom: 60px;
 
   &__arrow {
     width: 40px;
     height: 40px;
-    margin-right: 16px;
+
     background-color: $secondary-bg-color;
     border: none;
     border-radius: 5px;
+  }
+
+  &__arrow:not(:last-child) {
+    margin-right: 16px;
   }
 
   &__dots {
@@ -125,11 +128,9 @@
 
   &__list {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 
     &-item {
-      height: 14px;
-
       margin-right: 16px;
       background-color: inherit;
       border: none;
@@ -141,5 +142,18 @@
     height: 40px;
     width: 40px;
     border-radius: 5px;
+    color: $secondary-text-color;
   }
+}
+
+.js-previous {
+  background-image: url(..//images/icon/arrow-left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.js-next {
+  background-image: url(..//images/icon/arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
