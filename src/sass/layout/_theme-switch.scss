@@ -14,7 +14,7 @@ body.dark-theme {
   fill: $secondary-text-color;
   .films__item {
     &:hover {
-      box-shadow: $cards-shadows-box $secondary-text-color;
+      box-shadow: $cards-shadows-box $filters-text-color;
     }
   }
 }
@@ -24,7 +24,9 @@ body.dark-theme {
 }
 footer.dark-theme {
   background-color: $dark-theme-color-footer;
-  color: $secondary-bg-color;
+  &__text {
+    color: $secondary-text-color;
+  }
 }
 
 .theme-switch {
