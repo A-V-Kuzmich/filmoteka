@@ -3,41 +3,26 @@ import { refs } from '../refs/refs';
 refs.headerNav.addEventListener('click', changeHeader);
 refs.headerBtn.addEventListener('click', changeActiveHeaderBtn);
 
-// switch (e.srcElement.dataset.action) {
-//     case "library":
-//       selectLibraryBtn();
-//       queueBtnActive();
-//       break;
-//     case "home":
-//       selectHomeBtn();
-//     break;
-//   }
-
 function changeHeader(e) {
-  if (e.srcElement.dataset.action === 'library') {
-    selectLibraryBtn();
-    queueBtnActive();
-  }
-  if (e.srcElement.dataset.action === 'home') {
-    selectHomeBtn();
+  switch (e.srcElement.dataset.action) {
+    case "library":
+      selectLibraryBtn();
+      queueBtnActive();
+      break;
+    case "home":
+      selectHomeBtn();
+    break;
   }
 }
 
-// switch (e.srcElement.dataset.action) {
-//     case "watched":
-//       watchedBtnActive();
-//       break;
-//     case "queue":
-//       queueBtnActive();
-//     break;
-//   }
-
 function changeActiveHeaderBtn(e) {
-  if (e.srcElement.dataset.action === 'watched') {
-    watchedBtnActive();
-  }
-    if (e.srcElement.dataset.action === 'queue') {
-    queueBtnActive()
+switch (e.srcElement.dataset.action) {
+    case "watched":
+      watchedBtnActive();
+      break;
+    case "queue":
+      queueBtnActive();
+    break;
   }
 }
 
