@@ -12,6 +12,7 @@ import './js/layout/local-storage';
 import './js/layout/render-by-template';
 import './js/layout/render-storage-array';
 import './js/layout/switchTheme.js';
+import './js/layout/render-genres-list'
 
 //header
 import './js/layout/header';
