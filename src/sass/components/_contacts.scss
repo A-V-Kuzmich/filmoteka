@@ -1,12 +1,8 @@
 .contacts {
-  height: 100%;
   &__title {
-    font-size: 18px;
     margin-bottom: 10px;
+    text-align: center;
   }
-  // &__item {
-  //   margin-bottom: 5px;
-  // }
   // &__link {
   //   font-size: 14px;
   //   color: $credits-text-color;
@@ -16,114 +12,127 @@
   //   &:focus {
   //     color: $accent-color;
   //   }
+  // }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
-// ---------------
-.contacts__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 .contact-card {
+  margin: 0 auto;
   padding: 30px 0 40px;
-  margin-bottom: 30px;
-  background-color: #f7f5ec;
+  margin-bottom: 10px;
+  background-color: $filters-text-color;
   text-align: center;
   overflow: hidden;
   position: relative;
-  width: 150px;
-  // margin-right: 10px;
-}
+  border-radius: 5px;
+  width: 105px;
 
-.contact-card__picture {
-  display: inline-block;
-  height: 130px;
-  width: 130px;
-  margin-bottom: 50px;
-  z-index: 1;
-  position: relative;
-}
+  @media screen and (min-width: $desktop) {
+    width: 150px;
+  }
 
-.contact-card__picture::before {
-  content: '';
-  width: 100%;
-  height: 0;
-  border-radius: 50%;
-  background-color: #1369ce;
-  position: absolute;
-  bottom: 135%;
-  right: 0;
-  left: 0;
-  opacity: 0.9;
-  transform: scale(3);
-  transition: all 0.3s linear 0s;
-}
+  &__picture {
+    display: inline-block;
+    height: 90px;
+    width: 90px;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
 
-.contact-card:hover .contact-card__picture::before {
-  height: 100%;
-}
+    @media screen and (min-width: $desktop) {
+      width: 110px;
+      height: 110px;
+    }
 
-.contact-card__picture::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #1369ce;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+    &::before {
+      content: '';
+      width: 100%;
+      height: 0;
+      border-radius: 50%;
+      background-color: $accent-color;
+      position: absolute;
+      bottom: 135%;
+      right: 0;
+      left: 0;
+      opacity: 0.9;
+      transform: scale(3);
+      transition: all $animation-duration linear 0ms;
+    }
 
-.contact-card__img-fluid {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  transform: scale(1);
-  transition: all 0.9s ease 0s;
-}
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $accent-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
 
-.contact-card:hover .contact-card__img-fluid {
-  box-shadow: 0 0 0 14px #f7f5ec;
-  transform: scale(0.7);
-}
+  &:hover &__picture::before {
+    height: 100%;
+  }
 
-.contact-card__title {
-  display: block;
-  font-size: 15px;
-  color: #4e5052;
-  text-transform: capitalize;
-}
+  &__title {
+    color: $credits-text-color;
+  }
 
-.contact-card__social-list {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background-color: #1369ce;
-  position: absolute;
-  bottom: -100px;
-  left: 0;
-  transition: all 0.5s ease 0s;
-}
+  &__name {
+    margin-bottom: 5px;
+  }
 
-.contact-card:hover .contact-card__social-list {
-  bottom: 0;
-}
+  &__img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 900ms ease 0ms;
+  }
 
-.contact-card__social-item {
-  display: inline-block;
-}
+  &:hover &__img-fluid {
+    box-shadow: 0 0 0 14px $filters-text-color;
+    transform: scale(0.7);
+  }
 
-.contact-card__social-link {
-  display: block;
-  padding: 10px;
-  font-size: 17px;
-  color: white;
-  transition: all 0.3s ease 0s;
-  text-decoration: none;
-}
+  &__social-list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $accent-color;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 500ms ease 0ms;
+  }
 
-.contact-card__social-link:hover {
-  color: #1369ce;
-  background-color: #f7f5ec;
+  &:hover &__social-list {
+    bottom: 0;
+  }
+
+  &__social-item {
+    display: inline-block;
+  }
+
+  &__social-link {
+    display: block;
+    color: $secondary-text-color;
+    transition: all $animation-duration ease 0ms;
+    text-decoration: none;
+  }
+
+  &__social-link:hover {
+    color: $accent-color;
+    background-color: $filters-text-color;
+  }
+
+  &__social-link:focus {
+  }
 }
