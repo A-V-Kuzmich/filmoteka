@@ -134,6 +134,18 @@
       margin-right: 16px;
       background-color: inherit;
       border: none;
+      height: 30px;
+    }
+    &-item:hover,
+    :focus {
+      background-color: $secondary-bg-color;
+      border-radius: 5px;
+    }
+
+    &-item.pagination__current-btn:hover,
+    :focus {
+      background-color: red;
+      color: $secondary-text-color;
     }
   }
 
