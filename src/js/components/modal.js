@@ -14,7 +14,6 @@ function closeToBackdrop(e) {
 }
 
 function closeModalWindow() {
-  console.log('я отработал')
   refs.backdrop.classList.add('visually-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
   refs.closeModalBtn.removeEventListener('click', closeToBackdrop);
