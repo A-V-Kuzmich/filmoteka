@@ -3,7 +3,7 @@ import { refs } from '../refs/refs.js'
  refs.scrollButton.addEventListener("click", scrollToTop);
 
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 1) {
         addClass("icon-up-arrow--active");
         removeClass("icon-up-arrow--not-visible");
          
@@ -23,6 +23,7 @@ function scrollToTop() {
     
     refs.scrollTarget.scrollIntoView();
     addClass("scroll-running");
+   
    
 }
 
