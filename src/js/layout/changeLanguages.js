@@ -1,9 +1,8 @@
-// import { langArrey } from "../components/translate";
 const langArrey = {
     "header-logo": {
-        "uk": "фільмотека",
-        "ru": "фильмотека",
-        "en": "filmoteka",
+        "uk": "Фільмотека",
+        "ru": "Фильмотека",
+        "en": "Filmoteka",
     },
 
     "home": {
@@ -17,6 +16,33 @@ const langArrey = {
         "ru": "моя библиотека",
         "en": "my libruary",
     },    
+
+    "watched": {
+        "uk": "ПЕРЕГЛЯНУТІ",
+        "ru": "ПРОСМОТРЕННЫЕ",
+        "en": "WATCHED",
+    },  
+    "queue": {
+        "uk": "НА ЧЕРЗІ",
+        "ru": "В ОЧЕРЕДИ",
+        "en": "QUEUE",
+    }, 
+    // "vote": {
+    //     "uk": "Рейтинг/Голоси",
+    //     "ru": "Рейтинг/Голоса",
+    //     "en": "Vote/Votes",
+    // }, 
+    // "add-watched": {
+    //     "uk": "Додати переглянуті",
+    //     "ru": "Дополнить просмотренные",
+    //     "en": "Add-watched",
+    // },
+    "right": {
+        "uk": "&#169; 2020 | Всі Права Захищені | Зроблено Студентами GоIT",
+        "ru": "&#169; 2020 | Все Права Защищены | Сделано Студентами GоIT",
+        "en": "&#169; 2020 | All Rights Reserved | Developed by GoIT Student's",
+    }
+
 
 };
 

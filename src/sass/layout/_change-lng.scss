@@ -1,8 +1,14 @@
 .change-lng {
     position: absolute;
-    top: 50px;
+    top: 10px;
     right: 20px;
     background-color: transparent;
     color: $secondary-text-color;
     border: none;
+    @media screen and (min-width: $tablet) {
+        top: 100px;
+      }
+      @media screen and (min-width: $desktop) {
+        top: 60px;
+      }
 }
