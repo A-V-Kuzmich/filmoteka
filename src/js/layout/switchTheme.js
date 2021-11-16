@@ -11,20 +11,20 @@ const { LIGHT, DARK } = theme;
 let newTheme = getFromLocalStorage('n-theme');
 
 if (!newTheme) {
-  newTheme = theme.LIGHT;
-  setToLocalStorage('n-theme', theme.LIGHT);
+  newTheme = LIGHT;
+  setToLocalStorage('n-theme', LIGHT);
 }
 
 refs.clickBox.addEventListener('click', changeTheme);
 refs.lightEl.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
-  refs.bodySwitch.classList.toggle(theme.DARK);
-  refs.bodySwitch.classList.toggle(theme.LIGHT);
-  refs.footerSwitch.classList.toggle(theme.DARK);
-  refs.footerSwitch.classList.toggle(theme.LIGHT);
-  refs.modal.classList.toggle(theme.DARK);
-  refs.modal.classList.toggle(theme.LIGHT);
+  refs.bodySwitch.classList.toggle(DARK);
+  refs.bodySwitch.classList.toggle(LIGHT);
+  refs.footerSwitch.classList.toggle(DARK);
+  refs.footerSwitch.classList.toggle(LIGHT);
+  refs.modal.classList.toggle(DARK);
+  refs.modal.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.target ? theme.DARK : theme.LIGHT);
+  setToLocalStorage('n-theme', e.target.value ? DARK : LIGHT);
 }
