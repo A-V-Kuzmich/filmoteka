@@ -9,8 +9,8 @@ const closeBtn = document.querySelector('[data-modal="close-video"]');
 // const btnWatchUl = document.querySelector('');
 
 function FetchVideo(id) {
-   // const type = '&language=ru-RU'
-   // let query = `/movie/${id}?${type}`;
+  //  const type = '&language=ru-RU'
+  //  let query = `/movie/${id}?${type}`;
     let query = `/movie/${id}?`;
     return getApiData(query).then(result => result);
   };

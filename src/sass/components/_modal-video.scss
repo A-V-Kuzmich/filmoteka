@@ -3,10 +3,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-
     width: calc($mobile - 20px);
     height: calc($mobile * 0.56);
-
     transform: translate(-50%, -50%);
     z-index: 500;
     @media screen and (min-width: $tablet) {
@@ -17,19 +15,11 @@
       width: calc($desktop - 40px);
       height: calc($desktop * 0.56);
     }
-
     & > .modal__close-btn {
       top: -30px;
       right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 100%;
       background-color: $cards-shadow-color;
       fill: $secondary-text-color;
-      &:hover {
-        fill: $accent-color;
-      }
     }
   }
   &__frame {
