@@ -4,62 +4,71 @@
       "name": "Andrey",
       "surname": "Kuzmichov",
       "url": "https://github.com/Dron010",
-      "role": ["Team Lead", "Web Developer"]
+      "role": ["Team Lead", "Web Developer"],
+      "photo": ""
     },
     {
       "name": "Viktor",
       "surname": "Kostiuchenko",
       "url": "https://github.com/Viktor-Kostiuchenko",
-      "role": ["Scrum Master", "Web Developer"]
+      "role": ["Scrum Master", "Web Developer"],
+      "photo": ""
     },
     {
       "name": "Dasha",
       "surname": "Pashkovskaya",
       "url": "https://github.com/DashaPash",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     },
     {
       "name": "Nataliia",
       "surname": "Salamatina",
       "url": "https://github.com/T-jorven",
-      "role": ["Web Developer"]
-    }
-    ,
+      "role": ["Web Developer"],
+      "photo": ""
+    },
     {
       "name": "Larysa",
       "surname": "Timoshenko",
       "url": "https://github.com/LarysaTymoshenko",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     },
     {
       "name": "Viktor",
       "surname": "Sinelnykov",
       "url": "https://github.com/Fen111",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     },
     {
       "name": "Bronislav",
       "surname": "Voydylo",
       "url": "https://github.com/Bronislav-frontend",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     },
     {
       "name": "Vladislav",
       "surname": "Slobodenjuk",
       "url": "https://github.com/vladislav-slobodenjuk",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     },
     {
       "name": "Bohdan",
       "surname": "Tatarchuk",
       "url": "https://github.com/Bohdan-Ta",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     },
     {
       "name": "Serhii",
       "surname": "Sokolov",
       "url": "https://github.com/Falconoff",
-      "role": ["Web Developer"]
+      "role": ["Web Developer"],
+      "photo": ""
     }
   ]
 }
