@@ -1,27 +1,28 @@
 import { getApiData } from '../api/api-service.js';
 import video from '../../partial/templates/video.hbs';
-import { createInnerMarkup } from '../layout/render-by-template';
+import { createInnerMarkup,cleanInnerMarkup } from '../layout/render-by-template';
 
 const body = document.querySelector('body');
 const container = document.querySelector('.modal-video');
 const backdrop = document.querySelector('[data-modal="video"]');
 const closeBtn = document.querySelector('[data-modal="close-video"]');
+// const btnWatchUl = document.querySelector('');
 
 function FetchVideo(id) {
-    const type = 'images,videos&language=ru-RU'
-    const value = '&append_to_response='
-    let query = `/movie/${id}?${value}${type}`;
-  
+   // const type = '&language=ru-RU'
+   // let query = `/movie/${id}?${type}`;
+    let query = `/movie/${id}?`;
     return getApiData(query).then(result => result);
   };
-let movieId = 370172;
-  
-FetchVideo(movieId)
-  .then(result => {
-  console.log(result)
-  createInnerMarkup(container, video(result.videos.results[0].key));
-  openModalWindow();
-  });
+
+export function openVideo(id) {
+  FetchVideo(id)
+    .then(result => {
+      const playlist = result.videos.results.map(value => value.key).join(',');
+      createInnerMarkup(container, video(playlist));
+      openModalWindow();
+    });
+};
 //-----------no-scroll------------------------------------
 function noScrollBody() {
   body.classList.toggle('no-scroll'); 
@@ -50,5 +51,6 @@ function closeModalWindow() {
   closeBtn.removeEventListener('click', closeToBackdrop);
   backdrop.removeEventListener('click', closeModalWindow);
   noScrollBody();
+  cleanInnerMarkup(container);
 }
 //------------------------------------------------------------------

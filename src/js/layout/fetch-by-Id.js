@@ -6,6 +6,7 @@ import { openModalWindow } from '../components/modal.js';
 
 import { refs } from '../refs/refs.js';
 import { addToStorageArray } from './add-to-storage-array';
+import { openVideo } from '../test/test-video-player.js';
 
 // --------- func for search by ID -------------
 export function fetchById(id) {
@@ -16,6 +17,10 @@ export function fetchById(id) {
 refs.filmsEl.addEventListener('click', onCardClick);
 
 function onCardClick(e) {
+  if (e.srcElement.className === 'film__trailer') {
+    const id = e.path.find(num => num.className === 'films__item').dataset.id;
+    openVideo(id);
+  }
   if (e.target.nodeName !== 'IMG') {
     return;
   }
