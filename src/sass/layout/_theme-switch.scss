@@ -1,7 +1,9 @@
 .toolbar {
-  position: absolute;
-  right: 0%;
-  top: 145%;
+  position: relative;
+  text-align: right;
+  right: 100%;
+  bottom: 200%;
+  left: 20%;
   @media screen and(min-width:$tablet) {
     right: -12px;
     top: -50%;

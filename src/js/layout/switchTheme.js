@@ -18,6 +18,7 @@ refs.clickBox.click = newTheme === LIGHT ? false : true;
 
 refs.clickBox.addEventListener('click', changeTheme);
 refs.lightEl.addEventListener('click', changeTheme);
+
 function changeTheme(e) {
   refs.bodySwitch.classList.toggle(DARK);
   refs.bodySwitch.classList.toggle(LIGHT);
