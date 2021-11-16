@@ -1,56 +1,72 @@
+.header__container {
+  position: relative;
+}
+.toolbar {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  @media screen and(min-width:$tablet) {
+    right: 60px;
+    top: 67px;
+  }
+}
+
 body.dark-theme {
   background-color: $dark-theme-color;
   color: $secondary-text-color;
-}
-
-.toolbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 20px;
-
-  @media screen and(min-width:$desktop) {
-    right: 70px;
-    top: 45%;
+  fill: $secondary-text-color;
+  .films__item {
+    &:hover {
+      box-shadow: $cards-shadows-box $filters-text-color;
+    }
+  }
+  .theme-switch {
+    &__btn {
+      display: none;
+    }
+    &__btn-light {
+      display: block;
+      background-color: transparent;
+      align-content: center;
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
   }
 }
-/* THEME SWITCH */
+
+.modal.dark-theme {
+  background-color: $dark-theme-color;
+  color: $secondary-text-color;
+}
+footer.dark-theme {
+  background-color: $dark-theme-color-footer;
+  &__text {
+    color: $secondary-text-color;
+  }
+}
 
 .theme-switch {
   &__btn {
-    position: relative;
-    overflow: hidden;
     background-color: transparent;
     align-content: center;
     border: none;
     text-align: center;
     border-radius: 5px;
     padding: 8px 12px;
-
-    &:hover:after {
-      transform: translateY(0);
-      left: 3%;
-      top: 3%;
-      z-index: 1;
-    }
-
-    &:after {
-      content: 'switch theme';
-      position: absolute;
-      top: 30px;
-      right: 0;
-      left: 0;
-      width: 100%;
-      color: $secondary-text-color;
-      background: $logo-color;
-      transform: translateX(100%);
-      transition: $timing-function $animation-duration;
-    }
   }
-
+  &__btn-light {
+    display: none;
+  }
   &__icon {
     height: 12px;
     width: 12px;
     fill: $secondary-text-color;
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
 
     @media screen and(min-width:$tablet) {
       width: 20px;
