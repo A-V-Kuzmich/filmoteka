@@ -1,35 +1,42 @@
 .modal-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 100%;
-
   &__container {
     position: fixed;
     top: 50%;
     left: 50%;
+
+    width: calc($mobile - 20px);
+    height: calc($mobile * 0.56);
+
     transform: translate(-50%, -50%);
     z-index: 500;
-
-    height: 70%;
+    @media screen and (min-width: $tablet) {
+      width: calc($tablet - 20px);
+      height: calc($tablet * 0.56);
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc($desktop - 40px);
+      height: calc($desktop * 0.56);
+    }
 
     & > .modal__close-btn {
       top: -30px;
-
+      right: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-
       border-radius: 100%;
-
       background-color: $cards-shadow-color;
       fill: $secondary-text-color;
       &:hover {
         fill: $accent-color;
       }
     }
+  }
+  &__frame {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 .films__item {

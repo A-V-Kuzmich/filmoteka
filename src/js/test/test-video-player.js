@@ -3,7 +3,7 @@ import video from '../../partial/templates/video.hbs';
 import { createInnerMarkup,cleanInnerMarkup } from '../layout/render-by-template';
 
 const body = document.querySelector('body');
-const container = document.querySelector('.modal-video');
+const container = document.querySelector('.modal-video__frame');
 const backdrop = document.querySelector('[data-modal="video"]');
 const closeBtn = document.querySelector('[data-modal="close-video"]');
 // const btnWatchUl = document.querySelector('');
