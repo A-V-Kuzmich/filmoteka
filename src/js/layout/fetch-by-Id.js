@@ -16,16 +16,27 @@ export function fetchById(id) {
 
 refs.filmsEl.addEventListener('click', onCardClick);
 
+//---------click tracking function----------------
 function onCardClick(e) {
-  if (e.srcElement.className === 'film__trailer') {
-    const id = e.path.find(num => num.className === 'films__item').dataset.id;
-    openVideo(id);
-  }
-  if (e.target.nodeName !== 'IMG') {
-    return;
-  }
-
-  let filmId = e.target.dataset.index; // id атрибут должен быть на елементе клика
+  switch (e.srcElement.className) {
+    case 'film__trailer':
+      openVideo(getId(e));
+      break;
+    case 'film__trailer-img':
+      openVideo(getId(e));
+      break;
+    case 'films':
+      break;
+    default:
+      openModalCard(getId(e));
+  };
+};
+//-----------getting an ID card------------------------
+function getId(e) {
+  return e.path.find(num => num.className === 'films__item').dataset.id;
+};
+//---------opening a modal window---------------------
+function openModalCard(filmId) {
   fetchById(filmId).then(result => {
     result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
