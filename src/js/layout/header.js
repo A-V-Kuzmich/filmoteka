@@ -9,7 +9,6 @@ function changeHeader(e) {
       selectLibraryBtn();
       queueBtnActive();
       break;
-      s;
     case 'home':
       selectHomeBtn();
       break;
