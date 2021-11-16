@@ -12,21 +12,21 @@
       "surname": "Kostiuchenko",
       "url": "https://github.com/Viktor-Kostiuchenko",
       "role": ["Scrum Master", "Web Developer"],
-      "photo": ""
+      "photo": "https://avatars.githubusercontent.com/u/81323303?v=4"
     },
     {
       "name": "Dasha",
       "surname": "Pashkovskaya",
       "url": "https://github.com/DashaPash",
       "role": ["Web Developer"],
-      "photo": ""
+      "photo": "https://avatars.githubusercontent.com/u/81958637?v=4"
     },
     {
       "name": "Nataliia",
       "surname": "Salamatina",
       "url": "https://github.com/T-jorven",
       "role": ["Web Developer"],
-      "photo": ""
+      "photo": "https://avatars.githubusercontent.com/u/81956461?v=4"
     },
     {
       "name": "Larysa",
@@ -40,14 +40,14 @@
       "surname": "Sinelnykov",
       "url": "https://github.com/Fen111",
       "role": ["Web Developer"],
-      "photo": ""
+      "photo": "https://avatars.githubusercontent.com/u/28630122?v=4"
     },
     {
       "name": "Bronislav",
       "surname": "Voydylo",
       "url": "https://github.com/Bronislav-frontend",
       "role": ["Web Developer"],
-      "photo": ""
+      "photo": "https://avatars.githubusercontent.com/u/82459223?v=4"
     },
     {
       "name": "Vladislav",
@@ -68,7 +68,7 @@
       "surname": "Sokolov",
       "url": "https://github.com/Falconoff",
       "role": ["Web Developer"],
-      "photo": ""
+      "photo": "https://avatars.githubusercontent.com/u/68744408?v=4"
     }
   ]
 }
