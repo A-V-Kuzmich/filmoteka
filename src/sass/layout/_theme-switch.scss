@@ -1,12 +1,13 @@
-.toolbar {
+.header__container {
   position: relative;
-  text-align: right;
-  right: 100%;
-  bottom: 200%;
-  left: 20%;
+}
+.toolbar {
+  position: absolute;
+  right: 21px;
+  top: 25px;
   @media screen and(min-width:$tablet) {
-    right: -12px;
-    top: -50%;
+    right: 60px;
+    top: 67px;
   }
 }
 
