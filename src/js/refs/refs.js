@@ -20,6 +20,7 @@ export const refs = {
   pagePreloader: document.getElementById('page-preloader'),
   scrollButton: document.querySelector(".scroll-js"),
   scrollTarget: document.querySelector(".header"),
+  rocketTail: document.querySelector('.rocket-tail'),
   paginationList: document.querySelector('.pagination'),
   paginationBtnList: document.querySelector('.pagination__list'),
   firstPaginationBtn: document.querySelector('#first-btn'),

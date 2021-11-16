@@ -1,36 +1,37 @@
 import { refs } from '../refs/refs.js'
 
- refs.scrollButton.addEventListener("click", scrollToTop);
+refs.scrollButton.addEventListener("click", scrollToTop);
 
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 1) {
-        addClass("icon-up-arrow--active");
-        removeClass("icon-up-arrow--not-visible");
-         
-        
+        addClass(refs.scrollButton,"icon-up-arrow--active");
+        removeClass(refs.scrollButton,"icon-up-arrow--not-visible");
     } else {
-        removeClass("icon-up-arrow--active");
-        addClass("icon-up-arrow--not-visible");
+        removeClass(refs.scrollButton,"icon-up-arrow--active");
+        addClass(refs.scrollButton,"icon-up-arrow--not-visible");
     }
 
     if (window.pageYOffset < 20) { 
-        removeClass("scroll-running");
+        removeClass(refs.rocketTail,"rocket-running"); 
+        refs.rocketTail.style.opacity = 0;
     }
 })
 
 function scrollToTop() {
     
+      window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+      });
     
-    refs.scrollTarget.scrollIntoView();
-    addClass("scroll-running");
-   
-   
+    addClass(refs.rocketTail,"rocket-running"); 
+    refs.rocketTail.style.opacity = 1;
 }
 
 //Auxiliary functions
-function addClass(classToAdd) {
-     refs.scrollButton.classList.add(classToAdd);
+function addClass(element,classToAdd) {
+     element.classList.add(classToAdd);
 }
-function removeClass(classToRemove) {
-    refs.scrollButton.classList.remove(classToRemove);
+function removeClass(element,classToRemove) {
+    element.classList.remove(classToRemove);
 }
