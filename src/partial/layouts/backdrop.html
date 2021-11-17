@@ -4,11 +4,22 @@
     <li><button type="button" class="js-modal-next-btn modal__btn modal__btns-list-next">&#5171;</button></li>
   </ul>
   <div class="modal">
-    <div class="modal__content"></div>
     <button type="button" class="modal__close-btn" data-modal="close">
       <svg class="modal__close-btn-icon">
         <use href="./images/icon/sprite.svg#modal-close"></use>
       </svg>
     </button>
+    <div class="modal__content"></div>
   </div>
+</div>
+
+<div class="backdrop-video visually-hidden" data-modal="video">
+  <div class="modal-video__container">
+    <button type="button" class="modal__close-btn" data-modal="close-video">
+      <svg class="modal__close-btn-icon" width="30" height="30">
+        <use href="./././images/icon/sprite.svg#modal-close"></use>
+      </svg>
+    </button>
+    <div class="modal-video__frame"></div>
   </div>
+</div>

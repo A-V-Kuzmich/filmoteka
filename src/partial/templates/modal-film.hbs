@@ -1,11 +1,5 @@
 <div class='modal__elements' data-id={{id}}>
-{{!-- <ul class="js-modal-btns">
-  <li><button type="button" class="modal__elements-arrow  arrow__left" data-action="prev-film" title="Previous">
-    &#5176;</button></li>
-  <li><button type="button" class="modal__elements-arrow arrow__right" data-action="next-film" title="Next">
-    &#5171;
-  </button></li>
-  </ul> --}}
+  <div class="modal__img-container">
   {{#if poster_path}}
   <img
     class='modal__img'
@@ -19,48 +13,72 @@
     alt={{original_title}}
   />
   {{/if}}
+    <img class="film__trailer-img" data-modal="modal-video-btn"
+      src="https://cdn.icon-icons.com/icons2/1584/PNG/512/3721679-youtube_108064.png" alt="trailer" />
+</div>
   <div>
-    <h3 class='modal__title'>{{original_title}}</h3>
+    <h3 class='modal__title'>
+      {{original_title}}
+    </h3>
 
     <div class='modal__film-container'>
       <ul class='modal__film'>
-        <li class='modal__film-details'>Vote/Votes</li>
-        <li class='modal__film-data'><span
-            class='raiting raiting--modal'
-          >&nbsp{{vote_average}}&nbsp</span>/ &nbsp{{vote_count}}</li>
+        <li class='modal__film-details'>
+          Vote/Votes
+        </li>
+        <li class='modal__film-data'>
+          <span class='raiting raiting--modal'>
+            &nbsp{{vote_average}}&nbsp
+          </span>
+          / &nbsp{{vote_count}}
+        </li>
       </ul>
       <ul class='modal__film'>
-        <li class='modal__film-details'>Popularity</li>
-        <li class='modal__film-data'>{{popularity}}</li>
+        <li class='modal__film-details'>
+          Popularity
+        </li>
+        <li class='modal__film-data'>
+          {{popularity}}
+        </li>
       </ul>
       <ul class='modal__film'>
-        <li class='modal__film-details modal__orig-title'>Original Title</li>
-        <li class='modal__film-data modal__data-title'>{{original_title}}</li>
+        <li class='modal__film-details modal__orig-title'>
+          Original Title
+        </li>
+        <li class='modal__film-data modal__data-title'>
+          {{original_title}}
+        </li>
       </ul>
       <ul class='modal__film'>
-        <li class='modal__film-details'>Genre</li>
+        <li class='modal__film-details'>
+          Genre
+        </li>
         <ul class='modal__film-data modal__genres-list'>
           {{#each genres}}
-            <li class='modal__film-data modal__genres-item'>{{this.name}}</li>
+            <li class='modal__film-data modal__genres-item'>
+              {{this.name}}
+            </li>
           {{/each}}
         </ul>
       </ul>
     </div>
-    <h4 class='modal__about'>About</h4>
-    <p class='modal__text'>{{overview}}</p>
+    <h4 class='modal__about'>
+      About
+    </h4>
+    <p class='modal__text'>
+      {{overview}}
+    </p>
     <ul class='modal__list-btn'>
-      <li class='modal__item'><button
-          class='modal__item-btn'
-          data-watched
-          data-id={{id}}
-          type='button'
-        >add to Watched</button></li>
-      <li class='modal__item'><button
-          class='modal__item-btn'
-          data-queue
-          data-id={{id}}
-          type='button'
-        >add to queue</button></li>
+      <li class='modal__item'>
+        <button class='modal__item-btn' data-watched data-id={{id}} type='button'>
+          add to Watched
+        </button>
+      </li>
+      <li class='modal__item'>
+        <button class='modal__item-btn' data-queue data-id={{id}} type='button'>
+          add to queue
+        </button>
+      </li>
     </ul>
   </div>
 </div>
