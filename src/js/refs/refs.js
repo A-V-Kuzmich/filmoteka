@@ -36,5 +36,8 @@ export const refs = {
   filtersGenreBox: document.querySelector('.js-filter-box'),
   filtersGenreList: document.querySelector('.values--genres'),
   filtersYearInput: document.querySelector('.values__form-input'),
+  containerVideoPlayer: document.querySelector('.modal-video__frame'),
+  backdropVideoPlayer: document.querySelector('[data-modal="video"]'),
+  closeBtnVideoPlayer: document.querySelector('[data-modal="close-video"]'),
   modalEl: document.querySelector('.modal'),
 };
