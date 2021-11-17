@@ -15,6 +15,7 @@ export function addToStorageArray(keyName, property) {
 
       contentToAdd.push(id);
       setToLocalStorage(keyName, contentToAdd);
+      clearWactedFromQueue();
       // нотификация о добавлении фильма в список ${keyName}.
       // Это первый фильм, можно в стиле "Ура, вы добавили первый фильм свой список"
     } else {
@@ -24,20 +25,25 @@ export function addToStorageArray(keyName, property) {
           //нотификация о том, что фильм уже добавлен в список ${keyName}
           break;
         case false:
-          const queueArray = localStorage.getItem('queue');
-          if (queueArray.includes(id)) {
-            console.log('it works');
-            console.log('id', id);
-            console.log(queueArray.includes(id));
+          (function clearWactedFromQueue() {
+            const queueArray = localStorage.getItem('queue');
+            if (queueArray.includes(id)) {
+              // console.log('it works');
+              // console.log('id', id);
+              const parsedArray = JSON.parse(queueArray);
+              // console.log('before', parsedArray);
 
-            console.dir(queueArray);
+              const index = parsedArray.indexOf(id, 0);
+              // console.log('index', index);
 
-            const index = queueArray.indexOf(id);
-            console.log(index);
+              parsedArray.splice(index, 1);
 
-            queueArray.splice(id, 1);
-            console.log('after', queueArray);
-          }
+              // console.log('after', parsedArray);
+
+              setToLocalStorage('queue', parsedArray);
+            }
+          })();
+
           storageArray.push(id);
           setToLocalStorage(`${keyName}`, storageArray);
           // нотификация о добавлении фильма в список ${keyName}
