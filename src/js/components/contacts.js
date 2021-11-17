@@ -7,7 +7,7 @@ import sprite from '../../images/icon/sprite.svg';
 refs.contactsLink.addEventListener('click', onContactsClick);
 
 function onContactsClick() {
-  openModalWindow();
+  openModalWindow(refs.backdrop);
   const list = contactsArr.students;
   refs.modal.innerHTML = contactsTmpl({ list, sprite });
 }
