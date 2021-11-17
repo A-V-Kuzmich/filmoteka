@@ -1,10 +1,14 @@
-<div class='modal__elements arrow' data-id={{id}}>
-
-  <button type="button" class="modal__elements-arrow  arrow__left" >
+<div class='modal__elements' data-id={{id}}>
+  
+<div class='arrow'>
+  <button type="button" class="modal__elements-arrow  arrow__left"  data-action="prev-film"
+        title="Previous">
     &#5176;
   </button>
-  
-  
+  <button type="button" class="modal__elements-arrow arrow__right" data-action="next-film" title="Next">
+    &#5171;
+  </button>
+  </div>
   <img
     class='modal__img'
     src='https://image.tmdb.org/t/p/w400{{poster_path}}'
@@ -54,7 +58,5 @@
         >add to queue</button></li>
     </ul>
   </div>
-<button type="button" class="modal__elements-arrow arrow__right" >
-  &#5171;
-</button>
+
 </div>
