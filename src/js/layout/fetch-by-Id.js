@@ -6,7 +6,7 @@ import { openModalWindow } from '../components/modal.js';
 
 import { refs } from '../refs/refs.js';
 import { addToStorageArray } from './add-to-storage-array';
-import { openVideo } from '../test/test-video-player.js';
+import { openVideo } from '../components/video-player';
 
 // --------- func for search by ID -------------
 export function fetchById(id) {
@@ -29,20 +29,24 @@ function onCardClick(e) {
       break;
     default:
       openModalCard(getId(e));
-  };
-};
+  }
+}
 //-----------getting an ID card------------------------
 function getId(e) {
   return e.path.find(num => num.className === 'films__item').dataset.id;
-};
+}
 //---------opening a modal window---------------------
 function openModalCard(filmId) {
   fetchById(filmId).then(result => {
+    const id = filmId;
     result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
     createInnerMarkup(refs.modal, modalContent);
-    openModalWindow();
+    openModalWindow(refs.backdrop);
+
+    const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
+    openVideoBtn.addEventListener('click', () => openVideo(id));
 
     const addToQueueBtn = document.querySelector('[data-queue]');
     addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));
