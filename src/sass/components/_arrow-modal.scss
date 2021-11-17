@@ -10,28 +10,26 @@
   font-size: 30px;
   border: none;
   border-radius: 50%;
-  background-color: transparent;
+  // background-color: transparent;
   color: $primary-text-color;
   cursor: pointer;
-  // opacity: 0;
+  z-index: 5;
   pointer-events: none;
 }
 
 .arrow__left {
-  left: -40px;
+  left: 0%;
   top: 50%;
 
   &:hover {
     background-color: $accent-color;
-    // opacity: 1;
   }
 }
 .arrow__right {
-  right: -850px;
+  right: 0%;
   top: 50%;
 
   &:hover {
     background-color: $accent-color;
-    // opacity: 1;
   }
 }
