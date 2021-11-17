@@ -21,10 +21,6 @@ refs.lightEl.addEventListener('click', changeTheme);
 function changeTheme(e) {
   refs.bodySwitch.classList.toggle(theme.DARK);
   refs.bodySwitch.classList.toggle(theme.LIGHT);
-  refs.footerSwitch.classList.toggle(theme.DARK);
-  refs.footerSwitch.classList.toggle(theme.LIGHT);
-  refs.modal.classList.toggle(theme.DARK);
-  refs.modal.classList.toggle(theme.LIGHT);
 
   setToLocalStorage('n-theme', e.target ? theme.DARK : theme.LIGHT);
 }
