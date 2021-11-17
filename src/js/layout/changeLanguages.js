@@ -1,8 +1,6 @@
-import { getApiData } from '../api/api-service';
-import { createInnerMarkup } from './render-by-template';
-import { exchangeObjectData } from './render-images-to-main';
-import template from '../../partial/templates/film-cards.hbs';
 import { refs } from '../refs/refs';
+import { onFetchAllMovies } from './fetch-by-keyword';
+import { setGenresToLocalStorage } from './genre-local-storage';
 
 const langArrey = {
   'header-logo': {
@@ -12,7 +10,7 @@ const langArrey = {
   },
 
   home: {
-    uk: 'до дому',
+    uk: 'головна',
     ru: 'домой',
     en: 'home',
   },
@@ -29,9 +27,14 @@ const langArrey = {
     en: 'WATCHED',
   },
   queue: {
-    uk: 'НА ЧЕРЗІ',
+    uk: 'В ЧЕРЗІ',
     ru: 'В ОЧЕРЕДИ',
     en: 'QUEUE',
+  },
+  input: {
+    uk: 'пошук',
+    ru: 'ПРОСМОТРЕННЫЕ',
+    en: 'WATCHED',
   },
   // "vote": {
   //     "uk": "Рейтинг/Голоси",
@@ -54,33 +57,15 @@ const select = document.querySelector('select');
 select.addEventListener('change', changeLanguage);
 function changeLanguage() {
   let lang = select.value;
+
+  refs.filmsEl.dataset.lang = select.value;
+
   for (let key in langArrey) {
-    document.querySelector('.lng-' + key).innerHTML = langArrey[key][lang];
-    let LG = lang;
-    let query = `/trending/movie/week?page=1`;
-    // element = refs.filmsEl
-
-    getApiData(query, LG)
-    .then(result => {
-      exchangeObjectData(result);
-      createInnerMarkup(refs.filmsEl, template(result.results))
-    }
-  );
-
+    document.querySelector('.lng-' + key).textContent = langArrey[key][lang];
+    setGenresToLocalStorage();
+    onFetchAllMovies(1);
+  
   }
 }
 
-//Local Storage
-// const lang = select.value
-// function saveLocalLang(lang) {
-//     let langs
-//     if (localStorage.getItem(key,'langs') === null) {
-//         langs = []
-//     } else {
-//         langs = JSON.parse(localStorage.getItem(key,'langs'))
-//     }
-//     langs.push(language)
-//     localStorage.setItem('langs', JSON.stringify(langs))
-// }
-
-// changeLanguage();
+// console.dir(document.querySelector('.header__form-input'))
