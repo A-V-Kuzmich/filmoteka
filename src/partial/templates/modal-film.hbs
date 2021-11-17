@@ -1,9 +1,9 @@
 <div class='modal__elements' data-id={{id}}>
-  <img
-    class='modal__img'
-    src='https://image.tmdb.org/t/p/w400{{poster_path}}'
-    alt={{original_title}}
-  />
+<div class="modal__img-container">
+    <img class='modal__img' src='https://image.tmdb.org/t/p/w400{{poster_path}}' alt='{{original_title}}' />
+    <img class="film__trailer-img" data-modal="modal-video-btn"
+      src="https://cdn.icon-icons.com/icons2/1584/PNG/512/3721679-youtube_108064.png" alt="trailer" />
+</div>
   <div>
     <h3 class='modal__title'>{{original_title}}</h3>
 
@@ -48,5 +48,4 @@
         >add to queue</button></li>
     </ul>
   </div>
-
 </div>

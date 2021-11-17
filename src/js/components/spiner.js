@@ -1,19 +1,16 @@
-import {refs} from "../refs/refs";
+import { refs } from '../refs/refs';
 
-function showSpiner () {
-    refs.pagePreloader.classList.remove('done');
+function showSpiner() {
+  refs.pagePreloader.classList.remove('done');
 }
-function hideSpiner () {
-    refs.pagePreloader.classList.add('done');;
+function hideSpiner() {
+  refs.pagePreloader.classList.add('done');
 }
 
-export {
-    showSpiner,
-    hideSpiner,
-};
+export { showSpiner, hideSpiner };
 
 window.addEventListener('load', () => {
-    setTimeout(() => {
+  setTimeout(() => {
     refs.pagePreloader.classList.add('done');
-    }, 1000); 
-})
+  }, 1000);
+});
