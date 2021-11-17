@@ -168,7 +168,7 @@ function onFetchAllMovies(page) {
     searchQuery = ''
     searchQuery = `/trending/movie/week?`;
     renderImages(searchQuery, refs.filmsEl, filmsTemplate)
-    checkBtnOpacity()
+    checkBtnOpacity() 
 }
 function onSearch(e) {
     e.preventDefault();
@@ -204,3 +204,4 @@ function renderPagesList(totalPages) {
       );}
   }
 }
+

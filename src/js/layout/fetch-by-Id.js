@@ -21,17 +21,42 @@ function onCardClick(e) {
   }
 
   let filmId = e.target.dataset.index; // id атрибут должен быть на елементе клика
-  fetchById(filmId).then(result => {
-    result.popularity = result.popularity.toFixed(2);
-    const modalContent = makeModalFilm(result);
+  fetchById(filmId).then (result => {
+        result.popularity = result.popularity.toFixed(2);
+        const modalContent = makeModalFilm(result);
 
-    createInnerMarkup(refs.modal, modalContent);
-    openModalWindow();
+        createInnerMarkup(refs.modal, modalContent);
+        openModalWindow();
 
-    const addToQueueBtn = document.querySelector('[data-queue]');
-    addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));
+        const addToQueueBtn = document.querySelector('[data-queue]');
+        addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));
 
-    const addToWatchedBtn = document.querySelector('[data-watched]');
-    addToWatchedBtn.addEventListener('click', addToStorageArray('watched', 'watched'));
-  });
+        const addToWatchedBtn = document.querySelector('[data-watched]');
+        addToWatchedBtn.addEventListener('click', addToStorageArray('watched', 'watched'));
+      })
+}
+
+refs.modalBtns.addEventListener ('click', onBtnsClick)
+
+function onBtnsClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return
+  } let cardsMassive = document.querySelectorAll('img[data-index]')
+  let currentFilmId = document.querySelector('.modal__elements[data-id]').dataset.id
+  let nextFilmId;
+  let previousFilmId;
+  for (let i = 0; i < cardsMassive.length; i += 1) {
+    if (currentFilmId === cardsMassive[i].dataset.index) {
+      i < 19 ? (nextFilmId = cardsMassive[i + 1].dataset.index) : (nextFilmId = cardsMassive[i].dataset.index)
+      i > 0 ? (previousFilmId = cardsMassive[i - 1].dataset.index) : (previousFilmId = cardsMassive[i].dataset.index)
+      if (e.target.classList.contains('next-btn')) {
+      fetchById(nextFilmId).then(result => {
+        createInnerMarkup(refs.modal, makeModalFilm(result))
+      })
+    }  if (e.target.classList.contains('prev-btn')) {
+      fetchById(previousFilmId).then(result => {
+        createInnerMarkup(refs.modal, makeModalFilm(result))
+      })
+    }}
+  }
 }
