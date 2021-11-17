@@ -4,30 +4,33 @@
   </h2>
   <ul class='contacts__list'>
     {{#each list}}
-        <li class='contact-card'>
+        <li class='contacts__item'>
            <a class='contact-card__link' href="{{url}}" target='_blank' rel='noreferrer noopener'>
-            <div class='contact-card__picture'>
-              <img class='contact-card__img-fluid'
-                src='{{#if photo}}{{photo}}{{else}}https://vyshnevyi-partners.com/wp-content/uploads/2016/12/no-avatar.png{{/if}}' />
-            </div>
-            <div class='contact-card__content'>
-              <h3 class='contact-card__name'>
-                {{name}} {{surname}}
-              </h3>
-              <ul class='contact-card__title'>
-                {{#each role}}
-                <li>
-                  {{this}}
-                </li>
-              {{/each}}
-            </ul>
-          </div>
-          <div class='contact-card__social-list'>
-            <div class='contact-card__social-item'>
-              <svg class='contact-card__social-link' width='32' height='32'>
-                <use href="{{../sprite}}#icon-github"></use>
-              </svg>
-            </div>
+           <div class="contact-card">
+              <div class='contact-card__picture'>
+                <img class='contact-card__img-fluid'
+                  src='{{#if photo}}{{photo}}{{else}}https://vyshnevyi-partners.com/wp-content/uploads/2016/12/no-avatar.png{{/if}}' />
+              </div>
+              <div class='contact-card__content'>
+                <h3 class='contact-card__name'>
+                  {{name}} {{surname}}
+                </h3>
+                <ul class='contact-card__title'>
+                  {{#each role}}
+                  <li>
+                    {{this}}
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+              <div class='contact-card__social-list'>
+                <div class='contact-card__social-item'>
+                  <svg class='contact-card__social-link' width='32' height='32'>
+                    <use href="{{../sprite}}#icon-github"></use>
+                  </svg>
+                </div>
+              </div>
+           </div>
            </a>
         </li>  
     {{/each}}

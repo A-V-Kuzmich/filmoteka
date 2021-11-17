@@ -11,14 +11,17 @@
     margin-left: -10px;
     margin-top: -10px;
   }
+
+  &__item {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 }
 
 .contact-card {
-  margin-left: 10px;
-  margin-top: 10px;
-
   padding: 30px 0 40px;
   width: 102px;
+  height: 245px;
   position: relative;
   background-color: $secondary-bg-color;
   text-align: center;
@@ -36,12 +39,17 @@
     color: inherit;
 
     &:focus {
-      color: $accent-color;
       outline: none;
     }
   }
 
+  &__link:hover &__picture,
+  &__link:focus &__picture {
+    filter: grayscale(0);
+  }
+
   &__picture {
+    filter: grayscale(1);
     display: inline-block;
     height: 95px;
     width: 95px;
@@ -82,7 +90,8 @@
     }
   }
 
-  &:hover &__picture::before {
+  &:hover &__picture::before,
+  &__link:focus &__picture::before {
     height: 100%;
   }
 
@@ -102,7 +111,8 @@
     transition: all 900ms ease 0ms;
   }
 
-  &:hover &__img-fluid {
+  &:hover &__img-fluid,
+  &__link:focus &__img-fluid {
     box-shadow: 0 0 0 14px $filters-text-color;
     transform: scale(0.7);
   }
@@ -121,7 +131,8 @@
     transition: all 500ms ease 0ms;
   }
 
-  &:hover &__social-list {
+  &:hover &__social-list,
+  &__link:focus &__social-list {
     bottom: 0;
   }
 
