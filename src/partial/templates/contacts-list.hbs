@@ -7,7 +7,7 @@
       <a class='contacts__link' href="{{url}}" target='_blank' rel='noreferrer noopener'>
         <li class='contact-card'>
           <div class='contact-card__picture'>
-            <img class='contact-card__img-fluid' src='https://picsum.photos/130/130?image=1027' />
+            <img class='contact-card__img-fluid' src='{{#if photo}}{{photo}}{{else}}https://vyshnevyi-partners.com/wp-content/uploads/2016/12/no-avatar.png{{/if}}' />
           </div>
           <div class='contact-card__content'>
             <h3 class='contact-card__name'>
@@ -21,16 +21,13 @@
               {{/each}}
             </ul>
           </div>
-          <ul class='contact-card__social-list'>
-            <li class='contact-card__social-item'>
-              <a href='#' class='contact-card__social-link'>
-                <svg class='contact-card__social-link' width='32' height='32'>
-                  <use href="{{../sprite}}#icon-github"></use>
-                  </path>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          <div class='contact-card__social-list'>
+            <div class='contact-card__social-item'>
+              <svg class='contact-card__social-link' width='32' height='32'>
+                <use href="{{../sprite}}#icon-github"></use>
+              </svg>
+            </div>
+          </div>
         </li>
       </a>
     {{/each}}
