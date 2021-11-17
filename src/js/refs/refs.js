@@ -18,8 +18,8 @@ export const refs = {
   valuesInput: document.querySelector('.values__form-input'),
   spiner: document.querySelector('.spiner'),
   pagePreloader: document.getElementById('page-preloader'),
-  scrollButton: document.querySelector(".scroll-js"),
-  scrollTarget: document.querySelector(".header"),
+  scrollButton: document.querySelector('.scroll-js'),
+  scrollTarget: document.querySelector('.header'),
   rocketTail: document.querySelector('.rocket-tail'),
   paginationList: document.querySelector('.pagination'),
   paginationBtnList: document.querySelector('.pagination__list'),
@@ -37,4 +37,5 @@ export const refs = {
   filtersGenreList: document.querySelector('.values--genres'),
   filtersYearInput: document.querySelector('.values__form-input'),
   modalBtns: document.querySelector('.js-modal-btns')
+  modalEl: document.querySelector('.modal'),
 };
