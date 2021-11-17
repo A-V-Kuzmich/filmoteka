@@ -37,4 +37,6 @@ export const refs = {
   filtersGenreBox: document.querySelector('.js-filter-box'),
   filtersGenreList: document.querySelector('.values--genres'),
   filtersYearInput: document.querySelector('.values__form-input'),
+  nextArrow: document.querySelector('.arrow__right'),
+  prevArrow: document.querySelector('.arrow__left'),
 };
