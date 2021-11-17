@@ -33,6 +33,7 @@ export const refs = {
   footerSwitch: document.querySelector('footer'),
   bodySwitch: document.querySelector('body'),
   lightEl: document.querySelector('#theme-switch-light'),
+  modalEl: document.querySelector('.modal'),
   filtersGenreBox: document.querySelector('.js-filter-box'),
   filtersGenreList: document.querySelector('.values--genres'),
   filtersYearInput: document.querySelector('.values__form-input'),

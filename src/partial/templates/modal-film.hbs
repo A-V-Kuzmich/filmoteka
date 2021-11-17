@@ -1,4 +1,13 @@
 <div class='modal__elements' data-id={{id}}>
+<div>
+  <button type="button" class="modal__elements-arrow  arrow__left"  data-action="prev-film"
+        title="Previous">
+    &#5176;
+  </button>
+  <button type="button" class="modal__elements-arrow arrow__right" data-action="next-film" title="Next">
+    &#5171;
+  </button>
+  </div>
   {{#if poster_path}}
   <img
     class='modal__img'

@@ -28,5 +28,5 @@ function changeTheme(e) {
   refs.modalEl.classList.toggle(DARK);
   refs.modalEl.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.target.className === DARK ? DARK : LIGHT);
+  setToLocalStorage('n-theme', e.target.click === DARK ? DARK : LIGHT);
 }
