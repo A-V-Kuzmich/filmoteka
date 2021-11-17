@@ -89,6 +89,9 @@ body.dark-theme {
       color: $secondary-text-color;
     }
   }
+  .pop {
+    filter: brightness(0.6);
+  }
 }
 
 .theme-switch {

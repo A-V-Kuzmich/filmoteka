@@ -15,6 +15,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+// -------------------------------POPCORN
 .background-box {
   position: fixed;
   z-index: -1;
@@ -38,103 +39,103 @@ body::-webkit-scrollbar-thumb {
   display: block;
 }
 .pop:nth-child(1) {
-  left: 10%;
-  animation: fall 15s linear infinite;
+  left: 90%;
+  animation: fall 23s linear infinite;
   animation-delay: -2s;
 }
 .pop:nth-child(2) {
   right: 0%;
-  animation: fall 15s linear infinite;
+  animation: fall 25s linear infinite;
   animation-delay: -2s;
 }
 .pop:nth-child(3) {
   left: 20%;
-  animation: fall 20s linear infinite;
+  animation: fall 40s linear infinite;
   animation-delay: -3s;
 }
 .pop:nth-child(4) {
   left: 60%;
-  animation: fall 18s linear infinite;
+  animation: fall 38s linear infinite;
   animation-delay: -4s;
 }
 .pop:nth-child(5) {
   left: 30%;
-  animation: fall 14s linear infinite;
+  animation: fall 34s linear infinite;
   animation-delay: -6s;
 }
 .pop:nth-child(6) {
   left: 80%;
-  animation: fall 16s linear infinite;
+  animation: fall 26s linear infinite;
   animation-delay: -6s;
 }
 .pop:nth-child(7) {
   left: 40%;
-  animation: fall 15s linear infinite;
+  animation: fall 35s linear infinite;
   animation-delay: -7s;
 }
 .pop:nth-child(8) {
   left: 70%;
-  animation: fall 16s linear infinite;
+  animation: fall 36s linear infinite;
   animation-delay: -8s;
 }
 .pop:nth-child(9) {
   left: 50%;
-  animation: fall 17s linear infinite;
+  animation: fall 27s linear infinite;
   animation-delay: -9s;
 }
 .pop:nth-child(10) {
   left: 0%;
-  animation: fall 18s linear infinite;
+  animation: fall 38s linear infinite;
   animation-delay: -10s;
 }
 .pop:nth-child(11) {
-  left: 15%;
-  animation: fall 19s linear infinite;
+  left: 70%;
+  animation: fall 39s linear infinite;
   animation-delay: -1s;
 }
 .pop:nth-child(12) {
   right: 5%;
-  animation: fall 15s linear infinite;
-  animation-delay: -2s;
+  animation: fall 35s linear infinite;
+  animation-delay: -4s;
 }
 .pop:nth-child(13) {
   left: 25%;
   animation: fall 20s linear infinite;
-  animation-delay: -3s;
+  animation-delay: -5s;
 }
 .pop:nth-child(14) {
   left: 5%;
-  animation: fall 18s linear infinite;
+  animation: fall 38s linear infinite;
   animation-delay: -3s;
 }
 .pop:nth-child(15) {
   left: 35%;
-  animation: fall 14s linear infinite;
+  animation: fall 34s linear infinite;
   animation-delay: -5s;
 }
 .pop:nth-child(16) {
   left: 45%;
-  animation: fall 16s linear infinite;
+  animation: fall 26s linear infinite;
   animation-delay: -6s;
 }
 .pop:nth-child(17) {
   left: 45%;
-  animation: fall 10s linear infinite;
+  animation: fall 30s linear infinite;
   animation-delay: -7s;
 }
 .pop:nth-child(18) {
   left: 75%;
-  animation: fall 11s linear infinite;
+  animation: fall 31s linear infinite;
   animation-delay: -8s;
 }
 .pop:nth-child(19) {
   left: 55%;
-  animation: fall 12s linear infinite;
+  animation: fall 32s linear infinite;
   animation-delay: -9s;
 }
 .pop:nth-child(20) {
-  right: 10%;
-  animation: fall 13s linear infinite;
+  right: 40%;
+  animation: fall 23s linear infinite;
   animation-delay: -10s;
 }
 
@@ -165,3 +166,18 @@ body::-webkit-scrollbar-thumb {
 .pops--invers {
   transform: rotateX(180deg);
 }
+
+.pops .pop {
+  width: 20px;
+  @media screen and(min-width:$tablet) {
+    width: 30px;
+  }
+}
+
+.pops--invers .pop {
+  width: 30px;
+  @media screen and(min-width:$tablet) {
+    width: 40px;
+  }
+}
+// -------------------------------POPCORN

@@ -26,6 +26,7 @@ import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
 import './js/components/scroll-to-top';
+import './js/components/background'
 
 //=============api==================
 import './js/api/api-service.js';
