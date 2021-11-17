@@ -15,19 +15,23 @@
   cursor: pointer;
   // opacity: 0;
   pointer-events: none;
+}
+
+.arrow__left {
+  left: -40px;
+  top: 50%;
+
   &:hover {
     background-color: $accent-color;
     // opacity: 1;
   }
 }
-
-.modal__elements-left {
-  left: -40px;
-  top: 50%;
-  align-content: center;
-}
-.modal__elements-right {
+.arrow__right {
   right: -40px;
   top: 50%;
-  align-content: center;
+
+  &:hover {
+    background-color: $accent-color;
+    // opacity: 1;
+  }
 }
