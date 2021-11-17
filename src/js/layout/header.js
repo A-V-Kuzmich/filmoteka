@@ -1,16 +1,21 @@
 import { refs } from '../refs/refs';
+import { renderFromStorageArray } from './render-storage-array';
+import { onFetchAllMovies } from './fetch-by-keyword';
 
 refs.headerNav.addEventListener('click', changeHeader);
 refs.headerBtn.addEventListener('click', changeActiveHeaderBtn);
+refs.libraryBtn.addEventListener('click', renderFromStorageArray('queue'));
 
 function changeHeader(e) {
   switch (e.srcElement.dataset.action) {
     case 'library':
       selectLibraryBtn();
       queueBtnActive();
+      // renderFromStorageArray('queue');
       break;
     case 'home':
       selectHomeBtn();
+      onFetchAllMovies(1);
       break;
   }
 }

@@ -162,7 +162,7 @@ function renderImages(query, element, template) {
     }
   );
 }
-function onFetchAllMovies(page) {
+export function onFetchAllMovies(page) {
     cleanInnerMarkup(refs.filmsEl)
     cleanInnerMarkup(refs.paginationBtnList)
     searchQuery = ''
