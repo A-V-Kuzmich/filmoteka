@@ -9,9 +9,8 @@ refs.libraryBtn.addEventListener('click', renderFromStorageArray('queue'));
 function changeHeader(e) {
   switch (e.srcElement.dataset.action) {
     case 'library':
+      renderFromStorageArray('queue');
       selectLibraryBtn();
-      queueBtnActive();
-      // renderFromStorageArray('queue');
       break;
     case 'home':
       selectHomeBtn();
