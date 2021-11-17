@@ -3,6 +3,7 @@
 @import './utils/no-scroll';
 @import './utils/visually-hidden';
 @import './utils/btn';
+@import './utils/style';
 
 //============base==================
 @import './base/global-style';
@@ -25,9 +26,9 @@
 @import './components/backdrop';
 @import './components/modal';
 @import './components/modal-btn';
+@import './components/modal-video';
 @import './components/spiner';
 
 @import './components/contacts';
 @import './components/scroll-top.scss';
 @import './components/scroll-top.scss';
-@import './components/arrow-modal.scss';
