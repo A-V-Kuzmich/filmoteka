@@ -15,6 +15,8 @@ if (!newTheme) {
   setToLocalStorage('n-theme', LIGHT);
 }
 
+refs.clickBox.click = newTheme === LIGHT ? false : true;
+
 refs.clickBox.addEventListener('click', changeTheme);
 refs.lightEl.addEventListener('click', changeTheme);
 
