@@ -30,6 +30,7 @@ export const refs = {
   paginationRightDots: document.querySelector('.js-right-dots'),
   paginationLeftDots: document.querySelector('.js-left-dots'),
   clickBox: document.querySelector('#theme-switch-toggle'),
+  contactsLink: document.querySelector('.js-students-contacts'),
   footerSwitch: document.querySelector('footer'),
   bodySwitch: document.querySelector('body'),
   lightEl: document.querySelector('#theme-switch-light'),
