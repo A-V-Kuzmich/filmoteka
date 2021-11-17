@@ -19,9 +19,7 @@
 
   padding: 30px 0 40px;
   width: 102px;
-  height: 245px;
   position: relative;
-
   background-color: $secondary-bg-color;
   text-align: center;
   overflow: hidden;
@@ -128,7 +126,6 @@
   }
 
   &__social-item {
-    display: inline-block;
     height: 32px;
   }
 

@@ -3,7 +3,7 @@
     Our amazing team:
   </h2>
   <ul class='contacts__list'>
-    {{#each this}}
+    {{#each list}}
         <li class='contact-card'>
            <a class='contact-card__link' href="{{url}}" target='_blank' rel='noreferrer noopener'>
             <div class='contact-card__picture'>
@@ -29,8 +29,7 @@
               </svg>
             </div>
            </a>
-        </li>
-      
+        </li>  
     {{/each}}
   </ul>
 </div>
