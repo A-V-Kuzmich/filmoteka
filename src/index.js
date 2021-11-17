@@ -19,6 +19,7 @@ import './js/layout/header';
 //main
 
 //footer
+import './js/components/contacts';
 
 //=========components===============
 import './js/components/spiner.js';
