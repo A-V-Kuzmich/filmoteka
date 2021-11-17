@@ -13,6 +13,7 @@ export function fetchById(id) {
   return getApiData(query);
 }
 
+
 refs.filmsEl.addEventListener('click', onCardClick);
 
 function onCardClick(e) {
@@ -36,27 +37,28 @@ function onCardClick(e) {
       })
 }
 
-refs.modalBtns.addEventListener ('click', onBtnsClick)
+refs.modalBtns.addEventListener ('click', onModalBtnsClick)
 
-function onBtnsClick(e) {
+function onModalBtnsClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return
   } let cardsMassive = document.querySelectorAll('img[data-index]')
-  let currentFilmId = document.querySelector('.modal__elements[data-id]').dataset.id
-  let nextFilmId;
-  let previousFilmId;
-  for (let i = 0; i < cardsMassive.length; i += 1) {
-    if (currentFilmId === cardsMassive[i].dataset.index) {
-      i < 19 ? (nextFilmId = cardsMassive[i + 1].dataset.index) : (nextFilmId = cardsMassive[i].dataset.index)
-      i > 0 ? (previousFilmId = cardsMassive[i - 1].dataset.index) : (previousFilmId = cardsMassive[i].dataset.index)
-      if (e.target.classList.contains('next-btn')) {
-      fetchById(nextFilmId).then(result => {
-        createInnerMarkup(refs.modal, makeModalFilm(result))
-      })
-    }  if (e.target.classList.contains('prev-btn')) {
-      fetchById(previousFilmId).then(result => {
-        createInnerMarkup(refs.modal, makeModalFilm(result))
-      })
-    }}
+    let currentFilmId = document.querySelector('.modal__elements[data-id]').dataset.id
+    let nextFilmId;
+    let previousFilmId;
+    for (let i = 0; i < cardsMassive.length; i += 1) {
+      if (currentFilmId === cardsMassive[i].dataset.index) {
+        i < cardsMassive.length - 1 ? (nextFilmId = cardsMassive[i + 1].dataset.index) : (nextFilmId = cardsMassive[i].dataset.index)
+        i > 0 ? (previousFilmId = cardsMassive[i - 1].dataset.index) : (previousFilmId = cardsMassive[i].dataset.index)
+        if (e.target.classList.contains('js-modal-next-btn')) {
+          fetchById(nextFilmId).then(result => {
+          createInnerMarkup(refs.modal, makeModalFilm(result))
+        })
+      } if (e.target.classList.contains('js-modal-prev-btn')) {
+          fetchById(previousFilmId).then(result => {
+          createInnerMarkup(refs.modal, makeModalFilm(result))
+        })
+      }
+    }
   }
 }

@@ -1,9 +1,17 @@
 <div class='modal__elements' data-id={{id}}>
+  {{#if poster_path}}
   <img
     class='modal__img'
     src='https://image.tmdb.org/t/p/w400{{poster_path}}'
     alt={{original_title}}
   />
+  {{else}}
+  <img
+    class='modal__img'
+    src='https://github.com/Dron010/filmoteka/blob/main/src/images/content/no-image-poster.png?raw=true'
+    alt={{original_title}}
+  />
+  {{/if}}
   <div>
     <h3 class='modal__title'>{{original_title}}</h3>
 

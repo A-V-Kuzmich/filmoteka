@@ -36,6 +36,8 @@ export const refs = {
   filtersGenreBox: document.querySelector('.js-filter-box'),
   filtersGenreList: document.querySelector('.values--genres'),
   filtersYearInput: document.querySelector('.values__form-input'),
-  modalBtns: document.querySelector('.js-modal-btns')
-  modalEl: document.querySelector('.modal'),
+  modalBtns: document.querySelector('.js-modal-btns'),
+  modalPrevBtn: document.querySelector('.js-modal-prev-btn'),
+  modalNextBtn: document.querySelector('.js-modal-next-btn'),
+  modalEl: document.querySelector('.modal')
 };
