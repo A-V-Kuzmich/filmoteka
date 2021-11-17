@@ -1,104 +1,117 @@
 <header class="header header__main-bckg">
-  <div class="container header__container ">
+  <div class="container header__container">
     <div class="header__section">
-        <nav class="header__nav">
-            <a class="header__logo js-logo" href="././index.html">
-                <svg class="header__logo-icon animation" width="24" height="24">
-                    <use  href="./././images/icon/sprite.svg#icon-film"></use>
-                </svg>
-                <span class="header__logo-name">Filmoteka</span>
-             </a>
-            <ul class="header__nav-list">
-                <li class="header__nav-item">
-                    <button class="header__nav-btn header__nav-item--active"
-                     type="button" data-action="home">Home</button>
-                </li>
-                <li class="header__nav-item">
-                    <button class="header__nav-btn" 
-                    type="button" data-action="library">My library</button>
-                </li>
-            </ul>
-           
-        </nav>
+      <nav class="header__nav">
+        <a class="header__logo js-logo" href="././index.html">
+          <svg class="header__logo-icon animation" width="24" height="24">
+            <use href="./././images/icon/sprite.svg#icon-film"></use>
+          </svg>
+          <span class="header__logo-name">Filmoteka</span>
+        </a>
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <button
+              class="header__nav-btn header__nav-item--active"
+              type="button"
+              data-action="home"
+            >
+              Home
+            </button>
+          </li>
+          <li class="header__nav-item">
+            <button class="header__nav-btn" type="button" data-action="library">My library</button>
+          </li>
+        </ul>
+      </nav>
     </div>
-    
+
     <div class="header__searcher">
-        <form class="header__form" role="search">
-            <input 
-            class="header__form-input"
-            type="text" 
-            name="query" 
-            placeholder="Search movies by name" 
-            autocomplete="off"/>
-            <button type="submit" class="header__form-input-btn js-input-btn">
-            <svg class="header__form-search-icon" width="12" height="12">
-              <use href="./././images/icon/sprite.svg#icon-search"></use>
-            </svg>
-          </button>
-        </form>
-   
-        <div class="filters__box filters__dropdown">
-            <svg class="filters__search-icon" width="12" height="12">
-                <use href="./././images/icon/sprite.svg#icon-equalizer"></use>
-            </svg>
-            <ul class="filters">
-                <li class="filters__item">
-                    <p class="filters__box filters__title">release</p>
-                    <div class="values">
-                        <form class="filters__box values__item values__form" role="search">
-                            <input class="values__form-input" type="number" name="year" min="1878" max="2022" maxlength="4" placeholder="year" autocomplete="off"/>
-                            <button type="submit" class="values__form-btn">
-                                <svg class="values__form-search-icon" width="12" height="12">
-                                    <use href="./././images/icon/sprite.svg#icon-search"></use>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-                   
-                </li>
-                <li class="filters__item">
-                    <p class="filters__box filters__title">popularity</p>
-                    <ul class="values">
-                        <li class="filters__box values__item values__item--rating">descending</li>
-                        <li class="filters__box values__item values__item--rating">ascending</li>
-                    </ul>
-                </li>
-                <li class="filters__item js-filter-box">
-                    <p class="filters__box filters__title">genre</p>
-                    <ul class="values values--genres"></ul>
-                </li>
+      <form class="header__form" role="search">
+        <input
+          class="header__form-input"
+          type="text"
+          name="query"
+          placeholder="Search movies by name"
+          autocomplete="off"
+        />
+        <button type="submit" class="header__form-input-btn js-input-btn">
+          <svg class="header__form-search-icon" width="12" height="12">
+            <use href="./././images/icon/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+
+      <div class="filters__box filters__dropdown">
+        <svg class="filters__search-icon" width="12" height="12">
+          <use href="./././images/icon/sprite.svg#icon-equalizer"></use>
+        </svg>
+        <ul class="filters">
+          <li class="filters__item">
+            <p class="filters__box filters__title">release</p>
+            <div class="values">
+              <form class="filters__box values__item values__form" role="search">
+                <input
+                  class="values__form-input"
+                  type="number"
+                  name="year"
+                  min="1878"
+                  max="2022"
+                  maxlength="4"
+                  placeholder="year"
+                  autocomplete="off"
+                />
+                <button type="submit" class="values__form-btn">
+                  <svg class="values__form-search-icon" width="12" height="12">
+                    <use href="./././images/icon/sprite.svg#icon-search"></use>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </li>
+          <li class="filters__item">
+            <p class="filters__box filters__title">popularity</p>
+            <ul class="values">
+              <li class="filters__box values__item values__item--rating">descending</li>
+              <li class="filters__box values__item values__item--rating">ascending</li>
             </ul>
-        </div>
+          </li>
+          <li class="filters__item js-filter-box">
+            <p class="filters__box filters__title">genre</p>
+            <ul class="values values--genres"></ul>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="header__btn visually-hidden">
-        <ul class="header__list-btn">
-            <li>
-                <button class="header__item-btn header__item-btn--active" type="button" data-action="watched">WATCHED</button>
-            </li>
-            <li>
-                <button class="header__item-btn" type="button" data-action="queue">QUEUE</button>
-            </li>
-        </ul>
+      <ul class="header__list-btn">
+        <li>
+          <button
+            class="header__item-btn header__item-btn--active"
+            type="button"
+            data-action="watched"
+          >
+            WATCHED
+          </button>
+        </li>
+        <li>
+          <button class="header__item-btn" type="button" data-action="queue">QUEUE</button>
+        </li>
+      </ul>
     </div>
- 
-<div class="toolbar">
-    <div class="theme-switch">
-        <button class="theme-switch__btn " type="button" id="theme-switch-toggle" name="theme">
 
-            <svg class="theme-switch__icon " role="tab" aria-label="Sun icon">
-                <use href="./images/icon/sprite.svg#sun"></use>
-            </svg>
+    <div class="toolbar">
+      <div class="theme-switch">
+        <button class="theme-switch__btn" type="button" id="theme-switch-toggle" name="theme">
+          <svg class="theme-switch__icon" role="tab" aria-label="Sun icon">
+            <use href="./images/icon/sprite.svg#sun"></use>
+          </svg>
         </button>
-        <button class="theme-switch__btn-light " type="button" id="theme-switch-light" name="theme">
-
-            <svg class="theme-switch__icon" aria-label="Moon icon">
-                <use href="./images/icon/sprite.svg#moon"></use>
-            </svg>
+        <button class="theme-switch__btn-light" type="button" id="theme-switch-light" name="theme">
+          <svg class="theme-switch__icon" aria-label="Moon icon">
+            <use href="./images/icon/sprite.svg#moon"></use>
+          </svg>
         </button>
-
+      </div>
     </div>
-</div>
-
   </div>
-
 </header>
