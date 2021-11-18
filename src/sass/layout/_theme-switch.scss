@@ -92,6 +92,16 @@ body.dark-theme {
   .pop {
     filter: brightness(0.6);
   }
+  .contact-card {
+    background: linear-gradient(
+      $dark-theme-color-footer 5%,
+      $modal-topic-color,
+      $dark-theme-color-footer 95%
+    );
+    &__title {
+      color: $accent-color;
+    }
+  }
 }
 
 .theme-switch {

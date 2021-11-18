@@ -101,6 +101,7 @@
 
   &__name {
     margin-bottom: 5px;
+    font-weight: 500;
   }
 
   &__img-fluid {
@@ -117,12 +118,13 @@
     transform: scale(0.7);
   }
 
-  &__social-list {
+  &__bottom {
     display: flex;
     justify-content: center;
     align-self: flex-end;
     width: 100%;
-    padding: 0;
+    height: 33px;
+    padding: 2px;
     margin: 0;
     background-color: $accent-color;
     position: absolute;
@@ -131,23 +133,14 @@
     transition: all 500ms ease 0ms;
   }
 
-  &:hover &__social-list,
-  &__link:focus &__social-list {
+  &:hover &__bottom,
+  &__link:focus &__bottom {
     bottom: 0;
   }
 
-  &__social-item {
-    height: 32px;
-  }
-
-  &__social-link {
-    color: $secondary-text-color;
+  &__git-icon {
+    fill: $primary-text-color;
     transition: all $animation-duration ease 0ms;
     text-decoration: none;
-
-    &:hover {
-      color: $accent-color;
-      background-color: $secondary-bg-color;
-    }
   }
 }
