@@ -30,6 +30,7 @@ import './js/components/video-player.js';
 import './js/components/scroll-to-top';
 import './js/components/background'
 import './js/components/no-scroll.js';
+import './js/components/arrows-on-modal'
 
 //=============api==================
 import './js/api/api-service.js';
