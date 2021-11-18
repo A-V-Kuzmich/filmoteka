@@ -26,7 +26,7 @@ export function exchangeObjectData(result) {
   })
 }
 
-// let query = `/trending/movie/week?`; - example!
+
 export function renderImages(query, element, template) {
   getApiData(query)
     .then(result => {
