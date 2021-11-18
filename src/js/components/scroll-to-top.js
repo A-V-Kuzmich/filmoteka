@@ -1,19 +1,22 @@
 import { refs } from '../refs/refs.js'
 
-refs.scrollButton.addEventListener("click", scrollToTop);
+    const { scrollButton, rocketTail } = refs; 
+   
+    scrollButton.addEventListener("click", scrollToTop);
 
 window.addEventListener("scroll", () => {
     if (window.pageYOffset > 400) {
-        addClass(refs.scrollButton,"icon-up-arrow--active");
-        removeClass(refs.scrollButton,"icon-up-arrow--not-visible");
+        addClass(scrollButton, "icon-up-arrow--active");
+        removeClass(scrollButton, "icon-up-arrow--hidden");
+         
     } else {
-        removeClass(refs.scrollButton,"icon-up-arrow--active");
-        addClass(refs.scrollButton,"icon-up-arrow--not-visible");
+        removeClass(scrollButton,"icon-up-arrow--active");
     }
 
     if (window.pageYOffset < 20) { 
-        removeClass(refs.rocketTail,"rocket-running"); 
-        refs.rocketTail.style.opacity = 0;
+        removeClass(rocketTail,"rocket-running"); 
+        setOpacity(rocketTail, 0); 
+        addClass(scrollButton, "icon-up-arrow--hidden");
     }
 })
 
@@ -24,14 +27,16 @@ function scrollToTop() {
       behavior: 'smooth',
       });
     
-    addClass(refs.rocketTail,"rocket-running"); 
-    refs.rocketTail.style.opacity = 1;
+    addClass(rocketTail,"rocket-running"); 
+    rocketTail.style.opacity = 1;
 }
 
-//Auxiliary functions
 function addClass(element,classToAdd) {
      element.classList.add(classToAdd);
 }
 function removeClass(element,classToRemove) {
     element.classList.remove(classToRemove);
+}
+function setOpacity(element, value) {
+    element.style.opacity = value;
 }
