@@ -10,26 +10,24 @@ let searchQuery = '1'
 let onClickPage = 1;
 let totalPages = 0;
 let btnSummary = 2
+
 document.addEventListener('DOMContentLoaded', onFetchAllMovies());
 refs.paginationList.addEventListener('click', onPaginationBtnClick)
 refs.filtersDropdownEl.addEventListener('click', searhByParameter)
 refs.searchFormEl.addEventListener('submit', onSearch)
-function searhByParameter(evt) {
-  const yearItem = evt.target.classList.contains('values__form-input')
-  const genreItem = evt.target.classList.contains('values__item--genre')
-  const ratingItem = evt.target.classList.contains('values__item--rating')
-  switch (true) {
-    case genreItem:
-      searchByGenre(evt.target.textContent);
-      break
-    case yearItem:
-      searchByRelease();
-      break
-    case ratingItem:
-      searchByPopularity(evt.target.textContent)
-      break
-  }
+
+
+//! функии для поиска по разным запросам
+// функиця поиска фильмов на главную страницу при первом заходе (ОСНОВНАЯ)
+export function onFetchAllMovies(page) {
+    cleanInnerMarkup(refs.filmsEl)
+    cleanInnerMarkup(refs.paginationBtnList)
+    searchQuery = ''
+    searchQuery = `/trending/movie/week?`;
+    renderImages(searchQuery, refs.filmsEl, filmsTemplate)
+    checkBtnOpacity()
 }
+// функция поиска по жанрам (ОСНОВНАЯ)
 function searchByGenre(value) {
     cleanInnerMarkup(refs.paginationBtnList)
     const genreId = getGenreIdByName(value)
@@ -38,11 +36,7 @@ function searchByGenre(value) {
     searchQuery = `/discover/movie?with_genres=${genreId}&sort_by=popularity.desc`;
     renderImages(searchQuery, refs.filmsEl, filmsTemplate)
 }
-refs.filtersYearInput.oninput = function () {
-  if (this.value.length > 4) {
-      this.value = this.value.slice(0,4); 
-  }
-}
+// функция поиска по годам (ОСНОВНАЯ)
 function searchByYear(e) {
   e.preventDefault();
   cleanInnerMarkup(refs.paginationBtnList)
@@ -52,13 +46,7 @@ function searchByYear(e) {
   searchQuery = `/discover/movie?primary_release_year=${year}&sort_by=popularity.desc`
   renderImages(searchQuery, refs.filmsEl, filmsTemplate)
 }
-function searchByRelease() {
-    cleanInnerMarkup(refs.paginationBtnList)
-    onClickPage = 1
-    let thisYear = new Date().getFullYear();
-    refs.valuesInput.setAttribute("max", thisYear);
-    refs.valueFormEl.addEventListener('submit', searchByYear)
-}
+// функиця поиска по популрности (ОСНОВНАЯ)
 function searchByPopularity(value) {
     cleanInnerMarkup(refs.paginationBtnList)
     onClickPage = 1
@@ -71,6 +59,7 @@ function searchByPopularity(value) {
         }
     renderImages(searchQuery, refs.filmsEl, filmsTemplate)
 }
+// функиця поиска по имени фильма (ОСНОВНАЯ)
 function onFetchByKeyword(keyword, page) {
     cleanInnerMarkup(refs.paginationBtnList)
     searchQuery = ''
@@ -88,6 +77,64 @@ function onFetchByKeyword(keyword, page) {
         })
 }
 
+// функция которая по поиску Вити (нужна чисто для того, чтобы повесить один слушатель и в ней уже обрабатывать запрос) (вспомогательная)
+function searhByParameter(evt) { 
+  const yearItem = evt.target.classList.contains('values__form-input')
+  const genreItem = evt.target.classList.contains('values__item--genre')
+  const ratingItem = evt.target.classList.contains('values__item--rating')
+  switch (true) {
+    case genreItem:
+      searchByGenre(evt.target.textContent);
+      break
+    case yearItem:
+      searchByRelease();
+      break
+    case ratingItem:
+      searchByPopularity(evt.target.textContent)
+      break
+  }
+}
+// функция переводит имя жанра в айдишник (вспомогательная)
+function getGenreIdByName(name) {
+  const queryGenre = getGenresFromLocalStorage().find(genre => {
+    return genre.name === name
+  })
+  return queryGenre.id
+}
+// это просто ограничивает количество символов для поиска года (вспомогательная)
+refs.filtersYearInput.oninput = function () {
+  if (this.value.length > 4) {
+      this.value = this.value.slice(0,4); 
+  }
+}
+
+// функция задает минимальный и максимальный год (вспомогательная)
+function searchByRelease() {
+    cleanInnerMarkup(refs.paginationBtnList)
+    onClickPage = 1
+    let thisYear = new Date().getFullYear();
+    refs.valuesInput.setAttribute("max", thisYear);
+    refs.valueFormEl.addEventListener('submit', searchByYear)
+}
+
+
+// функиця поиска по имени фильма (вспомогательная)
+function onSearch(e) {
+    e.preventDefault();
+    const keyword = e.currentTarget.elements.query.value
+    onClickPage = 1
+  cleanInnerMarkup(refs.paginationBtnList)
+  checkBtnOpacity()
+    if (keyword === '') {
+        alertEnterQuery()
+        return
+    }
+    onFetchByKeyword(keyword)
+}
+// -------------------------------------------------------------------------------------------------
+
+//! функции для пагинаци, которые получают запрос, получают цифру при нажатии на страницу и рисуют нужную страницу запроса
+// функция получает по клику на цифру саму цифру и записывает ее как номер страницы после чего по уже сформированному запросу - рисует нужную страницу (ОСНОВНАЯ)
 function onPaginationBtnClick(evt) {
     if (evt.target.nodeName !== 'BUTTON') {
     return
@@ -107,8 +154,7 @@ function onPaginationBtnClick(evt) {
         top: 250
       })
   } 
-
-
+// это какие-то функции Брона для прятания кнопок (вспомогательная)
 function checkBtnOpacity() {
   onClickPage === 1 ? (refs.previousArrow.classList.add('visually-hidden')) : (refs.previousArrow.classList.remove('visually-hidden'));
   onClickPage === Number(refs.lastPaginationBtn.textContent) ? (refs.nextArrow.classList.add('visually-hidden')) : (refs.nextArrow.classList.remove('visually-hidden'));
@@ -122,34 +168,37 @@ function checkBtnOpacity() {
     onClickPage > Number(refs.lastPaginationBtn.textContent) - 4 ? (refs.paginationRightDots.classList.add('visually-hidden')) : (refs.paginationRightDots.classList.remove('visually-hidden'));
   }  
 }
-
-
-function getGenreIdByName(name) {
-  const queryGenre = getGenresFromLocalStorage().find(genre => {
-    return genre.name === name
-  })
-  return queryGenre.id
+// это какие-то функции Брона для отрисовки страниц (вспомогательная)
+function setLastPageNumber(totalPages) {
+    refs.lastPaginationBtn.textContent = totalPages
 }
-function getGenreNameById(genreIds) {
-  let newArray = []
-  genreIds.forEach(genreId => {
-    getGenresFromLocalStorage().map(genre => {
-      if (genre.id === genreId) {
-        newArray.push(genre.name)
-      }
-    })
-  })
-  return newArray
-}
-function exchangeObjectData(result) {
-  result.results.forEach((obj) => {
-    if (obj.genre_ids) {
-    obj.genre_ids = getGenreNameById(obj.genre_ids)}
-    if (obj.release_date) {
-    obj.release_date = obj.release_date.slice(0, 4)
+// это какие-то функции Брона для отрисовки страниц (вспомогательная)
+function currentBtnClass() {
+  let paginationBtns = refs.paginationList.querySelectorAll('button');
+  for (let i = 0; i < paginationBtns.length; i += 1) {
+    if (Number(paginationBtns[i].textContent) === onClickPage) {
+      paginationBtns[i].classList.add('pagination__current-btn');
+      } else if (Number(paginationBtns[i].textContent) !== onClickPage) {
+      paginationBtns[i].classList.remove('pagination__current-btn')    
     }
-  })
+  }
 }
+// это какие-то функции Брона для отрисовки страниц (вспомогательная)
+function renderPagesList(totalPages) {
+  const start = onClickPage - btnSummary
+  const end = onClickPage + btnSummary;
+    for (let i = start; i <= end; i += 1) {
+    if (i > 1 && i < totalPages) {
+      refs.paginationBtnList.insertAdjacentHTML('beforeend', `<li class=""><button type="button" class="pagination__list-item">${i}</button></li>`,
+      );}
+  }
+}
+// -------------------------------------------------------
+
+
+
+//! ниже функии просто для рендера по полученному запросу 
+// рендерит по запросу (ОСНОВНАЯ)
 function renderImages(query, element, template) {
   getApiData(query)
       .then(result => {
@@ -162,45 +211,26 @@ function renderImages(query, element, template) {
     }
   );
 }
-export function onFetchAllMovies(page) {
-    cleanInnerMarkup(refs.filmsEl)
-    cleanInnerMarkup(refs.paginationBtnList)
-    searchQuery = ''
-    searchQuery = `/trending/movie/week?`;
-    renderImages(searchQuery, refs.filmsEl, filmsTemplate)
-    checkBtnOpacity()
+// меняет айди жанров на имена (вспомогательная)
+function getGenreNameById(genreIds) {
+  let newArray = []
+  genreIds.forEach(genreId => {
+    getGenresFromLocalStorage().map(genre => {
+      if (genre.id === genreId) {
+        newArray.push(genre.name)
+      }
+    })
+  })
+  return newArray
 }
-function onSearch(e) {
-    e.preventDefault();
-    const keyword = e.currentTarget.elements.query.value
-    onClickPage = 1
-  cleanInnerMarkup(refs.paginationBtnList)
-  checkBtnOpacity()
-    if (keyword === '') {
-        alertEnterQuery()
-        return
+// меняет данные обьекта (id жанров на имена, с полной даты - на год фильма) (вспомогательная)
+function exchangeObjectData(result) {
+  result.results.forEach((obj) => {
+    if (obj.genre_ids) {
+    obj.genre_ids = getGenreNameById(obj.genre_ids)}
+    if (obj.release_date) {
+    obj.release_date = obj.release_date.slice(0, 4)
     }
-    onFetchByKeyword(keyword)
+  })
 }
-function setLastPageNumber(totalPages) {
-    refs.lastPaginationBtn.textContent = totalPages
-}
-function currentBtnClass() {
-  let paginationBtns = refs.paginationList.querySelectorAll('button');
-  for (let i = 0; i < paginationBtns.length; i += 1) {
-    if (Number(paginationBtns[i].textContent) === onClickPage) {
-      paginationBtns[i].classList.add('pagination__current-btn');
-      } else if (Number(paginationBtns[i].textContent) !== onClickPage) {
-      paginationBtns[i].classList.remove('pagination__current-btn')    
-    }
-  }
-}
-function renderPagesList(totalPages) {
-  const start = onClickPage - btnSummary
-  const end = onClickPage + btnSummary;
-    for (let i = start; i <= end; i += 1) {
-    if (i > 1 && i < totalPages) {
-      refs.paginationBtnList.insertAdjacentHTML('beforeend', `<li class=""><button type="button" class="pagination__list-item">${i}</button></li>`,
-      );}
-  }
-}
+
