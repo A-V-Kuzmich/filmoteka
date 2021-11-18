@@ -50,10 +50,10 @@ function openModalCard(filmId) {
     const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
     openVideoBtn.addEventListener('click', () => openVideo(id));
 
-    const addToQueueBtn = document.querySelector('[data-queue]');
-    addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));
+    // const addToQueueBtn = document.querySelector('[data-queue]');
+    modal.addEventListener('click', addToStorageArray('queue', 'queue'));
 
-    const addToWatchedBtn = document.querySelector('[data-watched]');
-    addToWatchedBtn.addEventListener('click', addToStorageArray('watched', 'watched'));
+    // const addToWatchedBtn = document.querySelector('[data-watched]');
+    modal.addEventListener('click', addToStorageArray('watched', 'watched'));
   });
 }

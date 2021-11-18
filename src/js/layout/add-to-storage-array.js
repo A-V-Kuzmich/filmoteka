@@ -1,6 +1,6 @@
 import { setToLocalStorage } from './local-storage';
 import { getFromLocalStorage } from './local-storage';
-import Notiflix from 'notiflix';
+import { showNotify } from '../components/notifications';
 
 export function addToStorageArray(keyName, property) {
   return function closureFunc(e) {
@@ -11,43 +11,39 @@ export function addToStorageArray(keyName, property) {
       return;
     }
     const id = e.target.dataset.id;
-    if (!localStorage.getItem(keyName)) {
-      const contentToAdd = [];
 
-      contentToAdd.push(id);
-      setToLocalStorage(keyName, contentToAdd);
-      Notiflix.Notify.success('Added to List');
-    } else {
-      const storageArray = getFromLocalStorage(keyName);
-      switch (storageArray.includes(id)) {
-        case true:
-          Notiflix.Notify.warning('Already added');
-          break;
-        case false:
-          (function clearWactedFromQueue() {
-            const queueArray = localStorage.getItem('queue');
-            if (queueArray.includes(id)) {
-              // console.log('it works');
-              // console.log('id', id);
-              const parsedArray = JSON.parse(queueArray);
-              // console.log('before', parsedArray);
-
-              const index = parsedArray.indexOf(id, 0);
-              // console.log('index', index);
-
-              parsedArray.splice(index, 1);
-
-              // console.log('after', parsedArray);
-
-              setToLocalStorage('queue', parsedArray);
-            }
-          })();
-
+    switch (!localStorage.getItem(keyName)) {
+      case true:
+        const contentToAdd = [];
+        contentToAdd.push(id);
+        setToLocalStorage(keyName, contentToAdd);
+        showNotify('success', 'Added to List');
+        if (keyName === 'watched') {
+          clearWactedFromQueue();
+        }
+        break;
+      case false:
+        const storageArray = getFromLocalStorage(keyName);
+        if (storageArray.includes(id)) {
+          showNotify('warning', 'Already added');
+          if (keyName === 'watched') {
+            clearWactedFromQueue();
+          }
+        } else {
+          clearWactedFromQueue();
           storageArray.push(id);
           setToLocalStorage(`${keyName}`, storageArray);
-          Notiflix.Notify.success('Added to List');
-          break;
-      }
+          showNotify('success', 'Added to List');
+        }
     }
   };
+}
+
+function clearWactedFromQueue(id) {
+  try {
+    const parsedArray = JSON.parse(localStorage.getItem('queue'));
+    const index = parsedArray.indexOf(id, 0);
+    parsedArray.splice(index, 1);
+    setToLocalStorage('queue', parsedArray);
+  } catch (error) {}
 }
