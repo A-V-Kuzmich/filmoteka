@@ -41,7 +41,7 @@ function getId(e) {
 function openModalCard(filmId) {
   fetchById(filmId).then(result => {
     const id = filmId;
-    // popularity = result.popularity.toFixed(2); - ломало открытие модалки временно закомментировал
+    result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
     createInnerMarkup(modal, modalContent);
