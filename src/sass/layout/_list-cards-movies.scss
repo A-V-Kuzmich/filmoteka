@@ -26,6 +26,7 @@
   margin-bottom: 20px;
   width: 280px;
   border-radius: 5px;
+  background-color: $secondary-text-color;
   transition: box-shadow 450ms $timing-function;
   &:hover {
     box-shadow: $cards-shadows-box $modal-topic-color;
@@ -109,7 +110,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 60px;
 
   &__arrow {
     width: 40px;
@@ -134,7 +134,7 @@
 
     &-item {
       margin-right: 16px;
-      background-color: inherit;
+      background-color: $secondary-text-color;
       border: none;
       height: 30px;
     }
