@@ -12,8 +12,9 @@ export function fetchById(id) {
   return getApiData(query);
 }
 
+const { filmsEl, modal, backdrop } = refs;
 
-refs.filmsEl.addEventListener('click', onCardClick);
+filmsEl.addEventListener('click', onCardClick);
 
 //---------click tracking function----------------
 function onCardClick(e) {
@@ -42,8 +43,8 @@ function openModalCard(filmId) {
     result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
-    createInnerMarkup(refs.modal, modalContent);
-    openModalWindow(refs.backdrop);
+    createInnerMarkup(modal, modalContent);
+    openModalWindow(backdrop);
 
     const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
     openVideoBtn.addEventListener('click', () => openVideo(id));

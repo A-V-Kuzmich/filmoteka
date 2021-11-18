@@ -5,6 +5,13 @@
     justify-items: center;
   }
 
+  &__list-item:first-child {
+    margin-right: 20px;
+    @media screen and(min-width:$tablet) {
+      margin-right: 15px;
+    }
+  }
+
   &__item-btn {
     @extend %button;
     border: 1px solid $secondary-text-color;
@@ -29,13 +36,6 @@
       background-color: $accent-color;
       border: none;
       box-shadow: $btn-shadow-color;
-    }
-  }
-
-  &__item-btn:first-child {
-    margin-right: 20px;
-    @media screen and(min-width:$tablet) {
-      margin-right: 15px;
     }
   }
 }
