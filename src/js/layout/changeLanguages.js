@@ -31,31 +31,38 @@ const langArrey = {
     ru: 'В ОЧЕРЕДИ',
     en: 'QUEUE',
   },
-  input: {
-    uk: 'пошук',
-    ru: 'ПРОСМОТРЕННЫЕ',
-    en: 'WATCHED',
-  },
-
-  right: {
-    uk: '&#169; 2020 | Всі Права Захищені | Зроблено Студентами GоIT',
-    ru: '&#169; 2020 | Все Права Защищены | Сделано Студентами GоIT',
-    en: "&#169; 2020 | All Rights Reserved | Developed by GoIT Student's",
-  },
 };
+
+
 
 const select = document.querySelector('select');
 select.addEventListener('change', changeLanguage);
+
 function changeLanguage() {
   let lang = select.value;
-
   refs.filmsEl.dataset.lang = select.value;
-
   for (let key in langArrey) {
     document.querySelector('.lng-' + key).textContent = langArrey[key][lang];
     setGenresToLocalStorage();
     onFetchAllMovies(1);
-  
+    changePlaceholder();
   }
 }
 
+//==================================placeholder=========
+function changePlaceholder() {
+  const changLangs = {
+    uk: 'Пошук фільмів за назвою',
+    ru: 'Поиск фильмов за названием',
+    en: 'Search movies by name',
+  };
+  if (select.value === "ru") {
+    document.querySelector('.lng-input').placeholder = `${changLangs.ru}`;
+  }
+  if (select.value === "uk") {
+    document.querySelector('.lng-input').placeholder = `${changLangs.uk}`;
+  }
+  if (select.value === "en") {
+    document.querySelector('.lng-input').placeholder = `${changLangs.en}`;
+  }
+}

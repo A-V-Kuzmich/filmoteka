@@ -1,15 +1,9 @@
 .change-lng {
-    position: absolute;
-    top: 90px;
-    right: 20px;
-    background-color: transparent;
-    color: $secondary-text-color;
-    border: none;
-    @media screen and (min-width: $tablet) {
-        top: 110px;
-        right: 60px;
-      }
-      @media screen and (min-width: $desktop) {
-        top: 120px;
-      }
+  position: absolute;
+  top: 180px;
+  right: 20px;
+  background-color: transparent;
+  color: $secondary-text-color;
+  border: none;
+  outline: none;
 }
