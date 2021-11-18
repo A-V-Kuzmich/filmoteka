@@ -66,8 +66,10 @@ function onModalBtnsClick(e) {
     let previousFilmId;
     for (let i = 0; i < cardsMassive.length; i += 1) {
       if (currentFilmId === cardsMassive[i].dataset.id) {
+
         i < cardsMassive.length - 1 ? (nextFilmId = cardsMassive[i + 1].dataset.id) : (nextFilmId = cardsMassive[i].dataset.id)
         i > 0 ? (previousFilmId = cardsMassive[i - 1].dataset.id) : (previousFilmId = cardsMassive[i].dataset.id)
+        
         if (e.target.classList.contains('js-modal-next-btn')) {
           fetchById(nextFilmId).then(result => {
             createInnerMarkup(refs.modal, makeModalFilm(result))
@@ -84,3 +86,5 @@ function onModalBtnsClick(e) {
     }
   }
 }
+
+
