@@ -1,5 +1,6 @@
 import { setToLocalStorage } from './local-storage';
 import { getFromLocalStorage } from './local-storage';
+import Notiflix from 'notiflix';
 
 export function addToStorageArray(keyName, property) {
   return function closureFunc(e) {
@@ -15,17 +16,17 @@ export function addToStorageArray(keyName, property) {
 
       contentToAdd.push(id);
       setToLocalStorage(keyName, contentToAdd);
-      // нотификация о добавлении фильма в список ${keyName}
+      Notiflix.Notify.success('Added to List');
     } else {
       const storageArray = getFromLocalStorage(keyName);
       switch (storageArray.includes(id)) {
         case true:
-          //нотификация о том, что фильм уже добавлен в список ${keyName}
+          Notiflix.Notify.warning('Already added');
           break;
         case false:
           storageArray.push(id);
           setToLocalStorage(`${keyName}`, storageArray);
-          // нотификация о добавлении фильма в список ${keyName}
+          Notiflix.Notify.success('Added to List');
           break;
       }
     }
