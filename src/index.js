@@ -20,18 +20,23 @@ import './js/layout/header';
 //main
 
 //footer
+import './js/components/contacts';
 
 //=========components===============
 import './js/components/spiner.js';
 import './js/components/backdrop.js';
 import './js/components/modal.js';
 import './js/components/notifications.js';
+import './js/components/video-player.js';
 import './js/components/scroll-to-top';
+import './js/components/no-scroll.js';
 
 //=============api==================
 import './js/api/api-service.js';
 
 //=============test==================
 import './js/test/test-api.js';
+import './js/test/test-video-player.js';
 import './js/test/test-modal.js';
 // import './js/test/test-notification.js';
+// import 'https://www.youtube.com/iframe_api';
