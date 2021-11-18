@@ -4,8 +4,10 @@ import { getFromLocalStorage } from './local-storage';
 import { fetchById } from './fetch-by-Id';
 import { createInnerMarkup } from './render-by-template';
 
-refs.queueBtn.addEventListener('click', renderFromStorageArray('queue'));
-refs.watchedBtn.addEventListener('click', renderFromStorageArray('watched'));
+const { queueBtn, watchedBtn, filmsEl } = refs;
+
+queueBtn.addEventListener('click', renderFromStorageArray('queue'));
+watchedBtn.addEventListener('click', renderFromStorageArray('watched'));
 
 export function renderFromStorageArray(keyName) {
   return function closureFunc() {
@@ -24,7 +26,7 @@ export function renderFromStorageArray(keyName) {
       fetchById(film).then(result => {
         result.release_date = result.release_date.slice(0, 4);
         filmArray.push(result);
-        createInnerMarkup(refs.filmsEl, cardTemplate(filmArray));
+        createInnerMarkup(filmsEl, cardTemplate(filmArray));
       }),
     );
   };
