@@ -24,17 +24,25 @@
     }
   }
   &__icon-heart {
-  fill: $accent-color;
-  width: 14px;
-  height: 10px;
-  @media screen and (min-width: $mobile) {
-    margin-top: 10px;
+    fill: $accent-color;
+    width: 14px;
+    height: 10px;
+    @media screen and (min-width: $mobile) {
+      margin-top: 10px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      height: 12px;
+    }
   }
   &__text-authors {
     text-decoration: underline;
+    color: inherit;
+    cursor: pointer;
+    transition: color $timing-function $animation-duration;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
   }
-  @media screen and (min-width: $tablet) {
-    height: 12px;
-  }
-}
 }

@@ -1,0 +1,153 @@
+.contacts {
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+  &__item {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+.contact-card {
+  padding: 30px 0 40px;
+  width: 102px;
+  height: 245px;
+  position: relative;
+  background-color: $secondary-bg-color;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 4px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @media screen and (min-width: $desktop) {
+    width: 150px;
+  }
+
+  &__link {
+    color: inherit;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__link:hover &__picture,
+  &__link:focus &__picture {
+    filter: grayscale(0);
+  }
+
+  &__picture {
+    filter: grayscale(1);
+    display: inline-block;
+    height: 95px;
+    width: 95px;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+
+    @media screen and (min-width: $desktop) {
+      width: 110px;
+      height: 110px;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 0;
+      border-radius: 50%;
+      background-color: $accent-color;
+      position: absolute;
+      bottom: 135%;
+      right: 0;
+      left: 0;
+      opacity: 0.9;
+      transform: scale(3);
+      transition: all $animation-duration linear 0ms;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $accent-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &:hover &__picture::before,
+  &__link:focus &__picture::before {
+    height: 100%;
+  }
+
+  &__title {
+    color: $credits-text-color;
+  }
+
+  &__name {
+    margin-bottom: 5px;
+  }
+
+  &__img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: all 900ms ease 0ms;
+  }
+
+  &:hover &__img-fluid,
+  &__link:focus &__img-fluid {
+    box-shadow: 0 0 0 14px $filters-text-color;
+    transform: scale(0.7);
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $accent-color;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    transition: all 500ms ease 0ms;
+  }
+
+  &:hover &__social-list,
+  &__link:focus &__social-list {
+    bottom: 0;
+  }
+
+  &__social-item {
+    height: 32px;
+  }
+
+  &__social-link {
+    color: $secondary-text-color;
+    transition: all $animation-duration ease 0ms;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-color;
+      background-color: $secondary-bg-color;
+    }
+  }
+}

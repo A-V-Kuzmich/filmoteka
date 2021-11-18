@@ -5,7 +5,6 @@
   position: relative;
 }
 .icon-up-arrow {
-  
   position: fixed;
   bottom: 13%;
   right: 4%;
@@ -34,53 +33,60 @@
 }
 
 .rocket-tail {
-    opacity: 0; 
-    display: block;
-    position: absolute;
-    width: 10px;
-    height: 70px;
-    background: linear-gradient($btn-shadow-color, transparent);
-    right: 41%;  
-    &__container{
-      position: fixed;
-      bottom: 12%;
-      right: 4.3%;
-      width: 60px;
-      height: 10px;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 70px;
+  background: linear-gradient($btn-shadow-color, transparent);
+  right: 47%;
+  @media screen and (min-width: $tablet) {
+    right: 46%;
+  }
+  @media screen and (min-width: $tablet) {
+    right: 45%;
+  }
+
+  &__container {
+    position: fixed;
+    bottom: 12%;
+    right: 4.3%;
+    width: 60px;
+    height: 10px;
+  }
+}
+
+.rocket-running {
+  animation: animate 0.3s ease-out;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+
+  @keyframes animate {
+    0% {
+      transform: scaleY(0.5);
     }
-} 
+    20% {
+      transform: scaleY(0.9);
+    }
 
- .rocket-running{
-    animation: animate 0.3s ease-out;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    
-    @keyframes animate {
-      0% {
-         transform: scaleY(0.5);
-      }
-      20% {
-        transform: scaleY(0.9);
-      }
+    30% {
+      transform: scaleY(1);
+    }
+    40% {
+      transform: scaleY(0.2);
+    }
+    50% {
+      transform: scaleY(0.5);
+    }
+    70% {
+      transform: scaleY(0.9);
+    }
 
-      30% {
-         transform: scaleY(1);
-      }
-      40% {
-         transform: scaleY(0.2);
-      }
-      50% {
-         transform: scaleY(0.5);
-      }
-      70% {
-        transform: scaleY(0.9);
-      }
-
-      90% {
-         transform: scaleY(1);
-      }
-      100% {
-         transform: scaleY(0.5);
-      }
+    90% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(0.5);
     }
   }
+}

@@ -1,10 +1,9 @@
 {{#each this}}
-  <li class='films__item' id="theme-switch-toggle">
+  <li class='films__item' data-id='{{id}}'>
     <div class='film__card'>
       {{#if poster_path}}
         <img
           class='films__picture'
-          data-index='{{id}}'
           src='https://image.tmdb.org/t/p/w500{{poster_path}}'
           loading='lazy'
           alt='Film {{title}} poster'
@@ -12,16 +11,18 @@
       {{else}}
         <img
           class='films__picture'
-          data-index='{{id}}'
           src='https://github.com/Dron010/filmoteka/blob/main/src/images/content/no-image-poster.png?raw=true'
           alt='content photo'
         />
       {{/if}}
+      <p class="film__trailer">
+        <img class="film__trailer-img" height="30px" width="30px"
+          src="https://cdn.icon-icons.com/icons2/1584/PNG/512/3721679-youtube_108064.png" alt="trailer" />
+        Watch trailer
+      </p>
     </div>
     <div class='films__info'>
-
       <h2 class='films__name'>{{title}}</h2>
-
       <div class='films__info-wrap'>
         <ul class='films__genre'>
           {{#each genre_ids}}
