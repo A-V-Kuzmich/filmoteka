@@ -33,7 +33,6 @@ function onCardClick(e) {
   }
 }
 
-const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
 //-----------getting an ID card------------------------
 function getId(e) {
   return e.path.find(num => num.className === 'films__item').dataset.id;
@@ -73,13 +72,15 @@ function onModalBtnsClick(e) {
           fetchById(nextFilmId).then(result => {
             createInnerMarkup(refs.modal, makeModalFilm(result))
             document.querySelector('[data-modal="modal-video-btn"]').addEventListener('click', () => openVideo(nextFilmId))
+            document.querySelector('[data-watched]').addEventListener('click', addToStorageArray('watched', 'watched'));
         })
       } if (e.target.classList.contains('js-modal-prev-btn')) {
           fetchById(previousFilmId).then(result => {
             createInnerMarkup(refs.modal, makeModalFilm(result))
             document.querySelector('[data-modal="modal-video-btn"]').addEventListener('click', () => openVideo(previousFilmId))
+            document.querySelector('[data-watched]').addEventListener('click', addToStorageArray('watched', 'watched'));
         })
-      }  document.querySelector('[data-watched]').addEventListener('click', addToStorageArray('watched', 'watched'));
+      }  
     }
   }
 }
