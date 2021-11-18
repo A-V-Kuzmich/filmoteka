@@ -93,13 +93,9 @@ body.dark-theme {
     filter: brightness(0.6);
   }
   .contact-card {
-    background: linear-gradient(
-      $dark-theme-color-footer 5%,
-      $modal-topic-color,
-      $dark-theme-color-footer 95%
-    );
+    background-color: $contact-card-bg-dark-theme;
     &__title {
-      color: $accent-color;
+      color: $secondary-text-color;
     }
   }
 }
