@@ -9,7 +9,7 @@ const langArrey = {
     en: 'Filmoteka',
   },
 
-  'home': {
+  home: {
     uk: 'головна',
     ru: 'домой',
     en: 'home',
@@ -21,41 +21,40 @@ const langArrey = {
     en: 'my libruary',
   },
 
-  'watched': {
+  watched: {
     uk: 'ПЕРЕГЛЯНУТІ',
     ru: 'ПРОСМОТРЕННЫЕ',
     en: 'WATCHED',
   },
-  'queue': {
+  queue: {
     uk: 'В ЧЕРЗІ',
     ru: 'В ОЧЕРЕДИ',
     en: 'QUEUE',
   },
-  'footer': {
+  footer: {
     uk: '2021 | Всі права захищені | Зроблено з',
     ru: '2021 | Все права защищены | Сделано с',
     en: '2021 | All Rights Reserved | Developed with',
   },
-  'goit': {
-    uk: 'Студентами GoIT',
-    ru: 'Студентами GoIT',
-    en: 'GoIT Students',
-  },
-
+  // 'goit': {
+  //   uk: 'Студентами GoIT',
+  //   ru: 'Студентами GoIT',
+  //   en: 'GoIT Students',
+  // },
 };
 
-const {select, filmsEl} = refs;
+const { select, filmsEl } = refs;
 select.addEventListener('change', changeLanguage);
 
 function changeLanguage() {
   let lang = select.value;
   filmsEl.dataset.lang = select.value;
   for (let key in langArrey) {
-    document.querySelector('.lng-' + key).innerText = langArrey[key][lang];
-    setGenresToLocalStorage();
-    onFetchAllMovies(1);
-    changePlaceholder();
+    document.querySelector('.lng-' + key).textContent = langArrey[key][lang];
   }
+  setGenresToLocalStorage();
+  onFetchAllMovies(1);
+  changePlaceholder();
 }
 
 //==================================placeholder=========
@@ -65,15 +64,15 @@ function changePlaceholder() {
     ru: 'Поиск фильмов за названием',
     en: 'Search movies by name',
   };
-  
+
   const a = document.querySelector('.lng-input').placeholder;
-  if (select.value === "ru") {
+  if (select.value === 'ru') {
     document.querySelector('.lng-input').placeholder = `${changLangs.ru}`;
   }
-  if (select.value === "uk") {
+  if (select.value === 'uk') {
     document.querySelector('.lng-input').placeholder = `${changLangs.uk}`;
   }
-  if (select.value === "en") {
+  if (select.value === 'en') {
     document.querySelector('.lng-input').placeholder = `${changLangs.en}`;
   }
 }
