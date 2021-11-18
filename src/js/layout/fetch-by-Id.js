@@ -59,14 +59,14 @@ refs.modalBtns.addEventListener ('click', onModalBtnsClick)
 function onModalBtnsClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return
-  } let cardsMassive = document.querySelectorAll('img[data-index]')
+  } let cardsMassive = document.querySelectorAll('.films__item[data-id]')
     let currentFilmId = document.querySelector('.modal__elements[data-id]').dataset.id
     let nextFilmId;
     let previousFilmId;
     for (let i = 0; i < cardsMassive.length; i += 1) {
-      if (currentFilmId === cardsMassive[i].dataset.index) {
-        i < cardsMassive.length - 1 ? (nextFilmId = cardsMassive[i + 1].dataset.index) : (nextFilmId = cardsMassive[i].dataset.index)
-        i > 0 ? (previousFilmId = cardsMassive[i - 1].dataset.index) : (previousFilmId = cardsMassive[i].dataset.index)
+      if (currentFilmId === cardsMassive[i].dataset.id) {
+        i < cardsMassive.length - 1 ? (nextFilmId = cardsMassive[i + 1].dataset.id) : (nextFilmId = cardsMassive[i].dataset.id)
+        i > 0 ? (previousFilmId = cardsMassive[i - 1].dataset.id) : (previousFilmId = cardsMassive[i].dataset.id)
         if (e.target.classList.contains('js-modal-next-btn')) {
           fetchById(nextFilmId).then(result => {
           createInnerMarkup(refs.modal, makeModalFilm(result))
