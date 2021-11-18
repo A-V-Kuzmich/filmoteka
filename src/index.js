@@ -19,6 +19,7 @@ import './js/layout/header';
 //main
 
 //footer
+import './js/components/contacts';
 
 //=========components===============
 import './js/components/spiner.js';
@@ -27,6 +28,7 @@ import './js/components/modal.js';
 import './js/components/notifications.js';
 import './js/components/video-player.js';
 import './js/components/scroll-to-top';
+import './js/components/background'
 import './js/components/no-scroll.js';
 
 //=============api==================
