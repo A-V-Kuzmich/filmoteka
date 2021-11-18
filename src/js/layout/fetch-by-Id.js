@@ -7,12 +7,14 @@ import { openModalWindow } from '../components/modal.js';
 import { refs } from '../refs/refs.js';
 import { addToStorageArray } from './add-to-storage-array';
 import { openVideo } from '../components/video-player';
-const { popularity, filmsEl, modal, backdrop } = refs;
+
 // --------- func for search by ID -------------
 export function fetchById(id) {
   let query = `/movie/${id}?`;
   return getApiData(query);
 }
+
+const { filmsEl, modal, backdrop } = refs;
 
 filmsEl.addEventListener('click', onCardClick);
 
