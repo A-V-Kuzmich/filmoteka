@@ -1,0 +1,74 @@
+{
+  "students": [
+    {
+      "name": "Andrey",
+      "surname": "Kuzmichov",
+      "url": "https://github.com/Dron010",
+      "role": ["Team Lead", "Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/73987873?v=4"
+    },
+    {
+      "name": "Viktor",
+      "surname": "Kostiuchenko",
+      "url": "https://github.com/Viktor-Kostiuchenko",
+      "role": ["Scrum Master", "Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/81323303?v=4"
+    },
+    {
+      "name": "Dasha",
+      "surname": "Pashkovskaya",
+      "url": "https://github.com/DashaPash",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/81958637?v=4"
+    },
+    {
+      "name": "Nataliia",
+      "surname": "Salamatina",
+      "url": "https://github.com/T-jorven",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/81956461?v=4"
+    },
+    {
+      "name": "Larysa",
+      "surname": "Timoshenko",
+      "url": "https://github.com/LarysaTymoshenko",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/83286085?v=4"
+    },
+    {
+      "name": "Viktor",
+      "surname": "Sinelnykov",
+      "url": "https://github.com/Fen111",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/28630122?v=4"
+    },
+    {
+      "name": "Bronislav",
+      "surname": "Voydylo",
+      "url": "https://github.com/Bronislav-frontend",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/82459223?v=4"
+    },
+    {
+      "name": "Vladislav",
+      "surname": "Slobodenjuk",
+      "url": "https://github.com/vladislav-slobodenjuk",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/16687004?v=4"
+    },
+    {
+      "name": "Bohdan",
+      "surname": "Tatarchuk",
+      "url": "https://github.com/Bohdan-Ta",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/81333397?v=4"
+    },
+    {
+      "name": "Serhii",
+      "surname": "Sokolov",
+      "url": "https://github.com/Falconoff",
+      "role": ["Web Developer"],
+      "photo": "https://avatars.githubusercontent.com/u/68744408?v=4"
+    }
+  ]
+}

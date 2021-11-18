@@ -16,6 +16,7 @@ body.dark-theme {
   color: $secondary-text-color;
   fill: $secondary-text-color;
   .films__item {
+    background-color: $dark-theme-color;
     &:hover {
       box-shadow: $cards-shadows-box $filters-text-color;
     }
@@ -34,16 +35,62 @@ body.dark-theme {
       padding: 8px 12px;
     }
   }
-}
-
-.modal.dark-theme {
-  background-color: $dark-theme-color;
-  color: $secondary-text-color;
-}
-footer.dark-theme {
-  background-color: $dark-theme-color-footer;
-  &__text {
+  .pagination__list-item {
+    background-color: $dark-theme-color;
+  }
+  .pagination__current-btn {
+    background-color: $accent-color;
+  }
+  .pagination__dots {
+    color: $primary-text-color;
+  }
+  .modal {
+    background-color: $dark-theme-color;
     color: $secondary-text-color;
+  }
+  .modal__item-btn {
+    background-color: $dark-theme-color;
+    border-color: $secondary-text-color;
+    color: $secondary-text-color;
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+  .filters {
+    &__box {
+      background-color: $dark-theme-color;
+      color: $secondary-text-color;
+      &:hover {
+        background-color: $accent-color;
+      }
+    }
+    &__title::after {
+      border-left: 6px solid $secondary-text-color;
+    }
+    &__dropdown {
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    & .values__form-input {
+      border-color: $secondary-text-color;
+      &::placeholder {
+        color: $secondary-text-color;
+      }
+    }
+    & .values__form-search-icon {
+      stroke: $secondary-text-color;
+    }
+  }
+  .footer {
+    background-color: $dark-theme-color-footer;
+    &__text {
+      color: $secondary-text-color;
+    }
+  }
+  .pop {
+    filter: brightness(0.6);
   }
 }
 
