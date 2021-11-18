@@ -6,6 +6,7 @@ import { openModalWindow } from '../components/modal.js';
 
 import { refs } from '../refs/refs.js';
 import { addToStorageArray } from './add-to-storage-array';
+import { openVideo } from '../components/video-player';
 
 // --------- func for search by ID -------------
 export function fetchById(id) {
@@ -13,20 +14,41 @@ export function fetchById(id) {
   return getApiData(query);
 }
 
-refs.filmsEl.addEventListener('click', onCardClick);
+const { filmsEl, modal, backdrop } = refs;
 
+filmsEl.addEventListener('click', onCardClick);
+
+//---------click tracking function----------------
 function onCardClick(e) {
-  if (e.target.nodeName !== 'IMG') {
-    return;
+  switch (e.srcElement.className) {
+    case 'film__trailer':
+      openVideo(getId(e));
+      break;
+    case 'film__trailer-img':
+      openVideo(getId(e));
+      break;
+    case 'films':
+      break;
+    default:
+      openModalCard(getId(e));
   }
-
-  let filmId = e.target.dataset.index; // id атрибут должен быть на елементе клика
+}
+//-----------getting an ID card------------------------
+function getId(e) {
+  return e.path.find(num => num.className === 'films__item').dataset.id;
+}
+//---------opening a modal window---------------------
+function openModalCard(filmId) {
   fetchById(filmId).then(result => {
+    const id = filmId;
     result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
-    createInnerMarkup(refs.modal, modalContent);
-    openModalWindow();
+    createInnerMarkup(modal, modalContent);
+    openModalWindow(backdrop);
+
+    const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
+    openVideoBtn.addEventListener('click', () => openVideo(id));
 
     const addToQueueBtn = document.querySelector('[data-queue]');
     addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));

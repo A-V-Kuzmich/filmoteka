@@ -1,56 +1,120 @@
+.header__container {
+  position: relative;
+}
+.toolbar {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  @media screen and(min-width:$tablet) {
+    right: 60px;
+    top: 67px;
+  }
+}
+
 body.dark-theme {
   background-color: $dark-theme-color;
   color: $secondary-text-color;
-}
-
-.toolbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 20px;
-
-  @media screen and(min-width:$desktop) {
-    right: 70px;
-    top: 45%;
+  fill: $secondary-text-color;
+  .films__item {
+    background-color: $dark-theme-color;
+    &:hover {
+      box-shadow: $cards-shadows-box $filters-text-color;
+    }
+  }
+  .theme-switch {
+    &__btn {
+      display: none;
+    }
+    &__btn-light {
+      display: block;
+      background-color: transparent;
+      align-content: center;
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+      padding: 8px 12px;
+    }
+  }
+  .pagination__list-item {
+    background-color: transparent;
+    color: $secondary-text-color;
+  }
+  .pagination__current-btn {
+    background-color: $accent-color;
+  }
+  .pagination__dots {
+    color: $secondary-text-color;
+  }
+  .modal {
+    background-color: $dark-theme-color;
+    color: $secondary-text-color;
+  }
+  .modal__item-btn {
+    background-color: $dark-theme-color;
+    border-color: $secondary-text-color;
+    color: $secondary-text-color;
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+  .filters {
+    &__box {
+      background-color: $dark-theme-color;
+      color: $secondary-text-color;
+      &:hover {
+        background-color: $accent-color;
+      }
+    }
+    &__title::after {
+      border-left: 6px solid $secondary-text-color;
+    }
+    &__dropdown {
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    & .values__form-input {
+      border-color: $secondary-text-color;
+      &::placeholder {
+        color: $secondary-text-color;
+      }
+    }
+    & .values__form-search-icon {
+      stroke: $secondary-text-color;
+    }
+  }
+  .footer {
+    background-color: $dark-theme-color-footer;
+    &__text {
+      color: $secondary-text-color;
+    }
+  }
+  .pop {
+    filter: brightness(0.6);
   }
 }
-/* THEME SWITCH */
 
 .theme-switch {
   &__btn {
-    position: relative;
-    overflow: hidden;
     background-color: transparent;
     align-content: center;
     border: none;
     text-align: center;
     border-radius: 5px;
     padding: 8px 12px;
-
-    &:hover:after {
-      transform: translateY(0);
-      left: 3%;
-      top: 3%;
-      z-index: 1;
-    }
-
-    &:after {
-      content: 'switch theme';
-      position: absolute;
-      top: 30px;
-      right: 0;
-      left: 0;
-      width: 100%;
-      color: $secondary-text-color;
-      background: $logo-color;
-      transform: translateX(100%);
-      transition: $timing-function $animation-duration;
-    }
   }
-
+  &__btn-light {
+    display: none;
+  }
   &__icon {
     height: 12px;
     width: 12px;
     fill: $secondary-text-color;
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
 
     @media screen and(min-width:$tablet) {
       width: 20px;
