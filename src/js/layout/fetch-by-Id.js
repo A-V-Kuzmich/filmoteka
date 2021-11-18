@@ -7,14 +7,14 @@ import { openModalWindow } from '../components/modal.js';
 import { refs } from '../refs/refs.js';
 import { addToStorageArray } from './add-to-storage-array';
 import { openVideo } from '../components/video-player';
-
+const { popularity, filmsEl, modal, backdrop } = refs;
 // --------- func for search by ID -------------
 export function fetchById(id) {
   let query = `/movie/${id}?`;
   return getApiData(query);
 }
 
-refs.filmsEl.addEventListener('click', onCardClick);
+filmsEl.addEventListener('click', onCardClick);
 
 //---------click tracking function----------------
 function onCardClick(e) {
@@ -39,11 +39,11 @@ function getId(e) {
 function openModalCard(filmId) {
   fetchById(filmId).then(result => {
     const id = filmId;
-    result.popularity = result.popularity.toFixed(2);
+    popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
-    createInnerMarkup(refs.modal, modalContent);
-    openModalWindow(refs.backdrop);
+    createInnerMarkup(modal, modalContent);
+    openModalWindow(backdrop);
 
     const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
     openVideoBtn.addEventListener('click', () => openVideo(id));
