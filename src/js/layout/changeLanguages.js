@@ -36,16 +36,7 @@ const langArrey = {
     ru: 'ПРОСМОТРЕННЫЕ',
     en: 'WATCHED',
   },
-  // "vote": {
-  //     "uk": "Рейтинг/Голоси",
-  //     "ru": "Рейтинг/Голоса",
-  //     "en": "Vote/Votes",
-  // },
-  // "add-watched": {
-  //     "uk": "Додати переглянуті",
-  //     "ru": "Дополнить просмотренные",
-  //     "en": "Add-watched",
-  // },
+
   right: {
     uk: '&#169; 2020 | Всі Права Захищені | Зроблено Студентами GоIT',
     ru: '&#169; 2020 | Все Права Защищены | Сделано Студентами GоIT',
@@ -68,4 +59,3 @@ function changeLanguage() {
   }
 }
 
-// console.dir(document.querySelector('.header__form-input'))

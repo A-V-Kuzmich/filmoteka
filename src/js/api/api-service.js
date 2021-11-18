@@ -9,12 +9,12 @@ const API_KEY = 'a3ec7c1621ade0b1491e66cd43b88745';
 
 export const getApiData = query => {
   showSpiner();
-  let LG = refs.filmsEl.dataset.lang
+  let langs = refs.filmsEl.dataset.lang
   return axios
-    .get(`${query}&api_key=${API_KEY}&append_to_response=videos&language=${LG}`)
+    .get(`${query}&api_key=${API_KEY}&append_to_response=videos&language=${langs}`)
     .then(response => {
-      hideSpiner();
       return response.data;
     })
-    .catch(onFetchError);
+    .catch(onFetchError)
+    .finally(hideSpiner);
 };
