@@ -20,14 +20,14 @@
     align-content: center;
     transition: background-color $animation-duration $timing-function;
 
-    &:active {
+    &:hover {
       background-color: $accent-color;
       border: none;
       box-shadow: $btn-shadow-color;
     }
 
-    &:hover {
-      background-color: $accent-color;
+    &:focus {
+      background-color: $focus-btn-color;
       border: none;
       box-shadow: $btn-shadow-color;
     }
