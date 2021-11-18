@@ -34,4 +34,4 @@ export function renderImages(query, element, template) {
       createInnerMarkup(element, template(result.results))
     }
   );
-}
+} 

@@ -9,6 +9,7 @@ export const getApiData = query => {
   return axios
     .get(`${query}&api_key=${API_KEY}&append_to_response=videos`)
     .then(response => {
+      console.log(response);
       hideSpiner();
       return response.data;
     })

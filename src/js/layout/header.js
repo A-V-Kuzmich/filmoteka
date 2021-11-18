@@ -1,6 +1,6 @@
 import { refs } from '../refs/refs';
 import { renderFromStorageArray } from './render-storage-array';
-import { onFetchAllMovies } from './fetch-by-keyword';
+import { onFetchAllMovies } from './week-movies';
 
 refs.headerNav.addEventListener('click', changeHeader);
 refs.headerBtn.addEventListener('click', changeActiveHeaderBtn);
@@ -14,7 +14,7 @@ function changeHeader(e) {
       break;
     case 'home':
       selectHomeBtn();
-      onFetchAllMovies(1);
+      onFetchAllMovies();
       break;
   }
 }
