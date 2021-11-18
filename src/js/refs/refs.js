@@ -42,4 +42,5 @@ export const refs = {
   backdropVideoPlayer: document.querySelector('[data-modal="video"]'),
   closeBtnVideoPlayer: document.querySelector('[data-modal="close-video"]'),
   modalEl: document.querySelector('.modal'),
+  select: document.querySelector('select'),
 };
