@@ -55,6 +55,11 @@
   }
 }
 
+.films__info {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .films__info-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -103,70 +108,4 @@
   color: white;
   font-size: 12px;
   text-align: center;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__arrow {
-    width: 40px;
-    height: 40px;
-
-    background-color: $secondary-bg-color;
-    border: none;
-    border-radius: 5px;
-  }
-
-  &__arrow:not(:last-child) {
-    margin-right: 16px;
-  }
-
-  &__dots {
-    margin-right: 16px;
-  }
-
-  &__list {
-    display: flex;
-    align-items: center;
-
-    &-item {
-      margin-right: 16px;
-      background-color: transparent;
-      border: none;
-      height: 30px;
-    }
-    &-item:hover,
-    :focus {
-      background-color: $secondary-bg-color;
-      border-radius: 5px;
-    }
-
-    &-item.pagination__current-btn:hover,
-    :focus {
-      background-color: $focus-color;
-      color: $secondary-text-color;
-    }
-  }
-
-  &__current-btn {
-    background-color: $accent-color;
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
-    color: $secondary-text-color;
-  }
-}
-
-.js-previous {
-  background-image: url(..//images/icon/arrow-left.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.js-next {
-  background-image: url(..//images/icon/arrow-right.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
