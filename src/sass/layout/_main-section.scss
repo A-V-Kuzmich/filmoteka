@@ -1,0 +1,9 @@
+main {
+  min-height: calc(100vh - 330px);
+  @media screen and (min-width: $tablet) {
+    min-height: calc(100vh - 316px);
+  }
+  @media screen and (min-width: $desktop) {
+    min-height: calc(100vh - 317px);
+  }
+}
