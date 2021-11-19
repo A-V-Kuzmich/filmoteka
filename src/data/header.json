@@ -1,0 +1,70 @@
+{
+  "header-logo": {
+    "uk": "Фільмотека",
+    "ru": "Фильмотека",
+    "en": "Filmoteka"
+  },
+
+  "home": {
+    "uk": "головна",
+    "ru": "домой",
+    "en": "home"
+  },
+
+  "library": {
+    "uk": "моя бібліотека",
+    "ru": "моя библиотека",
+    "en": "my library"
+  },
+
+  "watched": {
+    "uk": "ПЕРЕГЛЯНУТІ",
+    "ru": "ПРОСМОТРЕННЫЕ",
+    "en": "WATCHED"
+  },
+  "queue": {
+    "uk": "В ЧЕРЗІ",
+    "ru": "В ОЧЕРЕДИ",
+    "en": "QUEUE"
+  },
+  "footer": {
+    "uk": "2021 | Всі права захищені | Зроблено з",
+    "ru": "2021 | Все права защищены | Сделано с",
+    "en": "2021 | All Rights Reserved | Developed with"
+  },
+  "goit": {
+    "uk": "Студентами GoIT",
+    "ru": "Студентами GoIT",
+    "en": "GoIT Students"
+  },
+  "release": {
+    "uk": "реліз",
+    "ru": "релиз",
+    "en": "release"
+  },
+  "year": {
+    "uk": "рік",
+    "ru": "год",
+    "en": "year"
+  },
+  "popularity": {
+    "uk": "популярні",
+    "ru": "популярные",
+    "en": "popularity"
+  },
+  "descending": {
+    "uk": "за спаданням",
+    "ru": "убывание",
+    "en": "descending"
+  },
+  "ascending": {
+    "uk": "за зростанням",
+    "ru": "возрастание",
+    "en": "ascending"
+  },
+  "genre": {
+    "uk": "жанр",
+    "ru": "жанр",
+    "en": "genre"
+  }
+}

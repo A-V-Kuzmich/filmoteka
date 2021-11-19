@@ -221,6 +221,9 @@
     justify-content: center;
     text-align: center;
     font-size: 10px;
+    @media screen and (max-width: 767px) {
+      font-size: 8px;
+    }
   }
 
   &__item--rating {

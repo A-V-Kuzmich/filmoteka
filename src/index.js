@@ -20,6 +20,7 @@ import './js/layout/fetch-by-Id';
 import './js/layout/week-movies';
 import './js/layout/render-genres-list';
 import './js/layout/pagination';
+import './js/layout/language';
 
 //footer
 import './js/components/contacts';
