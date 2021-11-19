@@ -6,32 +6,22 @@
 
   &__item-btn {
     @extend %button;
+    width: 112px;
+    align-content: center;
     border: 1px solid $primary-text-color;
     color: $primary-text-color;
     background-color: $secondary-text-color;
-    align-content: center;
     font-weight: 500;
     line-height: 1.33;
     text-transform: uppercase;
-    transition: background-color $animation-duration $timing-function,
-      color $animation-duration $timing-function;
+    transition: background-color $animation-duration $timing-function;
 
-    @media screen and(min-width:$mobile) {
-      width: 112px;
-    }
     @media screen and(min-width:$tablet) {
       width: 125px;
     }
     @media screen and(min-width:$desktop) {
       width: 136px;
     }
-
-    &:active {
-      background-color: $accent-color;
-      border: none;
-      box-shadow: $btn-shadow-color;
-    }
-
     &:hover {
       background-color: $accent-color;
       color: $secondary-text-color;
