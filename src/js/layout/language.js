@@ -28,7 +28,6 @@ if (langLS === 'uk') {
 
 if (langLS === 'ru') {
   setHeaderData('ru')
-  return
 }
   
 
