@@ -1,5 +1,5 @@
 import { refs } from '../refs/refs';
-import { onFetchAllMovies } from './fetch-by-keyword';
+import { onFetchAllMovies } from './week-movies';
 import { setGenresToLocalStorage } from './genre-local-storage';
 
 const langArrey = {
