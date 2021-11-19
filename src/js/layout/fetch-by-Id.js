@@ -1,6 +1,6 @@
 import { getApiData } from '../api/api-service.js';
 import { createInnerMarkup } from './render-by-template';
-
+import { changeModalLanguage } from './language.js';
 import makeModalFilm from '../../partial/templates/modal-film.hbs';
 import { openModalWindow } from '../components/modal.js';
 
@@ -51,5 +51,7 @@ function openModalCard(filmId) {
 
     const addToWatchedBtn = document.querySelector('[data-watched]');
     addToWatchedBtn.addEventListener('click', addToStorageArray('watched', 'watched'));
+
+    changeModalLanguage()
   });
 }
