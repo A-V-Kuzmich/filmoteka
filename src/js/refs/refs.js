@@ -38,4 +38,6 @@ export const refs = {
   containerVideoPlayer: document.querySelector('.modal-video__frame'),
   backdropVideoPlayer: document.querySelector('[data-modal="video"]'),
   closeBtnVideoPlayer: document.querySelector('[data-modal="close-video"]'),
+  modalEl: document.querySelector('.modal'),
+  emptyListImg: document.querySelector('.nothing-found'),
 };
