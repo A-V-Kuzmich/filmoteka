@@ -13,11 +13,10 @@ const { LIGHT, DARK } = theme;
 let newTheme = getFromLocalStorage('n-theme');
 
 if (!newTheme) {
-  newTheme = LIGHT;
   setToLocalStorage('n-theme', LIGHT);
+} else {
+  bodySwitch.classList.add(newTheme);
 }
-
-clickBox.click = newTheme === LIGHT ? false : true;
 
 clickBox.addEventListener('click', changeTheme);
 lightEl.addEventListener('click', changeTheme);
