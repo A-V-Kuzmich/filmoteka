@@ -1,12 +1,11 @@
 import { refs } from '../refs/refs';
-import { setGenresToLocalStorage } from './genre-local-storage';
-import { setToLocalStorage} from './local-storage';
+import { setToLocalStorage, getFromLocalStorage} from './local-storage';
 import { returnToMain} from '../layout/header'
 
 import headerLng from '../../data/header.json'
 import mainLng from '../../data/main.json'
 
-const { select, filmsEl } = refs;
+const { select } = refs;
 
 select.addEventListener('change', changeLanguage);
 
@@ -14,31 +13,21 @@ export function changeLanguage() {
   let lang = select.value;
   setToLocalStorage('lang', lang)
 
-  filmsEl.dataset.lang = select.value;
-  for (let key in headerLng) {
-    document.querySelector('.lng-' + key).textContent = headerLng[key][lang];
-  }
-  changePlaceholder();
-  setGenresToLocalStorage();
+  setHeaderData(lang)
   returnToMain()
 }
 
-function changePlaceholder() {
-  switch (select.value) {
-    case "ru":
-      document.querySelector('.lng-year').placeholder = `${mainLng.yearInput.ru}`;
-      document.querySelector('.lng-input').placeholder = `${mainLng.mainInput.ru}`;
-      break
-    case "uk":
-      document.querySelector('.lng-year').placeholder = `${mainLng.yearInput.uk}`;
-      document.querySelector('.lng-input').placeholder = `${mainLng.mainInput.uk}`;
-      break;
-    case "en":
-      document.querySelector('.lng-year').placeholder = `${mainLng.yearInput.en}`;
-      document.querySelector('.lng-input').placeholder = `${mainLng.mainInput.en}`;
-      break
-  }
+let langLS = getFromLocalStorage('lang')
+if (langLS === 'uk') {
+  setHeaderData('uk')
+  return
 }
+
+if (langLS === 'ru') {
+  setHeaderData('ru')
+  return
+}
+  
 
 export function changeModalLanguage() {
     const watchedBtn = document.querySelector('.lng-modal-watched')
@@ -69,4 +58,13 @@ export function changeModalLanguage() {
       about.textContent = `${mainLng.about.uk}`;
       break
   }
+}
+
+function setHeaderData(lang) {
+  for (let key in headerLng) {
+    document.querySelector('.lng-' + key).textContent = `${headerLng[key][`${lang}`]}`;
+  }
+  document.querySelector('.lng-year').placeholder = `${mainLng.yearInput[`${lang}`]}`;
+  document.querySelector('.lng-input').placeholder = `${mainLng.mainInput[`${lang}`]}`;
+  document.querySelector(`.change-lng__item--${ lang }`).setAttribute('selected', ' ')
 }
