@@ -23,8 +23,8 @@ clickBox.addEventListener('click', changeTheme);
 lightEl.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
-  bodySwitch.classList.toggle(theme.DARK);
-  bodySwitch.classList.toggle(theme.LIGHT);
+  bodySwitch.classList.toggle(DARK);
+  bodySwitch.classList.toggle(LIGHT);
 
   setToLocalStorage('n-theme', e.target.classList ? DARK : LIGHT);
 }
