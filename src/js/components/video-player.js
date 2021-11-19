@@ -4,6 +4,8 @@ import { createInnerMarkup } from '../layout/render-by-template';
 import { refs } from '../refs/refs';
 import { openModalWindow } from '../components/modal';
 
+const { containerVideoPlayer, backdropVideoPlayer } = refs;
+
 function fetchVideo(id) {
   let query = `/movie/${id}?`;
   return getApiData(query).then(result => result);
@@ -12,7 +14,7 @@ function fetchVideo(id) {
 export function openVideo(id) {
   fetchVideo(id).then(result => {
     const playlist = result.videos.results.map(value => value.key).join(',');
-    createInnerMarkup(refs.containerVideoPlayer, videoTp(playlist));
-    openModalWindow(refs.backdropVideoPlayer);
+    createInnerMarkup(containerVideoPlayer, videoTp(playlist));
+    openModalWindow(backdropVideoPlayer);
   });
 }

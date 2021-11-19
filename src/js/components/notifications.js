@@ -35,4 +35,12 @@ Notiflix.Notify.init({
     background: '#f00',
     notiflixIconColor: 'rgba(255,255,255,0.9)',
   },
+  success: {
+    background: '#32c682',
+    notiflixIconColor: 'rgba(255,255,255,0.9)',
+  },
+  info: {
+    background: '#26c0d3',
+    notiflixIconColor: 'rgba(255,255,255,0.9)',
+  },
 });

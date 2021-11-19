@@ -9,8 +9,8 @@ export const getApiData = query => {
   return axios
     .get(`${query}&api_key=${API_KEY}&append_to_response=videos`)
     .then(response => {
-      hideSpiner();
       return response.data;
     })
-    .catch(onFetchError);
+    .catch(onFetchError)
+    .finally(hideSpiner);
 };
