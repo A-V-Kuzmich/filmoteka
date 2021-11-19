@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
 
-export function showNotify(key, text) {
+function showNotify(key, text) {
   Notiflix.Notify[key](text);
 }
 
