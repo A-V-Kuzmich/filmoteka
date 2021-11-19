@@ -1,0 +1,166 @@
+// -------------------------------POPCORN
+.background-box {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.pops {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.pops--invers .pop {
+  transform: rotate(180deg) translateX(100%);
+}
+.pop {
+  position: absolute;
+  display: block;
+}
+.pop:nth-child(1) {
+  left: 90%;
+  animation: fall 23s linear infinite;
+  animation-delay: -2s;
+}
+.pop:nth-child(2) {
+  right: 0%;
+  animation: fall 25s linear infinite;
+  animation-delay: -2s;
+}
+.pop:nth-child(3) {
+  left: 20%;
+  animation: fall 40s linear infinite;
+  animation-delay: -3s;
+}
+.pop:nth-child(4) {
+  left: 60%;
+  animation: fall 38s linear infinite;
+  animation-delay: -4s;
+}
+.pop:nth-child(5) {
+  left: 30%;
+  animation: fall 34s linear infinite;
+  animation-delay: -6s;
+}
+.pop:nth-child(6) {
+  left: 80%;
+  animation: fall 26s linear infinite;
+  animation-delay: -6s;
+}
+.pop:nth-child(7) {
+  left: 40%;
+  animation: fall 35s linear infinite;
+  animation-delay: -7s;
+}
+.pop:nth-child(8) {
+  left: 70%;
+  animation: fall 36s linear infinite;
+  animation-delay: -8s;
+}
+.pop:nth-child(9) {
+  left: 50%;
+  animation: fall 27s linear infinite;
+  animation-delay: -9s;
+}
+.pop:nth-child(10) {
+  left: 0%;
+  animation: fall 38s linear infinite;
+  animation-delay: -10s;
+}
+.pop:nth-child(11) {
+  left: 70%;
+  animation: fall 39s linear infinite;
+  animation-delay: -1s;
+}
+.pop:nth-child(12) {
+  right: 5%;
+  animation: fall 35s linear infinite;
+  animation-delay: -4s;
+}
+.pop:nth-child(13) {
+  left: 25%;
+  animation: fall 20s linear infinite;
+  animation-delay: -5s;
+}
+.pop:nth-child(14) {
+  left: 5%;
+  animation: fall 38s linear infinite;
+  animation-delay: -3s;
+}
+.pop:nth-child(15) {
+  left: 35%;
+  animation: fall 34s linear infinite;
+  animation-delay: -5s;
+}
+.pop:nth-child(16) {
+  left: 45%;
+  animation: fall 26s linear infinite;
+  animation-delay: -6s;
+}
+.pop:nth-child(17) {
+  left: 45%;
+  animation: fall 30s linear infinite;
+  animation-delay: -7s;
+}
+.pop:nth-child(18) {
+  left: 75%;
+  animation: fall 31s linear infinite;
+  animation-delay: -8s;
+}
+.pop:nth-child(19) {
+  left: 55%;
+  animation: fall 32s linear infinite;
+  animation-delay: -9s;
+}
+.pop:nth-child(20) {
+  right: 40%;
+  animation: fall 23s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    top: -10%;
+    transform: translateX (20px) rotate(0deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX (-20px) rotate(45deg);
+  }
+  40% {
+    transform: translateX (-20px) rotate(90deg);
+  }
+  60% {
+    transform: translateX (-20px) rotate(135deg);
+  }
+  80% {
+    transform: translateX (-20px) rotate(180deg);
+  }
+  100% {
+    top: 110%;
+    transform: translateX (-20px) rotate(225deg);
+  }
+}
+.pops--invers {
+  transform: rotateX(180deg);
+}
+
+.pops .pop {
+  width: 20px;
+  @media screen and(min-width:$tablet) {
+    width: 30px;
+  }
+}
+
+.pops--invers .pop {
+  width: 30px;
+  @media screen and(min-width:$tablet) {
+    width: 40px;
+  }
+}
+// -------------------------------POPCORN

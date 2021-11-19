@@ -123,7 +123,7 @@
     &-name {
       transition: color $animation-duration $timing-function;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 767px) {
         display: none;
       }
 

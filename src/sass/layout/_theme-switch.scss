@@ -3,11 +3,11 @@
 }
 .toolbar {
   position: absolute;
-  right: 20px;
-  top: 25px;
+  top: -25px;
+  right: 54px;
   @media screen and(min-width:$tablet) {
-    right: 60px;
     top: 67px;
+    right: 106px;
   }
 }
 

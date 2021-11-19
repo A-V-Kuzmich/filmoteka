@@ -20,6 +20,7 @@ import './js/layout/fetch-by-Id';
 import './js/layout/week-movies';
 import './js/layout/render-genres-list';
 import './js/layout/pagination';
+import './js/layout/language';
 
 //footer
 import './js/components/contacts';
@@ -35,9 +36,3 @@ import './js/components/no-scroll.js';
 
 //=============api==================
 import './js/api/api-service.js';
-
-//=============test==================
-// import './js/test/test-api.js';
-// import './js/test/test-video-player.js';
-// import './js/test/test-modal.js';
-// import './js/test/test-notification.js';

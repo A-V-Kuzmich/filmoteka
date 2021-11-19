@@ -16,9 +16,11 @@
 @import './layout/header';
 @import './layout/header-btn';
 @import './layout/theme-switch';
+@import './layout/language';
 //main
 @import './layout/list-cards-movies';
 @import './layout/filters';
+@import './layout/main-section';
 //footer
 @import './layout/footer';
 
@@ -30,3 +32,4 @@
 @import './components/spiner';
 @import './components/contacts';
 @import './components/scroll-top.scss';
+@import './components/animation';

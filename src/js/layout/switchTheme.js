@@ -1,6 +1,8 @@
 import { refs } from '../refs/refs.js';
 import { setToLocalStorage, getFromLocalStorage } from './local-storage';
 
+const { clickBox, lightEl, bodySwitch } = refs;
+
 const theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
@@ -15,14 +17,14 @@ if (!newTheme) {
   setToLocalStorage('n-theme', LIGHT);
 }
 
-refs.clickBox.click = newTheme === LIGHT ? false : true;
+clickBox.click = newTheme === LIGHT ? false : true;
 
-refs.clickBox.addEventListener('click', changeTheme);
-refs.lightEl.addEventListener('click', changeTheme);
+clickBox.addEventListener('click', changeTheme);
+lightEl.addEventListener('click', changeTheme);
 
 function changeTheme(e) {
-  refs.bodySwitch.classList.toggle(theme.DARK);
-  refs.bodySwitch.classList.toggle(theme.LIGHT);
+  bodySwitch.classList.toggle(DARK);
+  bodySwitch.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.target ? theme.DARK : theme.LIGHT);
+  setToLocalStorage('n-theme', e.target.classList ? DARK : LIGHT);
 }
