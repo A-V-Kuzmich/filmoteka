@@ -1,28 +1,27 @@
 //colors
-
 $logo-color: #818181;
 $accent-color: #ff6b08;
-$accent-hover-color: #ff6b08; // подобрать цвет
+$accent-hover-color: #ff6b08;
 $dark-theme-color: rgb(63, 58, 58);
 $dark-theme-color-footer: rgb(46, 44, 44);
 $primary-text-color: #000000;
 $secondary-text-color: #ffffff;
 $credits-text-color: #545454;
 $modal-topic-color: #8c8c8c;
-// $primary-bg-color: #ffffff;
 $secondary-bg-color: #f7f7f7;
-$header-overlay: rgba(0, 0, 0, 0.56);
 $modal-backdrop: rgba(0, 0, 0, 0.25);
 $filters-text-color: #dbdbdb;
 $focus-color: red;
+$contact-card-bg-dark-theme: #4f4848;
 
 //shadows
 $cards-shadows-box: 8px -6px 16px -2px;
 $btn-shadow-color: rgba(255, 107, 1, 0.6);
 $filters-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-$filters-box-bcg: rgba(255, 107, 1, 0.9);
-// $hero-shadow-color: rgba(0, 0, 0, 0.04);
 $cards-shadow-color: rgba(73, 73, 73, 0.95);
+
+//filter
+$filters-focus-btn: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
 
 //font
 $primary-font: 'Roboto', sans-serif;

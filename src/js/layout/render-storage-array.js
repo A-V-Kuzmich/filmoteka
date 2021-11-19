@@ -4,21 +4,22 @@ import { getFromLocalStorage } from './local-storage';
 import { fetchById } from './fetch-by-Id';
 import { createInnerMarkup } from './render-by-template';
 
-const { queueBtn, watchedBtn, filmsEl } = refs;
+const { queueBtn, watchedBtn, filmsEl, emptyListImg } = refs;
+console.log(emptyListImg);
 
 queueBtn.addEventListener('click', renderFromStorageArray('queue'));
 watchedBtn.addEventListener('click', renderFromStorageArray('watched'));
 
 export function renderFromStorageArray(keyName) {
   return function closureFunc() {
-    if (!getFromLocalStorage(keyName)) {
-      console.log('no array');
-      //нотификация о том, что список ${keyName} пуст
+    if (!getFromLocalStorage(keyName) || getFromLocalStorage(keyName).length === 0) {
+      emptyListImg.classList.remove('visually-hidden');
+      filmsEl.innerHTML = '';
       return;
     }
 
     const storageArray = getFromLocalStorage(keyName);
-    console.log('storageArray', storageArray);
+    emptyListImg.classList.add('visually-hidden');
 
     const filmArray = [];
 

@@ -1,37 +1,40 @@
-import { refs } from '../refs/refs.js'
+import { refs } from '../refs/refs.js';
 
-refs.scrollButton.addEventListener("click", scrollToTop);
+const { scrollButton, rocketTail } = refs;
 
-window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 1) {
-        addClass(refs.scrollButton,"icon-up-arrow--active");
-        removeClass(refs.scrollButton,"icon-up-arrow--not-visible");
-    } else {
-        removeClass(refs.scrollButton,"icon-up-arrow--active");
-        addClass(refs.scrollButton,"icon-up-arrow--not-visible");
-    }
+scrollButton.addEventListener('click', scrollToTop);
 
-    if (window.pageYOffset < 20) { 
-        removeClass(refs.rocketTail,"rocket-running"); 
-        refs.rocketTail.style.opacity = 0;
-    }
-})
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 400) {
+    addClass(scrollButton, 'icon-up-arrow--active');
+    removeClass(scrollButton, 'icon-up-arrow--hidden');
+  } else {
+    removeClass(scrollButton, 'icon-up-arrow--active');
+  }
+
+  if (window.pageYOffset < 20) {
+    removeClass(rocketTail, 'rocket-running');
+    setOpacity(rocketTail, 0);
+    addClass(scrollButton, 'icon-up-arrow--hidden');
+  }
+});
 
 function scrollToTop() {
-    
-      window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-      });
-    
-    addClass(refs.rocketTail,"rocket-running"); 
-    refs.rocketTail.style.opacity = 1;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+
+  addClass(rocketTail, 'rocket-running');
+  rocketTail.style.opacity = 1;
 }
 
-//Auxiliary functions
-function addClass(element,classToAdd) {
-     element.classList.add(classToAdd);
+function addClass(element, classToAdd) {
+  element.classList.add(classToAdd);
 }
-function removeClass(element,classToRemove) {
-    element.classList.remove(classToRemove);
+function removeClass(element, classToRemove) {
+  element.classList.remove(classToRemove);
+}
+function setOpacity(element, value) {
+  element.style.opacity = value;
 }

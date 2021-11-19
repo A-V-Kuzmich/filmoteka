@@ -46,6 +46,8 @@
   width: 280px;
   height: 398px;
   margin-bottom: 10px;
+  object-fit: cover;
+
 
   @media screen and (min-width: $tablet) {
     width: 294px;
