@@ -20,12 +20,10 @@ export function changeLanguage() {
 let langLS = getFromLocalStorage('lang')
 if (langLS === 'uk') {
   setHeaderData('uk')
-  return
 }
 
 if (langLS === 'ru') {
   setHeaderData('ru')
-  return
 }
   
 
