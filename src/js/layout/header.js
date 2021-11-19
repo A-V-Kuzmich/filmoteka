@@ -12,6 +12,7 @@ const {
   headerSearcherEl,
   homeBtn,
   paginationList,
+  emptyListImg,
 } = refs;
 
 headerNav.addEventListener('click', changeHeader);
@@ -29,6 +30,8 @@ function changeHeader(e) {
       selectHomeBtn();
       onFetchAllMovies(1);
       paginationList.classList.remove('visually-hidden');
+      emptyListImg.classList.add('visually-hidden');
+
       break;
   }
 }
