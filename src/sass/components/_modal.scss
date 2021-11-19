@@ -138,13 +138,13 @@
 }
 
 .modal__close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 201;
-  position: absolute;
-  top: 10px;
-  right: 10px;
   width: 30px;
   height: 30px;
   background-color: transparent;
@@ -162,9 +162,6 @@
   }
   &:hover {
     border: 1px solid $accent-color;
-  }
-
-  &:hover &-icon {
     fill: $accent-color;
   }
 }
