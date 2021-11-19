@@ -40,15 +40,11 @@ function getId(e) {
 //---------opening a modal window---------------------
 function openModalCard(filmId) {
   fetchById(filmId).then(result => {
-    const id = filmId;
     result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
     createInnerMarkup(modal, modalContent);
     openModalWindow(backdrop);
-
-    const openVideoBtn = document.querySelector('[data-modal="modal-video-btn"]');
-    openVideoBtn.addEventListener('click', () => openVideo(id));
 
     const addToQueueBtn = document.querySelector('[data-queue]');
     addToQueueBtn.addEventListener('click', addToStorageArray('queue', 'queue'));

@@ -5,7 +5,6 @@ import { fetchById } from './fetch-by-Id';
 import { createInnerMarkup } from './render-by-template';
 
 const { queueBtn, watchedBtn, filmsEl, emptyListImg } = refs;
-console.log(emptyListImg);
 
 queueBtn.addEventListener('click', renderFromStorageArray('queue'));
 watchedBtn.addEventListener('click', renderFromStorageArray('watched'));
