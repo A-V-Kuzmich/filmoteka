@@ -36,9 +36,3 @@ import './js/components/no-scroll.js';
 
 //=============api==================
 import './js/api/api-service.js';
-
-//=============test==================
-// import './js/test/test-api.js';
-// import './js/test/test-video-player.js';
-// import './js/test/test-modal.js';
-// import './js/test/test-notification.js';

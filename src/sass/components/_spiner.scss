@@ -1,13 +1,11 @@
 .spiner {
+  position: absolute;
+  @extend %position;
   width: 100px;
   height: 100px;
   border: 15px solid rgb(20, 18, 18);
   border-radius: 50%;
   border-top-color: $accent-color;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   animation: 1s spin infinite linear;
 }
 .done {

@@ -20,22 +20,14 @@
     align-content: center;
     transition: background-color $animation-duration $timing-function;
 
-    &:active {
-      background-color: $accent-color;
-      border: none;
-      box-shadow: $btn-shadow-color;
-    }
-
-    &:hover {
-      background-color: $accent-color;
-      border: none;
-      box-shadow: $btn-shadow-color;
-    }
-
     &--active {
       background-color: $accent-color;
       border: none;
-      box-shadow: $btn-shadow-color;
+      filter: $filters-focus-btn;
+    }
+    &:hover,
+    &:focus {
+      @extend .header__item-btn--active;
     }
   }
 }
