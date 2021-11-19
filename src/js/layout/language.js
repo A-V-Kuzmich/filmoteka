@@ -1,6 +1,7 @@
 import { refs } from '../refs/refs';
 import { setToLocalStorage, getFromLocalStorage} from './local-storage';
-import { returnToMain} from '../layout/header'
+import { returnToMain } from '../layout/header'
+import { setGenresToLocalStorage } from './genre-local-storage';
 
 import headerLng from '../../data/header.json'
 import mainLng from '../../data/main.json'
@@ -14,12 +15,14 @@ export function changeLanguage() {
   setToLocalStorage('lang', lang)
 
   setHeaderData(lang)
+  setGenresToLocalStorage()
   returnToMain()
 }
 
 let langLS = getFromLocalStorage('lang')
 if (langLS === 'uk') {
   setHeaderData('uk')
+  setGenresToLocalStorage()
 }
 
 if (langLS === 'ru') {

@@ -15,6 +15,8 @@ let newTheme = getFromLocalStorage('n-theme');
 if (!newTheme) {
   newTheme = LIGHT;
   setToLocalStorage('n-theme', LIGHT);
+} else {
+  bodySwitch.classList.add(newTheme);
 }
 
 clickBox.click = newTheme === LIGHT ? false : true;
@@ -26,5 +28,5 @@ function changeTheme(e) {
   bodySwitch.classList.toggle(DARK);
   bodySwitch.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.target.classList ? DARK : LIGHT);
+  setToLocalStorage('n-theme', bodySwitch.classList.contains(DARK) ? DARK : LIGHT);
 }
