@@ -1,0 +1,18 @@
+.change-lng {
+  position: absolute;
+  right: 15px;
+  top: -19px;
+  background-color: transparent;
+  color: $secondary-text-color;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @media screen and (min-width: $tablet) {
+    right: 70px;
+    top: 78px;
+  }
+}
+
+.change-lng__item {
+  color: $primary-text-color;
+}

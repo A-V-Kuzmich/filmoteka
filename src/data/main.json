@@ -1,0 +1,51 @@
+{
+  "mainInput": {
+    "uk": "Пошук фільмів за назвою",
+    "ru": "Поиск фильмов за названием",
+    "en": "Search movies by name"
+  },
+
+  "yearInput": {
+    "uk": "рік",
+    "ru": "год",
+    "en": "year"
+  },
+
+  "modalWatched": {
+    "uk": "Переглянуто",
+    "ru": "Просмотренные",
+    "en": "my library"
+  },
+
+  "modalQueue": {
+    "uk": "В чергу",
+    "ru": "В очередь",
+    "en": "WATCHED"
+  },
+  "popularity": {
+    "uk": "Популярність",
+    "ru": "Популярность",
+    "en": "QUEUE"
+  },
+  "genres": {
+    "uk": "Жанри",
+    "ru": "Жанры",
+    "en": "2021 | All Rights Reserved | Developed with"
+  },
+  "votes": {
+    "uk": "Рейтинг/Голоси",
+    "ru": "Рейтинг/Голоса",
+    "en": "GoIT Students"
+  },
+  "title": {
+    "uk": "Ориг. назва",
+    "ru": "Ориг. название",
+    "en": "release"
+  },
+  "about": {
+    "uk": "Фільм про",
+    "ru": "Фильм о",
+    "en": "year"
+  }
+}
+

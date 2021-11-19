@@ -40,4 +40,5 @@ export const refs = {
   closeBtnVideoPlayer: document.querySelector('[data-modal="close-video"]'),
   modalEl: document.querySelector('.modal'),
   emptyListImg: document.querySelector('.nothing-found'),
+  select: document.querySelector('.change-lng')
 };

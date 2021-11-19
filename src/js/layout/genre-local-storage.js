@@ -2,7 +2,7 @@ import { getApiData } from '../api/api-service'
 import { setToLocalStorage, getFromLocalStorage } from './local-storage'
 
 
-function setGenresToLocalStorage() {
+export function setGenresToLocalStorage() {
   let query = `genre/movie/list?`;
   getApiData(query)
     .then(result => {
