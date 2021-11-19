@@ -18,7 +18,6 @@ export function renderFromStorageArray(keyName) {
     }
 
     const storageArray = getFromLocalStorage(keyName);
-    console.log('storageArray', storageArray);
 
     const filmArray = [];
 

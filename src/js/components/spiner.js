@@ -1,5 +1,7 @@
 import { refs } from '../refs/refs';
+
 const { pagePreloader } = refs;
+
 function showSpiner() {
   pagePreloader.classList.remove('done');
 }
