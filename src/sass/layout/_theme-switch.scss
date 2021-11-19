@@ -93,6 +93,12 @@ body.dark-theme {
   .pop {
     filter: brightness(0.6);
   }
+  .contact-card {
+    background-color: $contact-card-bg-dark-theme;
+    &__title {
+      color: $secondary-text-color;
+    }
+  }
 }
 
 .theme-switch {
