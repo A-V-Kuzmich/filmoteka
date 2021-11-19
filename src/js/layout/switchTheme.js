@@ -22,9 +22,12 @@ clickBox.click = newTheme === LIGHT ? false : true;
 clickBox.addEventListener('click', changeTheme);
 lightEl.addEventListener('click', changeTheme);
 
-function changeTheme(e) {
+function changeTheme() {
   bodySwitch.classList.toggle(DARK);
   bodySwitch.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.classList.contains(DARK) ? DARK : LIGHT);
+  setToLocalStorage('n-theme', bodySwitch.classList.contains(DARK) ? DARK : LIGHT);
+  // if (getFromLocalStorage(DARK) === true) {
+  //   bodySwitch.classList.add(DARK);
+  // }
 }
