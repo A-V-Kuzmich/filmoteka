@@ -21,6 +21,7 @@ function openModal(backdrop, btnClose) {
   backdrop.classList.remove('visually-hidden');
   btnClose.addEventListener('click', closeModalWindow);
   backdrop.addEventListener('click', closeToBackdrop);
+   document.querySelector('.modal__btns-list').classList.remove('visually-hidden') 
   scroll();
   if (flag === false) {
     window.addEventListener('keydown', onEscKeyPress);
