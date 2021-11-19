@@ -26,5 +26,5 @@ function changeTheme(e) {
   bodySwitch.classList.toggle(DARK);
   bodySwitch.classList.toggle(LIGHT);
 
-  setToLocalStorage('n-theme', e.target.classList ? DARK : LIGHT);
+  setToLocalStorage('n-theme', bodySwitch.classList.contains(DARK) ? DARK : LIGHT);
 }
