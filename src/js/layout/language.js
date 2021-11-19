@@ -23,7 +23,6 @@ let langLS = getFromLocalStorage('lang')
 if (langLS === 'uk') {
   setHeaderData('uk')
   setGenresToLocalStorage()
-  return
 }
 
 if (langLS === 'ru') {
