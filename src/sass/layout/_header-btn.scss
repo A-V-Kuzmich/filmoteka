@@ -23,7 +23,7 @@
     &--active {
       background-color: $accent-color;
       border: none;
-      filter: $filters-btn;
+      filter: $filters-focus-btn;
     }
     &:hover,
     &:focus {
