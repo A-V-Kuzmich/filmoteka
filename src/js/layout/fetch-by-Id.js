@@ -3,7 +3,6 @@ import { createInnerMarkup } from './render-by-template';
 import { changeModalLanguage } from './language.js';
 import makeModalFilm from '../../partial/templates/modal-film.hbs';
 import { openModalWindow } from '../components/modal.js';
-
 import { refs } from '../refs/refs.js';
 import { addToStorageArray } from './add-to-storage-array';
 import { openVideo } from '../components/video-player';
@@ -33,6 +32,7 @@ function onCardClick(e) {
       openModalCard(getId(e));
   }
 }
+
 //-----------getting an ID card------------------------
 function getId(e) {
   return e.path.find(num => num.className === 'films__item').dataset.id;
@@ -52,6 +52,6 @@ function openModalCard(filmId) {
     const addToWatchedBtn = document.querySelector('[data-watched]');
     addToWatchedBtn.addEventListener('click', addToStorageArray('watched', 'watched'));
 
-    changeModalLanguage()
+    changeModalLanguage();
   });
 }

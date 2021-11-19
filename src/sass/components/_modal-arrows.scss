@@ -1,0 +1,35 @@
+.modal__btn {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: $secondary-text-color;
+  color: $primary-text-color;
+  cursor: pointer;
+  z-index: 9999999;
+  &:hover {
+    background-color: $accent-color;
+    color: $secondary-text-color;
+  }
+  @media screen and(max-width:767px) {
+    background-color: $accent-color;
+    color: $secondary-text-color;
+  }
+}
+
+.modal__btns-list-prev {
+  left: 30px;
+  @media screen and(max-width:767px) {
+    left: 3px;
+  }
+}
+
+.modal__btns-list-next {
+  right: 30px;
+  @media screen and(max-width:767px) {
+    right: 3px;
+  }
+}

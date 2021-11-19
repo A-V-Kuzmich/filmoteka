@@ -10,6 +10,7 @@ contactsLink.addEventListener('click', onContactsClick);
 
 function onContactsClick() {
   openModalWindow(backdrop);
+  document.querySelector('.modal__btns-list').classList.add('visually-hidden') 
   const list = contactsArr.students;
   modal.innerHTML = contactsTmpl({ list, sprite });
 }
