@@ -2,15 +2,17 @@ import { noScrollBody } from '../components/no-scroll';
 import { refs } from '../refs/refs';
 import { cleanInnerMarkup } from '../layout/render-by-template';
 
+const {backdrop, closeModalBtn, backdropVideoPlayer, closeBtnVideoPlayer, bodySwitch, containerVideoPlayer} = refs
+
 let flag = false;
 
 export function openModalWindow(e) {
   switch (e) {
-    case refs.backdrop:
-      openModal(refs.backdrop, refs.closeModalBtn);
+    case backdrop:
+      openModal(backdrop, closeModalBtn);
       break;
-    case refs.backdropVideoPlayer:
-      openModal(refs.backdropVideoPlayer, refs.closeBtnVideoPlayer);
+    case backdropVideoPlayer:
+      openModal(backdropVideoPlayer, closeBtnVideoPlayer);
       break;
   }
 }
@@ -27,31 +29,31 @@ function openModal(backdrop, btnClose) {
 }
 
 function closeModalWindow() {
-  if (!refs.backdropVideoPlayer.classList.contains('visually-hidden')) {
-    refs.backdropVideoPlayer.classList.add('visually-hidden');
-    refs.closeBtnVideoPlayer.removeEventListener('click', closeModalWindow);
-    refs.backdropVideoPlayer.removeEventListener('click', closeToBackdrop);
-    cleanInnerMarkup(refs.containerVideoPlayer);
+  if (!backdropVideoPlayer.classList.contains('visually-hidden')) {
+    backdropVideoPlayer.classList.add('visually-hidden');
+    closeBtnVideoPlayer.removeEventListener('click', closeModalWindow);
+    backdropVideoPlayer.removeEventListener('click', closeToBackdrop);
+    cleanInnerMarkup(containerVideoPlayer);
     keyListner();
     return;
   }
-  if (!refs.backdrop.classList.contains('visually-hidden')) {
-    refs.backdrop.classList.add('visually-hidden');
-    refs.closeModalBtn.removeEventListener('click', closeModalWindow);
-    refs.backdrop.removeEventListener('click', closeToBackdrop);
+  if (!backdrop.classList.contains('visually-hidden')) {
+    backdrop.classList.add('visually-hidden');
+    closeModalBtn.removeEventListener('click', closeModalWindow);
+    backdrop.removeEventListener('click', closeToBackdrop);
     keyListner();
     return;
   }
 }
 function keyListner() {
-  if (refs.backdrop.classList.contains('visually-hidden')) {
+  if (backdrop.classList.contains('visually-hidden')) {
     noScrollBody();
     window.removeEventListener('keydown', onEscKeyPress);
     flag = false;
   }
 }
 function scroll() {
-  if (!refs.bodySwitch.classList.contains('no-scroll')) {
+  if (!bodySwitch.classList.contains('no-scroll')) {
     noScrollBody();
   }
 }

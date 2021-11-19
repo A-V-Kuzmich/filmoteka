@@ -4,10 +4,12 @@ import contactsArr from '../../contacts.json';
 import contactsTmpl from '../../partial/templates/contacts-list.hbs';
 import sprite from '../../images/icon/sprite.svg';
 
-refs.contactsLink.addEventListener('click', onContactsClick);
+const { contactsLink, modal, backdrop } = refs;
+
+contactsLink.addEventListener('click', onContactsClick);
 
 function onContactsClick() {
-  openModalWindow(refs.backdrop);
+  openModalWindow(backdrop);
   const list = contactsArr.students;
-  refs.modal.innerHTML = contactsTmpl({ list, sprite });
+  modal.innerHTML = contactsTmpl({ list, sprite });
 }
