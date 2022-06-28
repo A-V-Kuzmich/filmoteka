@@ -19,6 +19,7 @@ filmsEl.addEventListener('click', onCardClick);
 
 //---------click tracking function----------------
 function onCardClick(e) {
+  console.log(e.target);
   switch (e.srcElement.className) {
     case 'film__trailer':
       openVideo(getId(e));
@@ -27,6 +28,7 @@ function onCardClick(e) {
       openVideo(getId(e));
       break;
     case 'films':
+      openModalCard(getId(e));
       break;
     default:
       openModalCard(getId(e));
@@ -35,11 +37,15 @@ function onCardClick(e) {
 
 //-----------getting an ID card------------------------
 function getId(e) {
-  return e.path.find(num => num.className === 'films__item').dataset.id;
+  const spreadArray = [...e.currentTarget.children]
+  const filmId = spreadArray.find(num => num.className === 'films__item').dataset.id;
+  return filmId
 }
 //---------opening a modal window---------------------
 function openModalCard(filmId) {
+  console.log(filmId);
   fetchById(filmId).then(result => {
+    console.log(result);
     result.popularity = result.popularity.toFixed(2);
     const modalContent = makeModalFilm(result);
 
